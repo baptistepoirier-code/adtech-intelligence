@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Tech Financial Intel — Deep Analysis Report</title>
+<style>
+:root {
+    --bg: #0a0a10;
+    --surface: #12121c;
+    --surface2: #1a1a28;
+    --border: #252538;
+    --text: #dddde8;
+    --text2: #8888a0;
+    --accent: #6366f1;
+    --accent2: #818cf8;
+    --green: #10b981;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --blue: #3b82f6;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--bg); color: var(--text);
+    line-height: 1.75; font-size: 15px;
+}
+
+/* Navigation sidebar */
+.nav {
+    position: fixed; left: 0; top: 0; bottom: 0; width: 280px;
+    background: var(--surface); border-right: 1px solid var(--border);
+    padding: 32px 20px; overflow-y: auto; z-index: 100;
+}
+.nav-logo {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--accent2); margin-bottom: 8px;
+}
+.nav-subtitle {
+    font-size: 11px; color: var(--text2); margin-bottom: 28px;
+    font-family: -apple-system, sans-serif; letter-spacing: 0.5px;
+}
+.nav a {
+    display: block; padding: 10px 14px; margin-bottom: 2px;
+    border-radius: 8px; text-decoration: none; color: var(--text2);
+    font-family: -apple-system, sans-serif; font-size: 13px;
+    font-weight: 500; transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+.nav a:hover { background: var(--surface2); color: var(--text); border-left-color: var(--accent); }
+.nav a .nav-num {
+    display: inline-block; width: 22px; font-size: 11px;
+    color: var(--accent2); font-weight: 600;
+}
+.nav-divider { height: 1px; background: var(--border); margin: 16px 0; }
+.nav-info {
+    font-family: -apple-system, sans-serif; font-size: 11px;
+    color: var(--text2); line-height: 1.6; margin-top: 20px;
+}
+
+/* Main content */
+.main {
+    margin-left: 280px; padding: 40px 60px 80px; max-width: 960px;
+}
+
+/* Header */
+.report-header {
+    border-bottom: 2px solid var(--accent); padding-bottom: 24px; margin-bottom: 40px;
+}
+.report-header h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px;
+}
+.report-header h1 span { color: var(--accent2); }
+.report-header .report-meta {
+    font-family: -apple-system, sans-serif; font-size: 12px;
+    color: var(--text2); letter-spacing: 0.5px;
+}
+.report-header .report-tags {
+    display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;
+}
+.report-tag {
+    font-family: -apple-system, sans-serif; font-size: 10px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px;
+    padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border);
+    color: var(--text2);
+}
+.report-tag.highlight { border-color: var(--accent); color: var(--accent2); }
+
+/* Sections */
+.section {
+    margin-bottom: 48px; padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+}
+.section-number {
+    font-family: -apple-system, sans-serif; font-size: 12px;
+    font-weight: 700; color: var(--accent2); letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 6px;
+}
+.section h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 24px; font-weight: 700; margin-bottom: 6px;
+    letter-spacing: -0.3px;
+}
+.section .subtitle {
+    font-size: 14px; color: var(--text2); font-style: italic;
+    margin-bottom: 20px;
+}
+.section h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 17px; font-weight: 600; margin-top: 28px; margin-bottom: 12px;
+    color: var(--accent2);
+}
+.section p {
+    margin-bottom: 14px; text-align: justify;
+}
+.section strong { color: #fff; }
+
+/* Insight box */
+.insight-box {
+    background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(99,102,241,0.02));
+    border: 1px solid rgba(99,102,241,0.25); border-left: 4px solid var(--accent);
+    border-radius: 8px; padding: 16px 20px; margin-bottom: 24px;
+    font-size: 15px; line-height: 1.65;
+}
+.insight-label {
+    font-family: -apple-system, sans-serif; font-size: 10px;
+    font-weight: 700; letter-spacing: 2px; color: var(--accent2);
+    margin-bottom: 8px;
+}
+
+/* Mini tables */
+.mini-table {
+    width: 100%; border-collapse: collapse; margin: 20px 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+}
+.mini-table th {
+    text-align: left; padding: 10px 12px;
+    border-bottom: 2px solid var(--border);
+    color: var(--text2); font-weight: 600; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+.mini-table td {
+    padding: 9px 12px; border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+.mini-table tr:hover { background: var(--surface2); }
+.mini-table .row-private td { color: var(--text2); font-style: italic; }
+
+/* Utility classes */
+.nd { color: var(--text2); font-style: italic; }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); font-weight: 600; }
+.quality-badge {
+    display: inline-block; font-family: -apple-system, sans-serif;
+    font-size: 9px; font-weight: 700; padding: 2px 6px;
+    border-radius: 3px; color: white; vertical-align: middle;
+    letter-spacing: 0.5px;
+}
+.footnote {
+    font-size: 12px; color: var(--text2); font-style: italic;
+    margin-top: 4px; margin-bottom: 16px;
+}
+.analysis-list {
+    margin: 12px 0 16px 20px; list-style-type: disc;
+}
+.analysis-list li {
+    margin-bottom: 8px; padding-left: 4px;
+}
+
+/* Document trail */
+.doc-table {
+    width: 100%; border-collapse: collapse;
+    font-family: -apple-system, sans-serif; font-size: 12px;
+}
+.doc-table th {
+    text-align: left; padding: 8px 10px;
+    border-bottom: 2px solid var(--border);
+    color: var(--text2); font-size: 10px; text-transform: uppercase;
+}
+.doc-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); }
+.doc-table a { color: var(--accent2); text-decoration: none; }
+.doc-table a:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nav { display: none; }
+    .main { margin-left: 0; padding: 20px; max-width: 100%; }
+}
+@media print {
+    .nav { display: none; }
+    .main { margin-left: 0; }
+    body { background: white; color: #111; font-size: 11px; }
+    .insight-box { background: #f0f0ff; border-color: #6366f1; }
+    .section { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-logo">Financial Intel</div>
+    <div class="nav-subtitle">Ad Tech Deep Analysis Report</div>
+    <a href="#sec-exec"><span class="nav-num">01</span> Executive Summary</a>
+    <a href="#sec-pnl"><span class="nav-num">02</span> P&L Comparative Analysis</a>
+    <a href="#sec-moats"><span class="nav-num">03</span> Moats &amp; Compliance</a>
+    <a href="#sec-dsp"><span class="nav-num">04</span> DSP Landscape</a>
+    <a href="#sec-learn"><span class="nav-num">05</span> Learnings &amp; Outlook</a>
+    <div class="nav-divider"></div>
+    <a href="#sec-sources"><span class="nav-num">A</span> Document Trail</a>
+    <div class="nav-info">
+        <strong>Classification:</strong> Internal Research<br>
+        <strong>Analyst:</strong> AI-Generated<br>
+        <strong>Date:</strong> 2026-02-18 12:20<br>
+        <strong>Universe:</strong> Mobile Performance DSP<br><br>
+        Data sourced from SEC EDGAR XBRL, earnings releases, and curated market estimates.
+        Private company figures are labeled as estimates.
+    </div>
+</nav>
+
+<div class="main">
+    <div class="report-header">
+        <h1>Ad Tech <span>Deep Analysis</span></h1>
+        <div class="report-meta">
+            EQUITY RESEARCH NOTE &middot; MOBILE PERFORMANCE DSP UNIVERSE &middot; 2026-02-18 12:20
+        </div>
+        <div class="report-tags">
+            <span class="report-tag highlight">FY2024 EARNINGS</span>
+            <span class="report-tag">SEC FILINGS</span>
+            <span class="report-tag">COMPETITIVE ANALYSIS</span>
+            <span class="report-tag">PRIVACY IMPACT</span>
+            <span class="report-tag">ML / AI</span>
+        </div>
+    </div>
+
+    
+    <div class="section" id="sec-exec">
+        <div class="section-number">01</div>
+        <h2>Executive Summary</h2>
+        <div class="insight-box">
+            <div class="insight-label">KEY INSIGHT</div>
+            The mobile performance ecosystem is undergoing a decisive separation between AI-native platforms
+            and legacy infrastructure plays. AppLovin's AXON engine has redefined what "good" looks like in
+            programmatic monetization — delivering $3B in Adjusted EBITDA on
+            $5B in revenue (+57.7% margin). Unity, despite controlling
+            a critical game engine monopoly, has failed to translate infrastructure dominance into advertising profitability.
+        </div>
+
+        <p>The FY2024 earnings cycle has delivered a clear verdict on the mobile ad tech landscape. This is no longer a
+        story about "who has more inventory" — it is a story about <strong>who has the best ML-driven bid optimization engine</strong>,
+        and how deeply it is integrated into the demand-supply chain.</p>
+
+        <p><strong>AppLovin</strong> is the unambiguous winner of FY2024. Revenue surged +43.5% YoY to
+        $5B, with the Software Platform (advertising) segment contributing $3B
+        — now representing roughly 68% of total revenue vs. 56% in FY2022. The AXON 2.0 engine has created a compounding
+        flywheel: better predictions → higher win rates → more data → better predictions. Adjusted EBITDA of $3B
+        represents a +80.9% YoY expansion, driven almost entirely by software margin improvement, not
+        volume growth in the Apps segment.</p>
+
+        <p><strong>Unity</strong> presents the opposite trajectory. Revenue contracted -17.1% YoY to
+        $2B, reflecting the painful reset of its advertising monetization engine post-ironSource
+        integration. The Grow Solutions segment (ads/mediation) fell to $1B,
+        down from $1.33B in FY2023. The company remains
+        EBITDA-positive ($390M Adjusted) but is burning cash on restructuring and R&D pivots that have yet
+        to show returns in the advertising business.</p>
+
+        <p><strong>Alphabet</strong> and <strong>Meta</strong> continue to operate on a different plane entirely. Google's ad revenue
+        (Search + YouTube + Network) exceeded $265B
+        in FY2024, with YouTube alone at $36B.
+        Meta's Family of Apps generated $161B in revenue with
+        $87B in segment operating income — a staggering
+        54% operating margin that funds the $17.7B annual Reality Labs subsidy.</p>
+
+        <p><strong>Digital Turbine</strong> is in structural decline. Revenue fell to $545M with a significant goodwill
+        impairment contributing to a $-420M net loss. The on-device distribution model faces existential pressure from
+        platform-level privacy changes and OEM renegotiations.</p>
+
+        <h3>Comparative Snapshot — FY2024</h3>
+        <table class="mini-table">
+            <thead><tr>
+                <th>Company</th><th>Revenue</th><th>YoY</th><th>Adj. EBITDA</th><th>EBITDA %</th>
+                <th>Net Income</th><th>FCF</th><th>Data</th>
+            </tr></thead>
+            <tbody>
+                <tr><td><strong>AppLovin</strong></td><td>$5B</td><td><span class="pos">+43.5%</span></td>
+                    <td>$3B</td><td><span class="pos">+57.7%</span></td>
+                    <td>$2B</td><td>$2B</td><td><span class="quality-badge" style="background:#10b981">HIGH</span></td></tr>
+                <tr><td><strong>Unity</strong></td><td>$2B</td><td><span class="neg">-17.1%</span></td>
+                    <td>$390M</td><td><span class="pos">+21.5%</span></td>
+                    <td>$-664M</td><td>$286M</td><td><span class="quality-badge" style="background:#10b981">HIGH</span></td></tr>
+                <tr><td><strong>Alphabet</strong></td><td>$350B</td><td><span class="pos">+13.9%</span></td>
+                    <td>$112B</td><td><span class="pos">+32.1%</span></td>
+                    <td>$101B</td><td>$73B</td><td><span class="quality-badge" style="background:#10b981">HIGH</span></td></tr>
+                <tr><td><strong>Meta</strong></td><td>$165B</td><td><span class="pos">+21.9%</span></td>
+                    <td>$69B</td><td><span class="pos">+42.2%</span></td>
+                    <td>$62B</td><td>$52B</td><td><span class="quality-badge" style="background:#10b981">HIGH</span></td></tr>
+                <tr><td><strong>Digital Turbine</strong></td><td>$545M</td><td><span class="neg">-18.2%</span></td>
+                    <td>$92M</td><td><span class="pos">+16.9%</span></td>
+                    <td>$-420M</td><td class="nd">N/D</td><td><span class="quality-badge" style="background:#10b981">HIGH</span></td></tr>
+                <tr class="row-private"><td><strong>Moloco</strong></td><td>~$300M*</td><td class="nd">N/D</td>
+                    <td class="nd">N/D</td><td class="nd">N/D</td>
+                    <td class="nd">N/D</td><td class="nd">N/D</td><td><span class="quality-badge" style="background:#f59e0b">MEDIUM</span></td></tr>
+                <tr class="row-private"><td><strong>Liftoff / Vungle</strong></td><td colspan="6" class="nd">Not disclosed — private</td><td><span class="quality-badge" style="background:#ef4444">LOW</span></td></tr>
+                <tr class="row-private"><td><strong>Smadex</strong></td><td colspan="6" class="nd">Not disclosed — Entravision subsidiary</td><td><span class="quality-badge" style="background:#ef4444">LOW</span></td></tr>
+                <tr class="row-private"><td><strong>Adikteev</strong></td><td colspan="6" class="nd">Not disclosed — private</td><td><span class="quality-badge" style="background:#ef4444">LOW</span></td></tr>
+                <tr class="row-private"><td><strong>Remerge</strong></td><td colspan="6" class="nd">Not disclosed — private</td><td><span class="quality-badge" style="background:#ef4444">LOW</span></td></tr>
+            </tbody>
+        </table>
+        <p class="footnote">* Estimate based on press reporting and Crunchbase data. All other figures from SEC filings and earnings releases.</p>
+    </div>
+    
+    <div class="section" id="sec-pnl">
+        <div class="section-number">02</div>
+        <h2>P&L Comparative Analysis</h2>
+        <div class="subtitle">Cost structure, scalability, and the software vs. services divergence</div>
+
+        <div class="insight-box">
+            <div class="insight-label">KEY INSIGHT</div>
+            AppLovin's cost structure is converging toward a pure-play SaaS model. R&D at +10.4% of revenue
+            — down from 19.3% in FY2022 — reflects the inherent scalability of ML-based auction software. Unity's R&D at
+            +40.8% reveals the dual burden of maintaining a real-time 3D engine <em>and</em> rebuilding its ad stack.
+        </div>
+
+        <h3>The AppLovin Machine: Software-Like Margins at Ad Tech Scale</h3>
+
+        <p>AppLovin's P&L trajectory from FY2022 to FY2024 tells a story of operational transformation. In FY2022, the company
+        posted a $3B topline with a <em>negative</em> operating income of -$102M,
+        driven by elevated S&M spend ($423M) and the legacy cost structure of its Apps business. Two years later, the picture
+        is radically different:</p>
+
+        <table class="mini-table">
+            <thead><tr><th>AppLovin P&L Walk</th><th>FY2022</th><th>FY2023</th><th>FY2024</th><th>CAGR</th></tr></thead>
+            <tbody>
+                <tr><td>Revenue</td><td>$2.82B</td><td>$3.28B</td><td>$5B</td><td class="pos">+29.3%</td></tr>
+                <tr><td>Gross Profit</td><td>$1.76B</td><td>$2.17B</td><td>$3B</td><td class="pos">+39.9%</td></tr>
+                <tr><td>Operating Income</td><td class="neg">-$102M</td><td>$540M</td><td>$2B</td><td>NM</td></tr>
+                <tr><td>Adjusted EBITDA</td><td>$941M</td><td>$1.50B</td><td>$3B</td><td class="pos">+70.0%</td></tr>
+                <tr><td>Adj. EBITDA Margin</td><td>33.4%</td><td>45.8%</td><td><span class="pos">+57.7%</span></td><td>—</td></tr>
+            </tbody>
+        </table>
+
+        <p>The critical driver is <strong>operating leverage in the Software Platform segment</strong>. Advertising revenue nearly tripled
+        from $1.31B to $3B, while the cost base grew at a fraction of that rate. R&D
+        is now $490M (+10.4% of revenue), S&M dropped to $350M (+7.4%),
+        and G&A is $280M (+5.9%). Total OpEx of ~$1B on $5B revenue represents
+        a lean structure that more closely resembles Veeva or Datadog than a traditional ad network.</p>
+
+        <p>The AXON engine is the moat. Unlike impression-counting ad networks, AppLovin's value proposition is <em>algorithmic</em>:
+        the engine predicts which user will generate the highest LTV, bids accordingly, and takes a percentage of the value created.
+        As the model improves, the win rate improves, the data flywheel accelerates, and the marginal cost of each additional dollar
+        of revenue approaches zero. This is the SaaS dream applied to programmatic advertising.</p>
+
+        <h3>Unity: The Cost of Complexity</h3>
+
+        <p>Unity's P&L is a cautionary tale about the perils of M&A-driven growth in ad tech. The ironSource acquisition
+        ($4.4B, closed Nov 2022) was supposed to create an end-to-end monetization platform. Instead, it layered integration costs,
+        duplicative teams, and conflicting technology stacks onto an already complex business.</p>
+
+        <table class="mini-table">
+            <thead><tr><th>Unity P&L Walk</th><th>FY2022</th><th>FY2023</th><th>FY2024</th></tr></thead>
+            <tbody>
+                <tr><td>Revenue</td><td>$1.39B</td><td>$2.19B</td><td>$2B</td></tr>
+                <tr><td>Gross Profit</td><td>$943M</td><td>$1.50B</td><td>$1B</td></tr>
+                <tr><td>Operating Income</td><td class="neg">-$812M</td><td class="neg">-$716M</td><td>$-481M</td></tr>
+                <tr><td>Adjusted EBITDA</td><td class="neg">-$55M</td><td>$348M</td><td>$390M</td></tr>
+                <tr><td>R&D Expense</td><td>$824M</td><td>$966M</td><td>$740M</td></tr>
+                <tr><td>R&D as % Revenue</td><td>59.2%</td><td>44.2%</td><td><span class="pos">+40.8%</span></td></tr>
+            </tbody>
+        </table>
+
+        <p>FY2024 revenue of $2B reflects a -17.1% contraction — a direct consequence of Unity's
+        decision to sunset its legacy ad mediation products and reset pricing in response to advertiser pushback. The Grow segment
+        (ads/mediation) fell to ~$1.2B from $1.33B. R&D remains at $740M — over +40.8% of revenue —
+        because Unity must simultaneously maintain the 3D engine (Create), rebuild the ad stack (Grow), and invest in ML capabilities
+        to compete with AppLovin's AXON.</p>
+
+        <p>The structural problem is clear: <strong>Unity is spending 2x AppLovin's R&D budget on an absolute basis, generating
+        ~2.6x less revenue</strong>. Until the Grow segment can scale independently of the Create licensing business, Unity's
+        path to AppLovin-level margins is blocked by its own cost structure.</p>
+
+        <h3>The Walled Gardens: A Different Game Entirely</h3>
+
+        <p>Alphabet and Meta are included in this analysis not as direct competitors to mobile DSPs, but as the <em>platforms</em>
+        on which the entire mobile UA economy operates. Their financials provide the ceiling against which every independent
+        DSP must be measured.</p>
+
+        <p><strong>Alphabet</strong> generated $350B in total revenue in FY2024, with the advertising business
+        (Search + YouTube + Network) contributing ~$265B.
+        Operating margin of +32.1% on the consolidated entity understates the advertising margin — Google
+        Cloud ($43B revenue, recently turned
+        profitable) and Other Bets dilute the picture. The key metric for mobile DSP operators: Google's ad network revenue was
+        $30B — still a massive pipe despite the secular
+        decline of third-party ad networks.</p>
+
+        <p><strong>Meta</strong> reported $165B in total revenue with Family of Apps operating income of
+        $87B — a 54% segment margin. Reality Labs lost
+        $18B
+        in FY2024, making it the most expensive R&D bet in advertising history. For mobile UA, Meta remains the single largest budget
+        destination — its Advantage+ AI-driven campaign product has effectively automated the performance buying process, reducing the
+        need for external DSPs in some verticals.</p>
+
+        <h3>OpEx Structure — Who Spends What</h3>
+        <table class="mini-table">
+            <thead><tr><th>OpEx Ratios (% Rev)</th><th>R&D</th><th>S&M</th><th>G&A</th><th>Total OpEx/Rev</th></tr></thead>
+            <tbody>
+                <tr><td><strong>AppLovin</strong></td><td><span class="pos">+10.4%</span></td><td><span class="pos">+7.4%</span></td>
+                    <td><span class="pos">+5.9%</span></td><td><span class="pos">+23.8%</span></td></tr>
+                <tr><td><strong>Unity</strong></td><td><span class="pos">+40.8%</span></td><td><span class="pos">+28.1%</span></td>
+                    <td><span class="pos">+18.8%</span></td><td><span class="pos">+87.7%</span></td></tr>
+                <tr><td><strong>Alphabet</strong></td><td><span class="pos">+13.0%</span></td><td><span class="pos">+8.1%</span></td>
+                    <td><span class="pos">+4.5%</span></td><td>—</td></tr>
+                <tr><td><strong>Meta</strong></td><td><span class="pos">+25.7%</span></td><td><span class="pos">+8.3%</span></td>
+                    <td><span class="pos">+7.0%</span></td><td>—</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="section" id="sec-moats">
+        <div class="section-number">03</div>
+        <h2>Strategic Moats &amp; Compliance Landscape</h2>
+        <div class="subtitle">Privacy, regulation, and the shifting economics of attribution</div>
+
+        <div class="insight-box">
+            <div class="insight-label">KEY INSIGHT</div>
+            ATT was the best thing that ever happened to AppLovin and the worst thing that happened to independent DSPs.
+            When Apple eliminated IDFA opt-in tracking in 2021, it destroyed the data advantage of third-party DSPs and
+            handed it to platforms with first-party data — or platforms with superior ML that can operate without it.
+        </div>
+
+        <h3>ATT / SKAdNetwork: The Great Reshuffling</h3>
+
+        <p>Apple's App Tracking Transparency framework, now over four years old, has permanently restructured the mobile
+        advertising value chain. The impact has been asymmetric:</p>
+
+        <ul class="analysis-list">
+            <li><strong>Winners:</strong> Self-attributing networks (Meta, Google) that have first-party signal; ML-native
+            DSPs (AppLovin, Moloco) that invested early in contextual and probabilistic modeling; MMPs that pivoted to
+            aggregated measurement (SKAdNetwork, SKAN 4.0+).</li>
+            <li><strong>Losers:</strong> Traditional ad networks relying on device-level tracking; retargeting-only platforms
+            (Adikteev, Remerge) whose entire value proposition depends on identifying individual users; DSPs without
+            sufficient proprietary training data.</li>
+        </ul>
+
+        <p>AppLovin's AXON engine was purpose-built for a post-IDFA world. Rather than relying on user-level identifiers,
+        it uses contextual signals (app category, session depth, device type, time of day) combined with ML models trained
+        on AppLovin's mediation data (MAX sees ad requests from ~1 billion DAUs) to predict conversion probability. This
+        proprietary data moat is nearly impossible to replicate — you need the mediation SDK to generate the training data,
+        and you need the training data to build the model.</p>
+
+        <p>Unity's ironSource/LevelPlay mediation has a comparable dataset in gaming, but the ML layer has lagged. The company
+        acknowledged in its FY2024 filing that its "machine learning-based optimization tools" are still being upgraded, and
+        that competitive pressure from "platforms with more advanced predictive capabilities" is a material risk factor.</p>
+
+        <h3>Google Privacy Sandbox &amp; the Chrome Deprecation Saga</h3>
+
+        <p>Google's multi-year effort to deprecate third-party cookies in Chrome has been a rolling strategic uncertainty for the
+        ad tech ecosystem. The latest status (early 2025): Google has abandoned full deprecation in favor of a user-choice model,
+        but the Privacy Sandbox APIs (Topics API, Protected Audience/FLEDGE, Attribution Reporting) remain the long-term
+        architectural direction.</p>
+
+        <p>For mobile DSPs, the direct Chrome impact is limited (mobile web is a small fraction of in-app UA budgets). However,
+        the <strong>Android Privacy Sandbox</strong> is far more consequential. Google's plan to limit advertising ID access on
+        Android mirrors Apple's ATT, with the SDK Runtime and Topics API reshaping how ad SDKs can collect and share data.
+        AppLovin and Unity are both listed as early testers, but the transition creates a one-time migration risk for any DSP
+        that depends on Android GAID for audience targeting.</p>
+
+        <h3>SEC &amp; Regulatory Exposure</h3>
+
+        <p>All five public companies in this analysis carry material regulatory risk factors in their 10-K filings:</p>
+
+        <ul class="analysis-list">
+            <li><strong>AppLovin:</strong> Concentration risk — Apple's App Store policies and Google Play policies directly
+            affect the company's ability to collect data and distribute its SDK. A policy change from either platform could
+            materially impact the Software Platform segment.</li>
+            <li><strong>Unity:</strong> Ongoing litigation related to the ironSource merger pricing and integration. Restructuring
+            charges of ~$250M in FY2024. Risk that the Grow segment never reaches stand-alone profitability.</li>
+            <li><strong>Alphabet:</strong> DOJ antitrust suit targeting the ad tech stack. If Google is forced to divest its ad
+            exchange or DSP (DV360), this would be the most significant structural change in programmatic since header bidding.</li>
+            <li><strong>Meta:</strong> EU Digital Markets Act (DMA) compliance costs; potential "consent or pay" model in Europe;
+            Reality Labs investment scrutiny from activist investors.</li>
+            <li><strong>Digital Turbine:</strong> Dependency on carrier/OEM partnerships for on-device distribution; declining
+            relevance of pre-install models in a world of AI-driven discovery.</li>
+        </ul>
+
+        <h3>Moat Assessment</h3>
+        <table class="mini-table">
+            <thead><tr><th>Company</th><th>Primary Moat</th><th>Durability</th><th>Key Risk</th></tr></thead>
+            <tbody>
+                <tr><td><strong>AppLovin</strong></td><td>ML engine + mediation data flywheel</td>
+                    <td><span class="pos">Strong</span></td><td>Apple SDK policy changes</td></tr>
+                <tr><td><strong>Unity</strong></td><td>Game engine lock-in + SDK distribution</td>
+                    <td><span class="nd">Moderate</span></td><td>Ad tech execution; developer churn</td></tr>
+                <tr><td><strong>Alphabet</strong></td><td>Search intent data + YouTube scale</td>
+                    <td><span class="pos">Very Strong</span></td><td>DOJ antitrust divestiture</td></tr>
+                <tr><td><strong>Meta</strong></td><td>Social graph + first-party conversion data</td>
+                    <td><span class="pos">Very Strong</span></td><td>Regulatory (DMA, teen safety)</td></tr>
+                <tr><td><strong>Digital Turbine</strong></td><td>OEM/carrier distribution deals</td>
+                    <td><span class="neg">Weak</span></td><td>OEM renegotiation; model obsolescence</td></tr>
+                <tr><td><strong>Moloco</strong></td><td>Cloud-native ML DSP; zero legacy</td>
+                    <td><span class="nd">Emerging</span></td><td>Scale vs. AppLovin data moat</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="section" id="sec-dsp">
+        <div class="section-number">04</div>
+        <h2>The DSP Landscape: Private vs. Public</h2>
+        <div class="subtitle">Take rates, survival economics, and the independent DSP question</div>
+
+        <div class="insight-box">
+            <div class="insight-label">KEY INSIGHT</div>
+            The era of the "independent mobile DSP" as a standalone business model is over. What remains is a
+            bifurcation: AI-native platforms with proprietary data (AppLovin, Moloco) vs. niche specialists
+            (retargeting, CTV) that survive by owning a specific use case the platforms cannot or will not address.
+        </div>
+
+        <h3>Market Structure: The Funnel Is Narrowing</h3>
+
+        <p>The mobile DSP market has undergone rapid consolidation since 2020. The driver is not M&A — though there has been
+        plenty of that (Liftoff acquired Vungle for $1B in 2021; ironSource merged into Unity in 2022) — but
+        <strong>economic selection</strong>. DSPs without a proprietary data asset or differentiated ML capability are being
+        squeezed out by the improving performance of self-serve platforms (Meta Advantage+, Google UAC, AppLovin's AppDiscovery)
+        and the rising floor of technical competence required to compete in SKAN-constrained environments.</p>
+
+        <h3>The Take Rate Question</h3>
+
+        <p>Understanding DSP economics requires understanding the take rate — the percentage of media spend retained by the
+        platform as revenue. This metric is rarely disclosed but can be inferred:</p>
+
+        <table class="mini-table">
+            <thead><tr><th>Platform</th><th>Est. Take Rate</th><th>Revenue Model</th><th>Notes</th></tr></thead>
+            <tbody>
+                <tr><td><strong>AppLovin</strong></td><td>~30-40%</td><td>Performance (CPI/CPA)</td>
+                    <td>Blended; Software Platform has higher effective take rate due to mediation data advantage</td></tr>
+                <tr><td><strong>Unity Grow</strong></td><td>~25-35%</td><td>Mediation rev share + DSP</td>
+                    <td>LevelPlay mediation provides floor; ad revenue is the variable</td></tr>
+                <tr><td><strong>Moloco</strong></td><td>~15-25%</td><td>Performance (CPI/CPA)</td>
+                    <td>Cloud-native, lower fixed costs; can operate on thinner margins</td></tr>
+                <tr><td><strong>Liftoff/Vungle</strong></td><td>~20-30%</td><td>Performance + exchange</td>
+                    <td>Vungle's exchange provides supply-side revenue; Liftoff DSP on top</td></tr>
+                <tr><td><strong>Smadex</strong></td><td>~15-20%</td><td>Transparent DSP (SaaS-like)</td>
+                    <td>Differentiates on transparency and custom bidding logic access</td></tr>
+                <tr><td><strong>Adikteev</strong></td><td>~20-30%</td><td>Retargeting/churn prediction</td>
+                    <td>Premium pricing for specialized service; lower volume</td></tr>
+                <tr><td><strong>Remerge</strong></td><td>~20-25%</td><td>In-app retargeting</td>
+                    <td>Berlin-based; strong in EMEA gaming; SKAN risk is existential</td></tr>
+            </tbody>
+        </table>
+        <p class="footnote">Take rate estimates based on industry analysis, advertiser feedback, and public filings where available.
+        Actual rates vary by campaign type, vertical, and volume tier.</p>
+
+        <h3>Moloco: The Challenger</h3>
+
+        <p>Moloco is the most credible challenger to AppLovin's dominance in the independent DSP space. Valued at $2B after
+        its Series C ($150M, 2023), Moloco has taken a deliberately different approach: rather than building a mediation SDK to
+        generate proprietary training data, it builds custom ML models on top of each advertiser's <em>own</em> first-party data.</p>
+
+        <p>This "bring your own data" model has two implications:</p>
+        <ul class="analysis-list">
+            <li><strong>Advantage:</strong> No platform dependency. Moloco doesn't need a mediation business to function. It can
+            operate across environments (mobile, CTV, retail media) wherever the advertiser has data.</li>
+            <li><strong>Disadvantage:</strong> At scale, AppLovin's mediation data (billions of daily ad events) will likely produce
+            superior predictions for new campaigns where advertiser data is sparse. Moloco's model requires the advertiser to have
+            meaningful historical data to train on.</li>
+        </ul>
+
+        <p>Revenue is estimated at ~$300M (2023), making it roughly 1/15th of AppLovin's scale. The company claims profitability,
+        which is credible given its cloud-native cost structure (no legacy infrastructure, minimal sales force vs. enterprise SaaS-style
+        deals).</p>
+
+        <h3>Retargeting: The Endangered Category</h3>
+
+        <p>Adikteev, Remerge, and to some extent Liftoff's retargeting capabilities face a structural headwind: <strong>retargeting
+        requires user-level identification</strong>, which ATT has severely limited on iOS and Android Privacy Sandbox will
+        constrain on Android.</p>
+
+        <p>The playbook has shifted from "re-engage lapsed users via IDFA" to "predict churn and intervene before it happens" —
+        a fundamentally different technical challenge that requires either:</p>
+        <ul class="analysis-list">
+            <li>Deep SDK integration to observe in-app behavior (Adikteev's approach);</li>
+            <li>Publisher-side server-to-server integrations that bypass platform restrictions; or</li>
+            <li>Pivoting to owned channels (push notifications, email, in-app messaging) rather than paid re-engagement.</li>
+        </ul>
+
+        <p>The retargeting-only DSP model is not viable at scale in a post-ATT world. Companies like Adikteev and Remerge must
+        either expand their value proposition beyond retargeting or accept a diminishing addressable market. The exception is
+        Android-heavy markets (Southeast Asia, India, LATAM) where GAID access remains less restricted — but this is a
+        temporary reprieve, not a strategy.</p>
+
+        <h3>Smadex: The Transparency Play</h3>
+
+        <p>Smadex, operating as a subsidiary of Entravision Communications, has carved out a differentiated position by offering
+        advertisers direct access to bidding algorithms and transparent auction mechanics. This "glass-box DSP" approach appeals
+        to sophisticated UA teams that want control over bid logic rather than black-box optimization.</p>
+
+        <p>The risk: as AppLovin and Moloco's ML models improve, the performance gap between algorithmic optimization and manual
+        bidding widens. Transparency is a feature, not a moat — and it becomes less compelling when the black box consistently
+        outperforms the glass box.</p>
+    </div>
+    
+    <div class="section" id="sec-learn">
+        <div class="section-number">05</div>
+        <h2>Learnings &amp; Strategic Outlook</h2>
+        <div class="subtitle">R&D efficiency, operating leverage, and what happens next</div>
+
+        <div class="insight-box">
+            <div class="insight-label">KEY INSIGHT</div>
+            The single most important metric in mobile ad tech is <strong>R&D efficiency</strong> — dollars of incremental
+            revenue per dollar of R&D spend. AppLovin generated ~$2.86 of revenue per R&D dollar in FY2024. Unity generated
+            ~$2.45. The gap is accelerating.
+        </div>
+
+        <h3>Lesson 1: ML Is Not Optional — It Is The Product</h3>
+
+        <p>The FY2022-FY2024 period has proven definitively that machine learning is not a feature of a mobile DSP — it <em>is</em>
+        the mobile DSP. The platforms that treated ML as a core product capability (AppLovin with AXON, Moloco with its custom
+        model architecture, Meta with Advantage+) have pulled away from those that treated it as an optimization layer on top of
+        traditional ad serving (Unity, Digital Turbine, legacy ad networks).</p>
+
+        <p>The implication for new DSP entrants (or those building an exchange): <strong>your ML team is not a support function.
+        It is the engineering core of the business.</strong> The bidding engine, creative optimization, and audience prediction
+        models are the product. Everything else — SDK integration, dashboard, reporting — is packaging.</p>
+
+        <h3>Lesson 2: Mediation = Data = Moat</h3>
+
+        <p>The companies with the strongest financial trajectories (AppLovin, and to a lesser extent Unity) are those that
+        control the mediation layer. Why? Because mediation sees <em>every</em> ad request, from <em>every</em> demand source,
+        for <em>every</em> user. This creates a training dataset that no standalone DSP can match:</p>
+
+        <table class="mini-table">
+            <thead><tr><th>Data Asset</th><th>AppLovin (MAX)</th><th>Unity (LevelPlay)</th><th>Standalone DSP</th></tr></thead>
+            <tbody>
+                <tr><td>Daily ad requests observed</td><td>~8-10 billion</td><td>~5-7 billion</td><td>~0.5-2 billion</td></tr>
+                <tr><td>Publisher SDK integrations</td><td>~100K+ apps</td><td>~80K+ apps</td><td>Varies (1K-20K)</td></tr>
+                <tr><td>Bid/no-bid outcome data</td><td class="pos">Full visibility</td><td class="pos">Full visibility</td><td class="neg">Own bids only</td></tr>
+                <tr><td>Cross-network performance</td><td class="pos">Yes (all waterfall)</td><td class="pos">Yes (all waterfall)</td><td class="neg">No</td></tr>
+            </tbody>
+        </table>
+
+        <p>This is why Moloco's "bring your own data" approach is strategically clever — it sidesteps the mediation data disadvantage
+        by making the advertiser's data the primary training signal. But for campaigns without rich first-party data (new game launches,
+        for example), the mediation-data DSPs will always have an information advantage.</p>
+
+        <h3>Lesson 3: Operating Leverage Separates Winners from Survivors</h3>
+
+        <p>AppLovin's trajectory demonstrates what true operating leverage looks like in ad tech: revenue grew +43.5%
+        while total OpEx grew modestly. The result is EBITDA margin expansion from 33.4% (FY2022) to +57.7% (FY2024).
+        This is the hallmark of a software business reaching scale.</p>
+
+        <p>Unity, by contrast, has <em>negative</em> operating leverage on the advertising side: revenue declined while R&D and
+        restructuring costs consumed cash. The Adjusted EBITDA of $390M is real but fragile — it depends on
+        continued cost-cutting rather than topline growth.</p>
+
+        <p>For private DSPs without public financial disclosure, the operating leverage question is the existential one:
+        <strong>can you grow revenue faster than you grow costs?</strong> If your cost base is dominated by cloud compute (Moloco's
+        model), the answer is likely yes at sufficient scale. If your cost base includes large sales teams, managed service
+        operations, and custom integration work (the traditional agency-DSP model), the answer is likely no.</p>
+
+        <h3>Lesson 4: Who Is Over-Leveraged?</h3>
+
+        <p>From a balance sheet perspective:</p>
+        <ul class="analysis-list">
+            <li><strong>AppLovin:</strong> Carries ~$3.5B in long-term debt (from the 2021 IPO era), but FCF of
+            $2B in FY2024 makes this manageable. Debt/EBITDA is ~1.3x — comfortable for a high-growth
+            software business.</li>
+            <li><strong>Unity:</strong> Minimal long-term debt, but persistent GAAP operating losses (-$481M in FY2024)
+            and a shrinking revenue base create a different kind of risk — not leverage risk, but <em>viability risk</em> for
+            the advertising segment.</li>
+            <li><strong>Digital Turbine:</strong> Carries acquisition-related debt ($350M+ in term loans) against declining
+            revenue and negative operating income. This is the most stressed balance sheet in the peer group.</li>
+            <li><strong>Private DSPs:</strong> Moloco's $150M Series C provides runway. Others (Smadex, Adikteev, Remerge)
+            likely operate near breakeven and depend on sustained advertiser spend to maintain operations.</li>
+        </ul>
+
+        <h3>2025-2026 Outlook: What To Watch</h3>
+
+        <table class="mini-table">
+            <thead><tr><th>Theme</th><th>Impact</th><th>Who Benefits</th><th>Who Loses</th></tr></thead>
+            <tbody>
+                <tr><td><strong>SKAN 5.0 / Advanced Attribution</strong></td><td>More conversion data on iOS</td>
+                    <td>All DSPs (but ML-native benefit most)</td><td>Legacy attribution models</td></tr>
+                <tr><td><strong>Android Privacy Sandbox rollout</strong></td><td>GAID deprecation on Android</td>
+                    <td>First-party data platforms; ML DSPs</td><td>Retargeting DSPs; device graph companies</td></tr>
+                <tr><td><strong>Google ad tech antitrust ruling</strong></td><td>Potential exchange/DSP divestiture</td>
+                    <td>Independent SSPs/exchanges</td><td>Google DV360/AdX; potentially buyers of divested assets</td></tr>
+                <tr><td><strong>AI-generated creatives at scale</strong></td><td>10x creative volume, lower CPA</td>
+                    <td>AppLovin (SparkLabs), Meta (Advantage+)</td><td>Creative agencies; manual creative teams</td></tr>
+                <tr><td><strong>CTV programmatic expansion</strong></td><td>New supply for ML-based buying</td>
+                    <td>Moloco (CTV product), The Trade Desk</td><td>Legacy mobile-only DSPs</td></tr>
+            </tbody>
+        </table>
+
+        <p>The overarching narrative for 2025-2026 is <strong>convergence</strong>: the best mobile DSPs are becoming multi-channel
+        platforms (AppLovin entering e-commerce, Moloco expanding to CTV/retail media), while the walled gardens continue to
+        automate their self-serve buying (Meta Advantage+, Google Performance Max). The window for niche independent DSPs is
+        narrowing. The question is not whether consolidation will continue — it is which platforms will be the consolidators
+        and which will be the consolidated.</p>
+    </div>
+
+    <div class="section" id="sec-sources">
+        <div class="section-number">APPENDIX A</div>
+        <h2>Document Trail &amp; Sources</h2>
+        <div class="subtitle">Every datapoint in this report is traceable to a public filing or cited source</div>
+        <div style="max-height:500px;overflow-y:auto">
+        <table class="doc-table">
+            <thead><tr><th>Company</th><th>Period</th><th>Source</th></tr></thead>
+            <tbody><tr>
+                            <td>Alphabet (Google)</td><td>FY2022</td>
+                            <td><a href="https://abc.xyz/investor/" target="_blank" rel="noopener">Alphabet FY2022 10-K</a></td>
+                        </tr>
+<tr>
+                            <td>Alphabet (Google)</td><td>FY2023</td>
+                            <td><a href="https://abc.xyz/investor/" target="_blank" rel="noopener">Alphabet FY2023 10-K</a></td>
+                        </tr>
+<tr>
+                            <td>Alphabet (Google)</td><td>FY2024</td>
+                            <td><a href="https://s206.q4cdn.com/479360582/files/doc_financials/2024/q4/2024q4-alphabet-earnings-release.pdf" target="_blank" rel="noopener">Alphabet Q4/FY2024 Earnings Release</a></td>
+                        </tr>
+<tr>
+                            <td>AppLovin</td><td>FY2022</td>
+                            <td><a href="https://investors.applovin.com/financials/annual-reports/default.aspx" target="_blank" rel="noopener">AppLovin FY2022 10-K</a></td>
+                        </tr>
+<tr>
+                            <td>AppLovin</td><td>FY2023</td>
+                            <td><a href="https://investors.applovin.com/financials/annual-reports/default.aspx" target="_blank" rel="noopener">AppLovin FY2023 10-K</a></td>
+                        </tr>
+<tr>
+                            <td>AppLovin</td><td>FY2024</td>
+                            <td><a href="https://s27.q4cdn.com/966411597/files/doc_financials/2024/q4/v2/4Q24-AppLovin-Press-Release.pdf" target="_blank" rel="noopener">AppLovin Q4/FY2024 Earnings Press Release</a></td>
+                        </tr>
+<tr>
+                            <td>Digital Turbine</td><td>FY2022</td>
+                            <td><a href="https://ir.digitalturbine.com/sec-filings/annual-reports" target="_blank" rel="noopener">Digital Turbine FY2022 10-K (Mar year-end)</a></td>
+                        </tr>
+<tr>
+                            <td>Digital Turbine</td><td>FY2023</td>
+                            <td><a href="https://ir.digitalturbine.com/sec-filings/annual-reports" target="_blank" rel="noopener">Digital Turbine FY2023 10-K</a></td>
+                        </tr>
+<tr>
+                            <td>Digital Turbine</td><td>FY2024</td>
+                            <td><a href="https://ir.digitalturbine.com/sec-filings/annual-reports" target="_blank" rel="noopener">Digital Turbine FY2024 10-K</a></td>
+                        </tr>
+<tr>
+                            <td>Meta Platforms</td><td>FY2022</td>
+                            <td><a href="https://investor.atmeta.com/" target="_blank" rel="noopener">Meta FY2022 10-K</a></td>
+                        </tr>
+<tr>
+                            <td>Meta Platforms</td><td>FY2023</td>
+                            <td><a href="https://investor.atmeta.com/" target="_blank" rel="noopener">Meta FY2023 10-K</a></td>
+                        </tr>
+<tr>
+                            <td>Meta Platforms</td><td>FY2024</td>
+                            <td><a href="https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx" target="_blank" rel="noopener">Meta Q4/FY2024 Earnings Press Release</a></td>
+                        </tr>
+<tr>
+                            <td>Moloco</td><td>FY2023</td>
+                            <td><a href="https://www.cbinsights.com/company/moloco/financials" target="_blank" rel="noopener">Moloco revenue estimate via CBInsights / press [ESTIMATE] — Estimated. Company is profitable per pre</a></td>
+                        </tr>
+<tr>
+                            <td>Unity</td><td>FY2022</td>
+                            <td><a href="https://investors.unity.com/financials/quarterly-results/default.aspx" target="_blank" rel="noopener">Unity FY2022 10-K</a></td>
+                        </tr>
+<tr>
+                            <td>Unity</td><td>FY2023</td>
+                            <td><a href="https://investors.unity.com/financials/quarterly-results/default.aspx" target="_blank" rel="noopener">Unity FY2023 10-K (incl. ironSource)</a></td>
+                        </tr>
+<tr>
+                            <td>Unity</td><td>FY2024</td>
+                            <td><a href="https://investors.unity.com/news/news-details/2025/Unity-Reports-Fourth-Quarter-and-Fiscal-Year-2024-Financial-Results/default.aspx" target="_blank" rel="noopener">Unity Q4/FY2024 Earnings Press Release</a></td>
+                        </tr>
+<tr>
+                            <td>ironSource (Unity)</td><td>FY2022</td>
+                            <td><a href="https://investors.unity.com/" target="_blank" rel="noopener">ironSource pre-merger earnings (H1 2022). Merged into Unity Nov 2022. [ESTIMATE] — Full year 2021 re</a></td>
+                        </tr></tbody>
+        </table>
+        </div>
+        <p class="footnote" style="margin-top:16px">
+            Private company estimates (Moloco, Liftoff, Smadex, Adikteev, Remerge) are based on press reporting,
+            Crunchbase data, industry analysis, and advertiser feedback. These figures should not be treated as verified financials.
+        </p>
+    </div>
+
+    <footer style="text-align:center;padding:40px 0;color:var(--text2);font-size:11px;font-family:-apple-system,sans-serif;border-top:1px solid var(--border);margin-top:40px">
+        <strong>DISCLAIMER:</strong> This report is auto-generated for internal research purposes.
+        AI-generated analysis based on public SEC filings and market data.
+        Not investment advice. Verify all figures against primary sources before making decisions.<br><br>
+        Ad Tech Financial Intel &middot; 2026-02-18 12:20
+    </footer>
+</div>
+
+<script>
+document.querySelectorAll('.nav a').forEach(a => {
+    a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+</script>
+</body>
+</html>

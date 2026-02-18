@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Performance DSP Intelligence — 2026-02-18</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-0:#0a0c14;--bg-1:#0f1117;--bg-2:#1a1d27;--bg-card:#1e2130;--bg-hover:#252840;
+  --border:#2a2d3e;--text-1:#e8eaed;--text-2:#9ca3af;--text-3:#6b7280;
+  --accent-blue:#6366f1;--accent-red:#ef4444;--accent-green:#10b981;
+  --accent-yellow:#f59e0b;--accent-purple:#8b5cf6;
+  --r:12px;--rs:8px;--shadow:0 4px 6px -1px rgba(0,0,0,.3);--tr:200ms ease;
+}
+[data-theme="light"]{
+  --bg-0:#f1f5f9;--bg-1:#f8fafc;--bg-2:#ffffff;--bg-card:#ffffff;--bg-hover:#f1f5f9;
+  --border:#e2e8f0;--text-1:#1e293b;--text-2:#64748b;--text-3:#94a3b8;
+  --shadow:0 4px 6px -1px rgba(0,0,0,.07);
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;background:var(--bg-0);color:var(--text-1);line-height:1.6;min-height:100vh}
+.container{max-width:1320px;margin:0 auto;padding:0 24px}
+
+/* Header */
+.header{background:var(--bg-1);border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.header-left{display:flex;align-items:center;gap:16px}
+.logo{font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header-date{color:var(--text-2);font-size:13px}
+.theme-toggle{background:var(--bg-card);border:1px solid var(--border);color:var(--text-1);padding:7px 12px;border-radius:var(--rs);cursor:pointer;font-size:13px;transition:all var(--tr);display:flex;align-items:center;gap:6px}
+.theme-toggle:hover{background:var(--bg-hover)}
+
+/* Nav */
+.nav{background:var(--bg-1);border-bottom:1px solid var(--border);overflow-x:auto}
+.nav .container{display:flex;gap:0}
+.nav-tab{padding:12px 18px;color:var(--text-2);font-size:13px;font-weight:500;border:none;border-bottom:2px solid transparent;background:none;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:all var(--tr)}
+.nav-tab:hover{color:var(--text-1)}
+.nav-tab.active{color:var(--accent-blue);border-bottom-color:var(--accent-blue)}
+.nav-tab .cnt{background:var(--bg-card);padding:1px 7px;border-radius:10px;font-size:11px}
+
+/* Stats */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;align-items:center;gap:14px}
+.stat-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stat-icon svg{width:20px;height:20px}
+.stat-val{font-size:26px;font-weight:700;line-height:1}
+.stat-lbl{font-size:12px;color:var(--text-2);margin-top:2px}
+
+/* Sections shared */
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.section-icon{width:22px;height:22px;flex-shrink:0}
+.section-header h2{font-size:18px;font-weight:700}
+.section-count{background:var(--bg-card);border:1px solid var(--border);padding:1px 9px;border-radius:10px;font-size:12px;color:var(--text-2)}
+.section-subtitle{color:var(--text-2);font-size:13px;margin:-8px 0 16px 0}
+.badge-hot{background:linear-gradient(135deg,var(--accent-red),#f97316);color:#fff;padding:2px 10px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.content-section{margin-bottom:36px}
+
+/* Relevance pill */
+.relevance-pill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;font-variant-numeric:tabular-nums}
+.score-high{background:rgba(16,185,129,.15);color:#10b981}
+.score-med{background:rgba(245,158,11,.15);color:#f59e0b}
+.score-low{background:rgba(107,114,128,.15);color:#9ca3af}
+
+/* Signals */
+.signals-section{margin-bottom:32px}
+.signals-list{display:flex;flex-direction:column;gap:10px}
+.signal-card{display:flex;gap:14px;padding:18px;background:var(--bg-card);border:1px solid var(--border);border-left:4px solid var(--accent-red);border-radius:var(--r);text-decoration:none;color:inherit;transition:all var(--tr)}
+.signal-card:hover{background:var(--bg-hover);transform:translateY(-1px);box-shadow:var(--shadow)}
+.signal-rank{font-size:24px;font-weight:800;color:var(--text-3);min-width:36px;display:flex;align-items:flex-start;justify-content:center;padding-top:2px}
+.signal-body{flex:1;min-width:0}
+.signal-top{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.signal-source{font-size:12px;color:var(--text-2);font-weight:600}
+.sig-badge{font-size:10px;padding:1px 7px;border-radius:4px;background:color-mix(in srgb,var(--bc) 15%,transparent);color:var(--bc);font-weight:600}
+.signal-title{font-size:15px;font-weight:700;line-height:1.4;margin-bottom:8px}
+.signal-insight{display:flex;flex-direction:column;gap:4px}
+.insight-row{display:flex;gap:8px;font-size:13px;color:var(--text-2);line-height:1.5;align-items:flex-start}
+.insight-row strong{color:var(--text-1)}
+
+/* Key Learnings */
+.learnings-section{background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(239,68,68,.03));border:1px solid rgba(245,158,11,.15);border-radius:var(--r);padding:24px;margin-bottom:32px}
+.learnings-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.learning-item{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--rs);transition:all var(--tr)}
+.learning-item:hover{border-color:var(--accent-yellow);transform:translateX(3px)}
+.learning-num{font-size:12px;font-weight:800;color:var(--accent-yellow);background:rgba(245,158,11,.1);padding:3px 8px;border-radius:5px;flex-shrink:0;font-variant-numeric:tabular-nums}
+.learning-text{font-size:13px;line-height:1.6;color:var(--text-1)}
+.learning-text strong{color:var(--accent-yellow)}
+.learning-link{display:inline-block;margin-left:8px;font-size:12px;font-weight:600;color:var(--accent);text-decoration:none;padding:2px 10px;border:1px solid var(--accent);border-radius:5px;white-space:nowrap;transition:all var(--tr);flex-shrink:0}
+.learning-link:hover{background:var(--accent);color:white}
+
+/* Must-Reads */
+.mustreads-section{margin-bottom:36px}
+.mustreads-list{display:flex;flex-direction:column;gap:10px}
+.must-read-card{display:flex;gap:14px;padding:18px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);text-decoration:none;color:inherit;transition:all var(--tr);border-left:4px solid var(--border)}
+.must-read-card:hover{background:var(--bg-hover);transform:translateY(-1px);box-shadow:var(--shadow)}
+.must-read-card.priority-high{border-left-color:var(--accent-red)}
+.must-read-card.priority-med{border-left-color:var(--accent-yellow)}
+.mr-rank{font-size:20px;font-weight:800;color:var(--text-3);min-width:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mr-body{flex:1;min-width:0}
+.mr-meta{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.mr-type{display:flex;align-items:center;gap:3px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--tc);background:color-mix(in srgb,var(--tc) 12%,transparent);padding:2px 8px;border-radius:5px}
+.mr-source{font-size:12px;color:var(--text-2);font-weight:600}
+.mr-date{font-size:11px;color:var(--text-3)}
+.mr-title{font-size:15px;font-weight:700;line-height:1.4;margin-bottom:6px}
+.mr-reason{font-size:12px;color:var(--accent-yellow);line-height:1.5;display:flex;gap:6px;padding:6px 10px;background:rgba(245,158,11,.05);border-radius:var(--rs);border:1px solid rgba(245,158,11,.1)}
+
+/* Content Cards */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:10px}
+.content-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:16px;text-decoration:none;color:inherit;transition:all var(--tr);display:block}
+.content-card:hover{background:var(--bg-hover);border-color:var(--accent-blue);transform:translateY(-2px);box-shadow:var(--shadow)}
+.content-card.disabled-card{opacity:.55;pointer-events:none;border-style:dashed}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.card-badges{display:flex;gap:4px;flex-wrap:wrap}
+.card-badge{font-size:9px;padding:1px 6px;border-radius:4px;background:color-mix(in srgb,var(--bc) 15%,transparent);color:var(--bc);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.spotify-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:#1DB954;background:rgba(29,185,84,.1);padding:2px 8px;border-radius:4px}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.card-date{font-size:11px;color:var(--text-3);display:flex;align-items:center}
+.card-source{font-size:11px;color:var(--text-2);font-weight:600}
+.card-title{font-size:14px;font-weight:600;line-height:1.4;margin-bottom:6px}
+.card-summary{font-size:12px;color:var(--text-2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px}
+.card-insights{border-top:1px solid var(--border);padding-top:8px;display:flex;flex-direction:column;gap:2px}
+.card-why,.card-action{font-size:11px;color:var(--text-3);line-height:1.4}
+.card-why strong,.card-action strong{color:var(--text-2)}
+.card-competitors{font-size:10px;color:#f43f5e;display:flex;align-items:center;gap:4px;padding:4px 0;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+
+/* Charts */
+.charts-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.chart-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.chart-card h3{font-size:14px;margin-bottom:12px;color:var(--text-1)}
+.chart-container{position:relative;height:200px}
+
+/* People */
+.people-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.person-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:14px;display:flex;align-items:center;gap:12px;transition:all var(--tr)}
+.person-card:hover{background:var(--bg-hover);border-color:var(--accent-yellow)}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
+.person-info h4{font-size:13px;font-weight:600}
+.person-info p{font-size:11px;color:var(--text-2);margin-top:1px}
+.person-plats{display:flex;gap:4px;margin-top:4px}
+.plat-badge{font-size:9px;padding:1px 6px;border-radius:3px;background:var(--bg-0);color:var(--text-3);font-weight:500}
+
+/* Topics */
+.topics-grid{display:flex;flex-wrap:wrap;gap:6px}
+.topic-tag{background:var(--bg-card);border:1px solid var(--border);padding:6px 14px;border-radius:18px;font-size:12px;color:var(--text-2);transition:all var(--tr);cursor:default}
+.topic-tag:hover{border-color:var(--accent-purple);color:var(--accent-purple)}
+
+/* Footer */
+.footer{border-top:1px solid var(--border);padding:20px 0;margin-top:32px;text-align:center;color:var(--text-3);font-size:12px}
+
+/* Responsive */
+@media(max-width:768px){
+  .charts-row{grid-template-columns:1fr}
+  .cards-grid{grid-template-columns:1fr}
+  .people-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .signal-card,.must-read-card{flex-direction:column;gap:8px}
+  .signal-rank,.mr-rank{min-width:auto;justify-content:flex-start;font-size:16px}
+}
+html{scroll-behavior:smooth}
+.content-section.hidden,.signals-section.hidden,.learnings-section.hidden,.mustreads-section.hidden{display:none}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container">
+    <div class="header-left">
+        <span class="logo">Performance DSP Intelligence</span>
+        <span class="header-date">Wednesday February 18, 2026</span>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i data-lucide="sun" style="width:15px;height:15px"></i>
+        <span id="theme-label">Light</span>
+    </button>
+</div>
+</header>
+
+<nav class="nav">
+<div class="container">
+    <button class="nav-tab active" data-filter="all">All <span class="cnt">32</span></button>
+    <button class="nav-tab" data-filter="signals"><i data-lucide="radio" style="width:14px;height:14px"></i> Signals</button>
+    <button class="nav-tab" data-filter="learnings"><i data-lucide="lightbulb" style="width:14px;height:14px"></i> Learnings</button>
+    <button class="nav-tab" data-filter="mustreads"><i data-lucide="bookmark" style="width:14px;height:14px"></i> Must-Read</button>
+    <button class="nav-tab" data-filter="blog"><i data-lucide="newspaper" style="width:14px;height:14px"></i> Blogs <span class="cnt">19</span></button>
+    <button class="nav-tab" data-filter="youtube"><i data-lucide="play-circle" style="width:14px;height:14px"></i> YouTube <span class="cnt">3</span></button>
+    <button class="nav-tab" data-filter="podcast"><i data-lucide="headphones" style="width:14px;height:14px"></i> Podcasts <span class="cnt">10</span></button>
+    <button class="nav-tab" data-filter="people"><i data-lucide="users" style="width:14px;height:14px"></i> People</button>
+    <button class="nav-tab" data-filter="topics"><i data-lucide="hash" style="width:14px;height:14px"></i> Topics</button>
+</div>
+</nav>
+
+<main class="container" style="padding-top:20px;padding-bottom:32px">
+
+<div class="stats-row" id="stats-section">
+    <div class="stat-card">
+        <div class="stat-icon" style="background:rgba(99,102,241,.12)"><i data-lucide="layers" style="color:var(--accent-blue)"></i></div>
+        <div><div class="stat-val">32</div><div class="stat-lbl">Items Analyzed</div></div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon" style="background:rgba(16,185,129,.12)"><i data-lucide="target" style="color:var(--accent-green)"></i></div>
+        <div><div class="stat-val">15</div><div class="stat-lbl">Avg Relevance</div></div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon" style="background:rgba(239,68,68,.12)"><i data-lucide="flame" style="color:var(--accent-red)"></i></div>
+        <div><div class="stat-val">1</div><div class="stat-lbl">High Priority</div></div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon" style="background:rgba(139,92,246,.12)"><i data-lucide="filter" style="color:var(--accent-purple)"></i></div>
+        <div><div class="stat-val">0</div><div class="stat-lbl">Noise Filtered</div></div>
+    </div>
+</div>
+
+<div class="charts-row" id="charts-section">
+    <div class="chart-card">
+        <h3>Top Strategic Topics</h3>
+        <div class="chart-container"><canvas id="themeChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+        <h3>Items by Source</h3>
+        <div class="chart-container"><canvas id="sourceChart"></canvas></div>
+    </div>
+</div>
+
+
+    <section class="signals-section" id="section-signals">
+        <div class="section-header">
+            <i data-lucide="radio" class="section-icon" style="color: var(--accent-red)"></i>
+            <h2>Today's Key Signals</h2>
+            <span class="badge-hot">Priority Intel</span>
+        </div>
+        <p class="section-subtitle">The most important items for your DSP strategy this week.</p>
+        <div class="signals-list">
+        <a href="https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/" target="_blank" rel="noopener" class="signal-card">
+            <div class="signal-rank">1</div>
+            <div class="signal-body">
+                <div class="signal-top">
+                    <span class="signal-source">AdExchanger</span>
+                    <span class="sig-badge" style="--bc:#3b82f6">UA</span>
+                    <span class="relevance-pill score-high">55</span>
+                </div>
+                <h3 class="signal-title">Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes</h3>
+                <div class="signal-insight">
+                    <div class="insight-row">
+                        <i data-lucide="alert-circle" style="width:14px;height:14px;flex-shrink:0;color:var(--accent-yellow)"></i>
+                        <span><strong>Why it matters:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</span>
+                    </div>
+                    <div class="insight-row">
+                        <i data-lucide="zap" style="width:14px;height:14px;flex-shrink:0;color:var(--accent-green)"></i>
+                        <span><strong>Action:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.exchangewire.com/blog/2026/02/18/audion-launches-first-ai-agent-built-to-deliver-tangible-outcomes-in-digital-audio-advertising/" target="_blank" rel="noopener" class="signal-card">
+            <div class="signal-rank">2</div>
+            <div class="signal-body">
+                <div class="signal-top">
+                    <span class="signal-source">ExchangeWire</span>
+                    <span class="sig-badge" style="--bc:#10b981">ML/AI</span>
+                    <span class="relevance-pill score-med">46</span>
+                </div>
+                <h3 class="signal-title">Audion Launches First AI Agent Built to Deliver Tangible Outcomes in Digital Audio Advertising</h3>
+                <div class="signal-insight">
+                    <div class="insight-row">
+                        <i data-lucide="alert-circle" style="width:14px;height:14px;flex-shrink:0;color:var(--accent-yellow)"></i>
+                        <span><strong>Why it matters:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</span>
+                    </div>
+                    <div class="insight-row">
+                        <i data-lucide="zap" style="width:14px;height:14px;flex-shrink:0;color:var(--accent-green)"></i>
+                        <span><strong>Action:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi" target="_blank" rel="noopener" class="signal-card">
+            <div class="signal-rank">3</div>
+            <div class="signal-body">
+                <div class="signal-top">
+                    <span class="signal-source">Marketecture Podcast</span>
+                    <span class="sig-badge" style="--bc:#8b5cf6">SKAN/ATT</span><span class="sig-badge" style="--bc:#10b981">ML/AI</span><span class="sig-badge" style="--bc:#f59e0b">Creative</span>
+                    <span class="relevance-pill score-med">33</span>
+                </div>
+                <h3 class="signal-title">Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association</h3>
+                <div class="signal-insight">
+                    <div class="insight-row">
+                        <i data-lucide="alert-circle" style="width:14px;height:14px;flex-shrink:0;color:var(--accent-yellow)"></i>
+                        <span><strong>Why it matters:</strong> SKAN/ATT changes redefine what data your DSP can access for targeting and attribution.</span>
+                    </div>
+                    <div class="insight-row">
+                        <i data-lucide="zap" style="width:14px;height:14px;flex-shrink:0;color:var(--accent-green)"></i>
+                        <span><strong>Action:</strong> Audit your SKAN 4.0 implementation. Ensure your conversion models work with limited postbacks.</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://digiday.com/marketing/creators-as-the-new-storytellers-over-10000-apply-to-be-part-of-dicks-sporting-goods-creator-program/?utm_campaign=digidaydis&amp;utm_medium=rss&amp;utm_source=general-rss" target="_blank" rel="noopener" class="signal-card">
+            <div class="signal-rank">4</div>
+            <div class="signal-body">
+                <div class="signal-top">
+                    <span class="signal-source">Digiday</span>
+                    
+                    <span class="relevance-pill score-low">20</span>
+                </div>
+                <h3 class="signal-title">‘Creators as the new storytellers’: Over 10,000 apply to be part of Dick’s Sporting Goods creator program</h3>
+                <div class="signal-insight">
+                    <div class="insight-row">
+                        <i data-lucide="alert-circle" style="width:14px;height:14px;flex-shrink:0;color:var(--accent-yellow)"></i>
+                        <span><strong>Why it matters:</strong> Relevant signal for the performance DSP ecosystem.</span>
+                    </div>
+                    <div class="insight-row">
+                        <i data-lucide="zap" style="width:14px;height:14px;flex-shrink:0;color:var(--accent-green)"></i>
+                        <span><strong>Action:</strong> Skim for key takeaways relevant to your DSP roadmap.</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/6lNiVniMqHRCnDMawfBjYH" target="_blank" rel="noopener" class="signal-card">
+            <div class="signal-rank">5</div>
+            <div class="signal-body">
+                <div class="signal-top">
+                    <span class="signal-source">Pivot (Kara Swisher &amp; Scott Galloway)</span>
+                    <span class="sig-badge" style="--bc:#10b981">ML/AI</span>
+                    <span class="relevance-pill score-low">20</span>
+                </div>
+                <h3 class="signal-title">Google Nest's Surveillance Secret, Bondi's Epstein Meltdown, Meta &amp; YouTube in Court</h3>
+                <div class="signal-insight">
+                    <div class="insight-row">
+                        <i data-lucide="alert-circle" style="width:14px;height:14px;flex-shrink:0;color:var(--accent-yellow)"></i>
+                        <span><strong>Why it matters:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</span>
+                    </div>
+                    <div class="insight-row">
+                        <i data-lucide="zap" style="width:14px;height:14px;flex-shrink:0;color:var(--accent-green)"></i>
+                        <span><strong>Action:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</span>
+                    </div>
+                </div>
+            </div>
+        </a></div>
+    </section>
+
+    <section class="learnings-section" id="section-learnings">
+        <div class="section-header">
+            <i data-lucide="lightbulb" class="section-icon" style="color: var(--accent-yellow)"></i>
+            <h2>Key Learnings This Week</h2>
+            <span class="section-count">Top 10</span>
+        </div>
+        <ol class="learnings-list">
+        <li class="learning-item">
+            <span class="learning-num">01</span>
+            <span class="learning-text">This week's dominant themes: <strong>ML & Predictive Models, CTV & Cross-Platform, Financials & Earnings</strong> — these are shaping the ad tech conversation right now.</span>
+            
+        </li>
+        <li class="learning-item">
+            <span class="learning-num">02</span>
+            <span class="learning-text"><strong>UA & performance</strong>: <em>Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes</em> (AdExchanger) — CPI and ROAS are the metrics your clients live by — every optimization improvement is a competitive advantage.</span>
+            <a href="https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/" target="_blank" rel="noopener" class="learning-link">Read &rarr;</a>
+        </li>
+        <li class="learning-item">
+            <span class="learning-num">03</span>
+            <span class="learning-text"><strong>ML & AI</strong>: <em>Audion Launches First AI Agent Built to Deliver Tangible Outcomes in Digital Audio Advertising</em> (ExchangeWire) — ML is the #1 differentiator between commodity DSPs and market leaders. Invest in feature engineering and training data.</span>
+            <a href="https://www.exchangewire.com/blog/2026/02/18/audion-launches-first-ai-agent-built-to-deliver-tangible-outcomes-in-digital-audio-advertising/" target="_blank" rel="noopener" class="learning-link">Read &rarr;</a>
+        </li>
+        <li class="learning-item">
+            <span class="learning-num">04</span>
+            <span class="learning-text"><strong>SKAN & ATT</strong>: <em>Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association</em> (Marketecture Podcast) — SKAN changes redefine what signals your DSP can use for optimization — conversion modeling is now existential.</span>
+            <a href="https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi" target="_blank" rel="noopener" class="learning-link">Read &rarr;</a>
+        </li>
+        <li class="learning-item">
+            <span class="learning-num">05</span>
+            <span class="learning-text"><strong>Market signals</strong>: <em>Ep. 121 The Future of Streaming: Live Sports, AI, and the New Ad Economy with Ying Wang</em> (The AdTechGod Pod) — AppLovin, Unity, and Google earnings reveal where mobile ad budgets are shifting — track closely.</span>
+            <a href="https://open.spotify.com/show/0xt8yv6JWqiDAuwGOSgjYP" target="_blank" rel="noopener" class="learning-link">Read &rarr;</a>
+        </li>
+        <li class="learning-item">
+            <span class="learning-num">06</span>
+            <span class="learning-text"><strong>Mediation & supply</strong>: <em>How The Minnesota Star Tribune Protects Advertisers While Covering ICE Crackdowns</em> (AdExchanger) — mediation shifts (MAX vs LevelPlay) determine supply quality — your DSP's exchange access is at stake.</span>
+            <a href="https://www.adexchanger.com/publishers/how-the-minnesota-star-tribune-protects-advertisers-while-covering-ice-crackdowns/" target="_blank" rel="noopener" class="learning-link">Read &rarr;</a>
+        </li>
+        <li class="learning-item">
+            <span class="learning-num">07</span>
+            <span class="learning-text"><strong>Regulation</strong>: <em>Google Nest's Surveillance Secret, Bondi's Epstein Meltdown, Meta & YouTube in Court</em> (Pivot (Kara Swisher & Scott Galloway)) — DMA and antitrust reshape data access for DSPs — Google/Apple policy changes can break your targeting overnight.</span>
+            <a href="https://open.spotify.com/show/6lNiVniMqHRCnDMawfBjYH" target="_blank" rel="noopener" class="learning-link">Read &rarr;</a>
+        </li>
+        <li class="learning-item">
+            <span class="learning-num">08</span>
+            <span class="learning-text"><strong>Worth noting</strong>: <em>Raging Moderates: Censoring Stephen Colbert Backfires</em> (The Prof G Pod (Scott Galloway)) — relevant signal for DSP builders.</span>
+            <a href="https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB" target="_blank" rel="noopener" class="learning-link">Read &rarr;</a>
+        </li>
+        <li class="learning-item">
+            <span class="learning-num">09</span>
+            <span class="learning-text"><strong>Worth noting</strong>: <em>Shopify Earnings, Shopify’s AI Advantages</em> (Stratechery) — relevant signal for DSP builders.</span>
+            <a href="https://stratechery.com/2026/shopify-earnings-shopifys-ai-advantages/" target="_blank" rel="noopener" class="learning-link">Read &rarr;</a>
+        </li>
+        <li class="learning-item">
+            <span class="learning-num">10</span>
+            <span class="learning-text"><strong>Worth noting</strong>: <em>Limelight Inc.’s Annual Report Charts Ad Networks’ Move from Aggregation to Curation</em> (ExchangeWire) — relevant signal for DSP builders.</span>
+            <a href="https://www.exchangewire.com/blog/2026/02/18/limelight-inc-s-annual-report-charts-ad-networks-move-from-aggregation-to-curation/" target="_blank" rel="noopener" class="learning-link">Read &rarr;</a>
+        </li></ol>
+    </section>
+
+    <section class="mustreads-section" id="section-mustreads">
+        <div class="section-header">
+            <i data-lucide="bookmark" class="section-icon" style="color: var(--accent-red)"></i>
+            <h2>Must-Read / Must-Listen</h2>
+            <span class="badge-hot">Expert Picks</span>
+        </div>
+        <p class="section-subtitle">Don't skim — consume in full. Here's why.</p>
+        <div class="mustreads-list">
+        <a href="https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/" target="_blank" rel="noopener" class="must-read-card priority-high">
+            <div class="mr-rank">#1</div>
+            <div class="mr-body">
+                <div class="mr-meta">
+                    <span class="mr-type" style="--tc:#6366f1">
+                        <i data-lucide="book-open" style="width:14px;height:14px"></i>
+                        READ
+                    </span>
+                    <span class="mr-source">AdExchanger</span>
+                    <span class="mr-date">Feb 18</span>
+                    <span class="relevance-pill score-high">55</span>
+                </div>
+                <h3 class="mr-title">Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes</h3>
+                <p class="mr-reason">
+                    <i data-lucide="message-circle" style="width:14px;height:14px;flex-shrink:0;margin-top:2px"></i>
+                    Read this fully — AdExchanger delivers depth critical for performance DSP strategy.
+                </p>
+            </div>
+        </a>
+        <a href="https://www.exchangewire.com/blog/2026/02/18/audion-launches-first-ai-agent-built-to-deliver-tangible-outcomes-in-digital-audio-advertising/" target="_blank" rel="noopener" class="must-read-card priority-high">
+            <div class="mr-rank">#2</div>
+            <div class="mr-body">
+                <div class="mr-meta">
+                    <span class="mr-type" style="--tc:#6366f1">
+                        <i data-lucide="book-open" style="width:14px;height:14px"></i>
+                        READ
+                    </span>
+                    <span class="mr-source">ExchangeWire</span>
+                    <span class="mr-date">Feb 18</span>
+                    <span class="relevance-pill score-med">46</span>
+                </div>
+                <h3 class="mr-title">Audion Launches First AI Agent Built to Deliver Tangible Outcomes in Digital Audio Advertising</h3>
+                <p class="mr-reason">
+                    <i data-lucide="message-circle" style="width:14px;height:14px;flex-shrink:0;margin-top:2px"></i>
+                    Read this fully — ExchangeWire delivers depth critical for performance DSP strategy.
+                </p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi" target="_blank" rel="noopener" class="must-read-card priority-med">
+            <div class="mr-rank">#3</div>
+            <div class="mr-body">
+                <div class="mr-meta">
+                    <span class="mr-type" style="--tc:#10b981">
+                        <i data-lucide="headphones" style="width:14px;height:14px"></i>
+                        LISTEN
+                    </span>
+                    <span class="mr-source">Marketecture Podcast</span>
+                    <span class="mr-date">Feb 13</span>
+                    <span class="relevance-pill score-med">33</span>
+                </div>
+                <h3 class="mr-title">Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association</h3>
+                <p class="mr-reason">
+                    <i data-lucide="message-circle" style="width:14px;height:14px;flex-shrink:0;margin-top:2px"></i>
+                    Listen to completely — SKAN/ATT changes define what your DSP can optimize for. Miss this and your conversion models break.
+                </p>
+            </div>
+        </a>
+        <a href="https://www.exchangewire.com/blog/2026/02/18/is-ctv-really-advertisings-premium-pasture/" target="_blank" rel="noopener" class="must-read-card priority-med">
+            <div class="mr-rank">#4</div>
+            <div class="mr-body">
+                <div class="mr-meta">
+                    <span class="mr-type" style="--tc:#6366f1">
+                        <i data-lucide="book-open" style="width:14px;height:14px"></i>
+                        READ
+                    </span>
+                    <span class="mr-source">ExchangeWire</span>
+                    <span class="mr-date">Feb 18</span>
+                    <span class="relevance-pill score-low">26</span>
+                </div>
+                <h3 class="mr-title">Is CTV Really Advertising’s Premium Pasture?</h3>
+                <p class="mr-reason">
+                    <i data-lucide="message-circle" style="width:14px;height:14px;flex-shrink:0;margin-top:2px"></i>
+                    Read this fully — ExchangeWire delivers depth critical for performance DSP strategy.
+                </p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/0xt8yv6JWqiDAuwGOSgjYP" target="_blank" rel="noopener" class="must-read-card priority-med">
+            <div class="mr-rank">#5</div>
+            <div class="mr-body">
+                <div class="mr-meta">
+                    <span class="mr-type" style="--tc:#10b981">
+                        <i data-lucide="headphones" style="width:14px;height:14px"></i>
+                        LISTEN
+                    </span>
+                    <span class="mr-source">The AdTechGod Pod</span>
+                    <span class="mr-date">Feb 17</span>
+                    <span class="relevance-pill score-low">26</span>
+                </div>
+                <h3 class="mr-title">Ep. 121 The Future of Streaming: Live Sports, AI, and the New Ad Economy with Ying Wang</h3>
+                <p class="mr-reason">
+                    <i data-lucide="message-circle" style="width:14px;height:14px;flex-shrink:0;margin-top:2px"></i>
+                    Listen to for market intelligence — competitor financials reveal where mobile ad spend is shifting.
+                </p>
+            </div>
+        </a>
+        <a href="https://www.adexchanger.com/tv/tv-and-video-convergence-is-fair-at-best-heres-what-10-execs-want-fixed-in-2026/" target="_blank" rel="noopener" class="must-read-card priority-med">
+            <div class="mr-rank">#6</div>
+            <div class="mr-body">
+                <div class="mr-meta">
+                    <span class="mr-type" style="--tc:#6366f1">
+                        <i data-lucide="book-open" style="width:14px;height:14px"></i>
+                        READ
+                    </span>
+                    <span class="mr-source">AdExchanger</span>
+                    <span class="mr-date">Feb 17</span>
+                    <span class="relevance-pill score-low">25</span>
+                </div>
+                <h3 class="mr-title">TV And Video Convergence Is ‘Fair’ At Best: Here’s What 10 Execs Want Fixed In 2026</h3>
+                <p class="mr-reason">
+                    <i data-lucide="message-circle" style="width:14px;height:14px;flex-shrink:0;margin-top:2px"></i>
+                    Read this fully — AdExchanger delivers depth critical for performance DSP strategy.
+                </p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/6lNiVniMqHRCnDMawfBjYH" target="_blank" rel="noopener" class="must-read-card priority-med">
+            <div class="mr-rank">#7</div>
+            <div class="mr-body">
+                <div class="mr-meta">
+                    <span class="mr-type" style="--tc:#10b981">
+                        <i data-lucide="headphones" style="width:14px;height:14px"></i>
+                        LISTEN
+                    </span>
+                    <span class="mr-source">Pivot (Kara Swisher &amp; Scott Galloway)</span>
+                    <span class="mr-date">Feb 13</span>
+                    <span class="relevance-pill score-low">20</span>
+                </div>
+                <h3 class="mr-title">Google Nest's Surveillance Secret, Bondi's Epstein Meltdown, Meta &amp; YouTube in Court</h3>
+                <p class="mr-reason">
+                    <i data-lucide="message-circle" style="width:14px;height:14px;flex-shrink:0;margin-top:2px"></i>
+                    Listen to completely — regulatory shifts can break your targeting stack overnight. Stay ahead.
+                </p>
+            </div>
+        </a></div>
+    </section>
+
+    <section class="content-section" id="section-blog">
+        <div class="section-header">
+            <i data-lucide="newspaper" class="section-icon" style="color: #6366f1"></i>
+            <h2>Blogs & Newsletters</h2>
+            <span class="section-count">19</span>
+        </div>
+        <div class="cards-grid">
+        <a href="https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#3b82f6">UA</span></div>
+                <span class="relevance-pill score-high">55</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18<i data-lucide="trending-up" style="width:14px;height:14px;color:var(--accent-green);margin-left:4px" title="Financial / Earnings"></i></span>
+                <span class="card-source">AdExchanger</span>
+            </div>
+            <h3 class="card-title">Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes</h3>
+            <p class="card-summary">Across industries, marketing teams are navigating a brutal equation: shrinking budgets, leaner teams and rising performance pressure. In this environment, platforms like Meta and G...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://www.exchangewire.com/blog/2026/02/18/audion-launches-first-ai-agent-built-to-deliver-tangible-outcomes-in-digital-audio-advertising/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#10b981">ML/AI</span></div>
+                <span class="relevance-pill score-med">46</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18</span>
+                <span class="card-source">ExchangeWire</span>
+            </div>
+            <h3 class="card-title">Audion Launches First AI Agent Built to Deliver Tangible Outcomes in Digital Audio Advertising</h3>
+            <p class="card-summary">Audion, a global digital audio specialist, has launched 'Audion AI', the first artificial intelligence (AI) solution designed to deliver outcome-driven audio advertising campaigns ...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://www.exchangewire.com/blog/2026/02/18/is-ctv-really-advertisings-premium-pasture/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">26</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18</span>
+                <span class="card-source">ExchangeWire</span>
+            </div>
+            <h3 class="card-title">Is CTV Really Advertising’s Premium Pasture?</h3>
+            <p class="card-summary">Shirley Marschall is back - this week she's looking at why CTV reminds her of a joke about a cow... Here’s a story about Kuh Elsa: A butler informs his employer, the Count, that on...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> CTV/cross-platform is the next frontier for performance DSPs expanding beyond mobile.</p>
+                <p class="card-action"><strong>Do:</strong> Evaluate CTV SDK integration and cross-device graph capabilities for your DSP.</p>
+            </div>
+        </a>
+        <a href="https://www.adexchanger.com/tv/tv-and-video-convergence-is-fair-at-best-heres-what-10-execs-want-fixed-in-2026/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">25</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17</span>
+                <span class="card-source">AdExchanger</span>
+            </div>
+            <h3 class="card-title">TV And Video Convergence Is ‘Fair’ At Best: Here’s What 10 Execs Want Fixed In 2026</h3>
+            <p class="card-summary">“Transitional.” “Developing.” “Work-in-progress.” Those are the best descriptions of the current state of TV and video convergence, according to industry experts that AdExchanger a...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://digiday.com/marketing/agentic-with-a-small-a-cmos-are-adopting-ai-more-slowly-than-its-evolving/?utm_campaign=digidaydis&amp;utm_medium=rss&amp;utm_source=general-rss" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#10b981">ML/AI</span></div>
+                <span class="relevance-pill score-low">25</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18</span>
+                <span class="card-source">Digiday</span>
+            </div>
+            <h3 class="card-title">‘Agentic with a small a’: CMOs are adopting AI more slowly than it’s evolving</h3>
+            <p class="card-summary">And the caution isn’t confined to large language models or flashy generative tools. It bubbles up just as clearly in decisions about agentic workflows.</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://www.adexchanger.com/publishers/how-the-minnesota-star-tribune-protects-advertisers-while-covering-ice-crackdowns/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">20</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18</span>
+                <span class="card-source">AdExchanger</span>
+            </div>
+            <h3 class="card-title">How The Minnesota Star Tribune Protects Advertisers While Covering ICE Crackdowns</h3>
+            <p class="card-summary">Amid a federal immigration crackdown that’s produced widespread allegations of law enforcement misconduct and resulted in the high-profile deaths of two US citizens, the state of a...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> Mediation and monetization trends determine your supply quality and SDK integration priorities.</p>
+                <p class="card-action"><strong>Do:</strong> Track mediation platform shifts (MAX vs LevelPlay). Optimize your exchange's fill rate and eCPM.</p>
+            </div>
+        </a>
+        <a href="https://www.adexchanger.com/tv/how-to-dominate-march-madness-with-show-level-data/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">20</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17</span>
+                <span class="card-source">AdExchanger</span>
+            </div>
+            <h3 class="card-title">How To Dominate March Madness With Show-Level Data</h3>
+            <p class="card-summary">At the risk of getting dorky with sports metaphors, DTC agency Rain the Growth already has a game plan to make sure its programmatic placements are a slam dunk. The post How To Dom...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://digiday.com/marketing/creators-as-the-new-storytellers-over-10000-apply-to-be-part-of-dicks-sporting-goods-creator-program/?utm_campaign=digidaydis&amp;utm_medium=rss&amp;utm_source=general-rss" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">20</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18</span>
+                <span class="card-source">Digiday</span>
+            </div>
+            <h3 class="card-title">‘Creators as the new storytellers’: Over 10,000 apply to be part of Dick’s Sporting Goods creator program</h3>
+            <p class="card-summary">Dick's Sporting Goods is boosting its creator roster as it looks to play a bigger role in culture, events and social-media trends.</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> Relevant signal for the performance DSP ecosystem.</p>
+                <p class="card-action"><strong>Do:</strong> Skim for key takeaways relevant to your DSP roadmap.</p>
+            </div>
+        </a>
+        <a href="https://digiday.com/future-of-tv/future-of-tv-briefing-wtf-is-server-guided-ad-insertion/?utm_campaign=digidaydis&amp;utm_medium=rss&amp;utm_source=general-rss" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">20</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18</span>
+                <span class="card-source">Digiday</span>
+            </div>
+            <h3 class="card-title">Future of TV Briefing: WTF is server-guided ad insertion?</h3>
+            <p class="card-summary">This week's Future of TV Briefing looks at server-guided ad insertion, a newish method for inserting ads into streaming video on the fly.</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> CTV/cross-platform is the next frontier for performance DSPs expanding beyond mobile.</p>
+                <p class="card-action"><strong>Do:</strong> Evaluate CTV SDK integration and cross-device graph capabilities for your DSP.</p>
+            </div>
+        </a>
+        <a href="https://stratechery.com/2026/shopify-earnings-shopifys-ai-advantages/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#10b981">ML/AI</span></div>
+                <span class="relevance-pill score-low">18</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18<i data-lucide="trending-up" style="width:14px;height:14px;color:var(--accent-green);margin-left:4px" title="Financial / Earnings"></i></span>
+                <span class="card-source">Stratechery</span>
+            </div>
+            <h3 class="card-title">Shopify Earnings, Shopify’s AI Advantages</h3>
+            <p class="card-summary">Shopify is poised to be one of the biggest winners from AI; it would behoove investors to actually understand the businesses they are selling.</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://www.exchangewire.com/blog/2026/02/18/limelight-inc-s-annual-report-charts-ad-networks-move-from-aggregation-to-curation/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">16</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18</span>
+                <span class="card-source">ExchangeWire</span>
+            </div>
+            <h3 class="card-title">Limelight Inc.’s Annual Report Charts Ad Networks’ Move from Aggregation to Curation</h3>
+            <p class="card-summary">Limelight Inc.’s latest annual report, Progress and Possibility: State of Ad Networks 2026 delves into how successful ad networks are shifting from aggregation to curation - doubli...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> Relevant signal for the performance DSP ecosystem.</p>
+                <p class="card-action"><strong>Do:</strong> Skim for key takeaways relevant to your DSP roadmap.</p>
+            </div>
+        </a>
+        <a href="https://www.exchangewire.com/blog/2026/02/18/digest-starmer-targets-youth-social-media-access-warner-bros-gives-paramount-final-bid-deadline/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">16</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18</span>
+                <span class="card-source">ExchangeWire</span>
+            </div>
+            <h3 class="card-title">Digest: Starmer Targets Youth Social Media Access; Warner Bros Gives Paramount Final Bid Deadline</h3>
+            <p class="card-summary">In today’s Digest, we cover Starmer targeting youth social media access, Ireland’s DPC probing X over Grok imagery, and Ad Net Zero’s young leaders making new recommendations. We a...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> Relevant signal for the performance DSP ecosystem.</p>
+                <p class="card-action"><strong>Do:</strong> Skim for key takeaways relevant to your DSP roadmap.</p>
+            </div>
+        </a>
+        <a href="https://www.adexchanger.com/adexchanger-talks/freestars-ceo-on-why-ad-tech-transparency-is-a-boon-for-struggling-publishers/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">10</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17</span>
+                <span class="card-source">AdExchanger</span>
+            </div>
+            <h3 class="card-title">Freestar’s CEO On Why Ad Tech Transparency Is A Boon For Struggling Publishers</h3>
+            <p class="card-summary">How do digital publishers navigate programmatic ad tech’s “flight to quality” while also dealing with their search traffic flying out the window? That’s the challenge and opportuni...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> Mediation and monetization trends determine your supply quality and SDK integration priorities.</p>
+                <p class="card-action"><strong>Do:</strong> Track mediation platform shifts (MAX vs LevelPlay). Optimize your exchange's fill rate and eCPM.</p>
+            </div>
+        </a>
+        <a href="https://digiday.com/media/creators-eye-snapchat-as-a-reliable-income-alternative-to-tiktok-and-youtube/?utm_campaign=digidaydis&amp;utm_medium=rss&amp;utm_source=general-rss" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">10</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18<i data-lucide="trending-up" style="width:14px;height:14px;color:var(--accent-green);margin-left:4px" title="Financial / Earnings"></i></span>
+                <span class="card-source">Digiday</span>
+            </div>
+            <h3 class="card-title">Creators eye Snapchat as a reliable income alternative to TikTok and YouTube</h3>
+            <p class="card-summary">Figuring out the Snapchat formula has been very lucrative for creators looking for more consistent revenue on a less-saturated platform.</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> Financials reveal which platforms (AppLovin, Unity, Google) are gaining/losing ad revenue share.</p>
+                <p class="card-action"><strong>Do:</strong> Track competitor revenue trends to inform your positioning and pricing strategy.</p>
+            </div>
+        </a>
+        <a href="https://stratechery.com/2026/thin-is-in/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#10b981">ML/AI</span></div>
+                <span class="relevance-pill score-low">8</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17</span>
+                <span class="card-source">Stratechery</span>
+            </div>
+            <h3 class="card-title">Thin Is In</h3>
+            <p class="card-summary">Thick clients were the dominant form of device throughout the PC and mobile era; in an AI world, however, thin clients make much more sense.</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://stratechery.com/2026/aggregators-and-ai/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#10b981">ML/AI</span></div>
+                <span class="relevance-pill score-low">8</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 13<i data-lucide="trending-up" style="width:14px;height:14px;color:var(--accent-green);margin-left:4px" title="Financial / Earnings"></i></span>
+                <span class="card-source">Stratechery</span>
+            </div>
+            <h3 class="card-title">2026.07: Aggregators and AI</h3>
+            <p class="card-summary">The best Stratechery content from the week of February 9, 2026, including individualization at scale, CapEx explosions and distinctions, and the interviewer becoming the interviewe...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://stratechery.com/2026/an-interview-with-ben-thompson-by-john-collison-on-the-cheeky-pint-podcast/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">8</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 12</span>
+                <span class="card-source">Stratechery</span>
+            </div>
+            <h3 class="card-title">An Interview with Ben Thompson by John Collison on the Cheeky Pint Podcast</h3>
+            <p class="card-summary">An interview with me by John Collison on the Cheeky Pint podcast about AI, ads, and the history of Stratechery.</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://www.exchangewire.com/blog/2026/02/17/omnichannel-planning-has-become-a-living-system-yaron-tomchin-ceo-mobupps/" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">6</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17</span>
+                <span class="card-source">ExchangeWire</span>
+            </div>
+            <h3 class="card-title">“Omnichannel planning has become a living system.”: Yaron Tomchin, CEO, Mobupps</h3>
+            <p class="card-summary">We meet Yaron Tomchin, CEO at Mobupps, to discuss the omnichannel landscape and how innovation has turned media planning into a far more dynamic process… Mobupps Mobupps is a globa...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> Relevant signal for the performance DSP ecosystem.</p>
+                <p class="card-action"><strong>Do:</strong> Skim for key takeaways relevant to your DSP roadmap.</p>
+            </div>
+        </a>
+        <a href="https://digiday.com/marketing/digiday-research-brand-marketing-will-be-the-priority-in-2026-after-revenues-fell-short-of-expectations/?utm_campaign=digidaydis&amp;utm_medium=rss&amp;utm_source=general-rss" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">0</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17<i data-lucide="trending-up" style="width:14px;height:14px;color:var(--accent-green);margin-left:4px" title="Financial / Earnings"></i></span>
+                <span class="card-source">Digiday</span>
+            </div>
+            <h3 class="card-title">Digiday+ Research: Brand marketing will be the priority in 2026, after revenues fell short of expectations</h3>
+            <p class="card-summary">Revenues fell short of marketers' expectations in 2025. But they'll be working with bigger budgets in 2026, and focusing on brand marketing.</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> Financials reveal which platforms (AppLovin, Unity, Google) are gaining/losing ad revenue share.</p>
+                <p class="card-action"><strong>Do:</strong> Track competitor revenue trends to inform your positioning and pricing strategy.</p>
+            </div>
+        </a></div>
+    </section>
+
+    <section class="content-section" id="section-youtube">
+        <div class="section-header">
+            <i data-lucide="play-circle" class="section-icon" style="color: #ef4444"></i>
+            <h2>YouTube</h2>
+            <span class="section-count">3</span>
+        </div>
+        <div class="cards-grid">
+        <a href="https://www.youtube.com/watch?v=0XFFUduvdS4" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#8b5cf6">SKAN/ATT</span></div>
+                <span class="relevance-pill score-low">10</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17</span>
+                <span class="card-source">The Trade Desk</span>
+            </div>
+            <h3 class="card-title">Own your insights</h3>
+            <p class="card-summary">What does objectivity really look like? It looks like campaign success defined by you. Because when you choose an objective ad platform that’s designed to put you in control of you...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> SKAN/ATT changes redefine what data your DSP can access for targeting and attribution.</p>
+                <p class="card-action"><strong>Do:</strong> Audit your SKAN 4.0 implementation. Ensure your conversion models work with limited postbacks.</p>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=N20v19jkVV8" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">0</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 12</span>
+                <span class="card-source">The Trade Desk</span>
+            </div>
+            <h3 class="card-title">Behind the Research: The Premium Payoff</h3>
+            <p class="card-summary">A new study confirms that running ads on premium media can deliver better performance, stronger brand trust, and higher purchase intent. This video, featuring Melissa Hutter, our S...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> Relevant signal for the performance DSP ecosystem.</p>
+                <p class="card-action"><strong>Do:</strong> Skim for key takeaways relevant to your DSP roadmap.</p>
+            </div>
+        </a>
+        <a href="https://www.youtube.com/shorts/i5hcLkX5OM4" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"></div>
+                <span class="relevance-pill score-low">0</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 11<i data-lucide="trending-up" style="width:14px;height:14px;color:var(--accent-green);margin-left:4px" title="Financial / Earnings"></i></span>
+                <span class="card-source">The Trade Desk</span>
+            </div>
+            <h3 class="card-title">Success in Short | IKEA builds brand efficiency and conversions</h3>
+            <p class="card-summary">Discover how IKEA Canada and its agency, Carat Canada, built a campaign with our omnichannel optimization tool that lowered acquisition costs and increased engagement.</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a></div>
+    </section>
+
+    <section class="content-section" id="section-podcast">
+        <div class="section-header">
+            <i data-lucide="headphones" class="section-icon" style="color: #10b981"></i>
+            <h2>Podcasts</h2>
+            <span class="section-count">10</span>
+        </div>
+        <div class="cards-grid">
+        <a href="https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#8b5cf6">SKAN/ATT</span><span class="card-badge" style="--bc:#10b981">ML/AI</span><span class="card-badge" style="--bc:#f59e0b">Creative</span><span class="spotify-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</span></div>
+                <span class="relevance-pill score-med">33</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 13</span>
+                <span class="card-source">Marketecture Podcast</span>
+            </div>
+            <h3 class="card-title">Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association</h3>
+            <p class="card-summary">Matthew Egol, Founder &amp; CEO of JourneySpark Consulting, joins Ari Paparo and Eric Franchi to break down agentic advertising and what AdCP means for the industry, from AI’s Super Bo...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> SKAN/ATT changes redefine what data your DSP can access for targeting and attribution.</p>
+                <p class="card-action"><strong>Do:</strong> Audit your SKAN 4.0 implementation. Ensure your conversion models work with limited postbacks.</p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/0xt8yv6JWqiDAuwGOSgjYP" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#10b981">ML/AI</span><span class="spotify-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</span></div>
+                <span class="relevance-pill score-low">26</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17<i data-lucide="trending-up" style="width:14px;height:14px;color:var(--accent-green);margin-left:4px" title="Financial / Earnings"></i></span>
+                <span class="card-source">The AdTechGod Pod</span>
+            </div>
+            <h3 class="card-title">Ep. 121 The Future of Streaming: Live Sports, AI, and the New Ad Economy with Ying Wang</h3>
+            <p class="card-summary">In this episode of the AdTechGod Pod, Ying Wang, the General Manager of Xumo, shares her journey in the streaming television industry, discussing her career growth, the evolution o...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/6lNiVniMqHRCnDMawfBjYH" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#10b981">ML/AI</span><span class="spotify-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</span></div>
+                <span class="relevance-pill score-low">20</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 13<i data-lucide="trending-up" style="width:14px;height:14px;color:var(--accent-green);margin-left:4px" title="Financial / Earnings"></i></span>
+                <span class="card-source">Pivot (Kara Swisher &amp; Scott Galloway)</span>
+            </div>
+            <h3 class="card-title">Google Nest's Surveillance Secret, Bondi's Epstein Meltdown, Meta &amp; YouTube in Court</h3>
+            <p class="card-summary">Kara and Scott discuss AG Pam Bondi's disastrous testimony on the Epstein files and Big Tech's day in court as Meta and YouTube face trial for deliberately addicting young users. T...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="spotify-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</span></div>
+                <span class="relevance-pill score-low">20</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 18</span>
+                <span class="card-source">The Prof G Pod (Scott Galloway)</span>
+            </div>
+            <h3 class="card-title">Raging Moderates: Censoring Stephen Colbert Backfires</h3>
+            <p class="card-summary">Scott Galloway and Jessica Tarlov break down how censoring Colbert backfired on CBS — after Texas state Rep. James Talarico’s scheduled appearance on The Late Show with Stephen Col...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="spotify-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</span></div>
+                <span class="relevance-pill score-low">10</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 13</span>
+                <span class="card-source">The Prof G Pod (Scott Galloway)</span>
+            </div>
+            <h3 class="card-title">Trump and Canada, How ‘Resist and Unsubscribe’ Affects Scott’s Investments, and the Power of Focus</h3>
+            <p class="card-summary">Scott weighs in on Trump’s escalating rhetoric toward Canada, explains why he’s unsubscribing from Uber, Amazon, and other Big Tech platforms, and argues that the biggest competiti...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#10b981">ML/AI</span><span class="spotify-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</span></div>
+                <span class="relevance-pill score-low">10</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 12</span>
+                <span class="card-source">The Prof G Pod (Scott Galloway)</span>
+            </div>
+            <h3 class="card-title">Why CEOs Are Getting AI Wrong — with Ethan Mollick</h3>
+            <p class="card-summary">Ethan Mollick, professor at the Wharton School and author of One Useful Thing, joins Scott Galloway to examine the biggest mistake companies are making about AI. They discuss why f...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/5FTMRr7SOs0WHMsOBPEe6F" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#10b981">ML/AI</span><span class="spotify-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</span></div>
+                <span class="relevance-pill score-low">0</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17</span>
+                <span class="card-source">The Digiday Podcast</span>
+            </div>
+            <h3 class="card-title">ChatGPT enters the ad game. Now what?</h3>
+            <p class="card-summary">The other shoe has finally dropped. After months of speculation, OpenAI officially began to test ads in ChatGPT in the U.S. Meanwhile, marketers are still trying to read the tea le...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/6lNiVniMqHRCnDMawfBjYH" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="card-badge" style="--bc:#8b5cf6">SKAN/ATT</span><span class="spotify-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</span></div>
+                <span class="relevance-pill score-low">0</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17</span>
+                <span class="card-source">Pivot (Kara Swisher &amp; Scott Galloway)</span>
+            </div>
+            <h3 class="card-title">Jane Fonda on How to Turn Rage Into Hope: On with Kara Swisher</h3>
+            <p class="card-summary">Jane Fonda has been fighting for social justice for over five decades, but in the past year, she’s kicked things up a notch. This past fall, she relaunched the Committee for the Fi...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> SKAN/ATT changes redefine what data your DSP can access for targeting and attribution.</p>
+                <p class="card-action"><strong>Do:</strong> Audit your SKAN 4.0 implementation. Ensure your conversion models work with limited postbacks.</p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="spotify-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</span></div>
+                <span class="relevance-pill score-low">0</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 17</span>
+                <span class="card-source">The Prof G Pod (Scott Galloway)</span>
+            </div>
+            <h3 class="card-title">China Decode: What the Fire Horse Reveals About China’s Past and Future</h3>
+            <p class="card-summary">China is entering the Year of the Fire Horse — a zodiac pairing that comes around just once every 60 years. The last time was 1966, the year the Cultural Revolution began. So is th...</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> ML is the differentiator between commodity DSPs and winners. Moloco built their entire moat on this.</p>
+                <p class="card-action"><strong>Do:</strong> Benchmark your pCVR/pLTV models. Invest in feature engineering and training data quality.</p>
+            </div>
+        </a>
+        <a href="https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB" target="_blank" rel="noopener" class="content-card">
+            <div class="card-top">
+                <div class="card-badges"><span class="spotify-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</span></div>
+                <span class="relevance-pill score-low">0</span>
+            </div>
+            <div class="card-header">
+                <span class="card-date">Feb 14</span>
+                <span class="card-source">The Prof G Pod (Scott Galloway)</span>
+            </div>
+            <h3 class="card-title">No Mercy / No Malice: Role Models</h3>
+            <p class="card-summary">As read by George Hahn. https://www.profgalloway.com/role-models/ Learn more about your ad choices. Visit podcastchoices.com/adchoices</p>
+            
+            <div class="card-insights">
+                <p class="card-why"><strong>Why:</strong> Relevant signal for the performance DSP ecosystem.</p>
+                <p class="card-action"><strong>Do:</strong> Skim for key takeaways relevant to your DSP roadmap.</p>
+            </div>
+        </a></div>
+    </section>
+
+    <section class="content-section" id="section-people">
+        <div class="section-header">
+            <i data-lucide="users" class="section-icon" style="color: var(--accent-yellow)"></i>
+            <h2>People to Follow</h2>
+            <span class="section-count">18</span>
+        </div>
+        <div class="people-grid">
+        <div class="person-card">
+            <div class="person-avatar">A</div>
+            <div class="person-info">
+                <h4>Ari Paparo</h4>
+                <p>Former CEO Beeswax, founder Marketecture</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span><span class="plat-badge">Twitter</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">B</div>
+            <div class="person-info">
+                <h4>Brian O'Kelley</h4>
+                <p>Founder of AppNexus</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span><span class="plat-badge">Twitter</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">E</div>
+            <div class="person-info">
+                <h4>Eric Seufert</h4>
+                <p>Mobile Dev Memo, mobile &amp; privacy economics</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span><span class="plat-badge">Twitter</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">J</div>
+            <div class="person-info">
+                <h4>Joanna O'Connell</h4>
+                <p>Veteran analyst, cuts through vendor hype</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">T</div>
+            <div class="person-info">
+                <h4>Terry Kawaja</h4>
+                <p>CEO of LUMA Partners, M&amp;A expert</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span><span class="plat-badge">Twitter</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">R</div>
+            <div class="person-info">
+                <h4>Ratko Vidakovic</h4>
+                <p>Founder of AdProfs, programmatic infrastructure</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">A</div>
+            <div class="person-info">
+                <h4>Andrew Casale</h4>
+                <p>President &amp; CEO Index Exchange, sell-side economics</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">J</div>
+            <div class="person-info">
+                <h4>Jason Kint</h4>
+                <p>CEO Digital Content Next, publisher side &amp; privacy</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span><span class="plat-badge">Twitter</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">D</div>
+            <div class="person-info">
+                <h4>Dave Morgan</h4>
+                <p>Founder Simulmedia, strategic long-form perspectives</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">D</div>
+            <div class="person-info">
+                <h4>Dr. Augustine Fou</h4>
+                <p>Ad fraud expert, invalid traffic mechanics</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">T</div>
+            <div class="person-info">
+                <h4>Tom Kershaw</h4>
+                <p>Former Rubicon exec, SSP &amp; exchange expert</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">S</div>
+            <div class="person-info">
+                <h4>Shani Rosenfelder</h4>
+                <p>Measurement, MRC, CTV fraud</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">A</div>
+            <div class="person-info">
+                <h4>Andrew Lipsman</h4>
+                <p>Retail media analyst (Amazon, Walmart, RMNs)</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span><span class="plat-badge">Twitter</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">K</div>
+            <div class="person-info">
+                <h4>Kiri Masters</h4>
+                <p>Retail media &amp; ecommerce strategy</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">J</div>
+            <div class="person-info">
+                <h4>Johnny Ryan</h4>
+                <p>Privacy &amp; RTB critic — must understand this position</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span><span class="plat-badge">Twitter</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">B</div>
+            <div class="person-info">
+                <h4>Bennett Cyphers</h4>
+                <p>Privacy researcher, regulatory risk</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">M</div>
+            <div class="person-info">
+                <h4>Martin Sorrell</h4>
+                <p>Broader advertising market perspective</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div>
+        <div class="person-card">
+            <div class="person-avatar">L</div>
+            <div class="person-info">
+                <h4>Laura Martin</h4>
+                <p>Wall Street media analyst, ad tech stocks</p>
+                <div class="person-plats"><span class="plat-badge">Linkedin</span></div>
+            </div>
+        </div></div>
+    </section>
+
+    <section class="content-section" id="section-topics">
+        <div class="section-header">
+            <i data-lucide="hash" class="section-icon" style="color: var(--accent-purple)"></i>
+            <h2>LinkedIn Topics to Watch</h2>
+        </div>
+        <div class="topics-grid"><span class="topic-tag">#MobileUA</span><span class="topic-tag">#PerformanceMarketing</span><span class="topic-tag">#SKAdNetwork</span><span class="topic-tag">#SKAN4</span><span class="topic-tag">#AppTracking</span><span class="topic-tag">#Programmatic</span><span class="topic-tag">#PrivacySandbox</span><span class="topic-tag">Bid optimization / ML bidding</span><span class="topic-tag">pCVR / pLTV models</span><span class="topic-tag">In-app bidding vs waterfall</span><span class="topic-tag">AppLovin MAX vs Unity LevelPlay</span><span class="topic-tag">SKAN conversion modeling</span><span class="topic-tag">Incrementality testing</span><span class="topic-tag">Creative optimization / DCO</span><span class="topic-tag">Retargeting post-ATT</span><span class="topic-tag">MMP strategy (AppsFlyer vs Adjust vs Singular)</span><span class="topic-tag">Competitor DSP product launches</span></div>
+    </section>
+
+</main>
+
+<footer class="footer">
+<div class="container">Performance DSP Intelligence — Decision-support for mobile UA & exchange builders — Wednesday February 18, 2026</div>
+</footer>
+
+<script>
+lucide.createIcons();
+
+function toggleTheme(){
+    const h=document.documentElement,c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';
+    h.setAttribute('data-theme',n);
+    document.getElementById('theme-label').textContent=n==='dark'?'Light':'Dark';
+    setTimeout(()=>{if(tc){tc.options.scales.x.grid.color=gbc();tc.options.scales.x.ticks.color=gtc();tc.options.scales.y.ticks.color=gtc();tc.update()}if(sc){sc.options.scales.x.grid.color=gbc();sc.options.scales.x.ticks.color=gtc();sc.options.scales.y.ticks.color=gtc();sc.update()}},50);
+}
+
+document.querySelectorAll('.nav-tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+        document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+        tab.classList.add('active');
+        const f=tab.dataset.filter;
+        const all=['signals','learnings','mustreads','blog','youtube','podcast','people','topics'];
+        const se=document.getElementById('stats-section');
+        const ce=document.getElementById('charts-section');
+        if(f==='all'){se.style.display='';ce.style.display='';all.forEach(s=>{const el=document.getElementById('section-'+s);if(el)el.classList.remove('hidden')})}
+        else{
+            const noStats=['people','topics','learnings','mustreads','signals'].includes(f);
+            se.style.display=noStats?'none':'';ce.style.display='none';
+            all.forEach(s=>{const el=document.getElementById('section-'+s);if(el){s===f?el.classList.remove('hidden'):el.classList.add('hidden')}})
+        }
+    });
+});
+
+const gtc=()=>getComputedStyle(document.documentElement).getPropertyValue('--text-2').trim()||'#9ca3af';
+const gbc=()=>getComputedStyle(document.documentElement).getPropertyValue('--border').trim()||'#2a2d3e';
+const tl=["ML & Predictive Models", "CTV & Cross-Platform", "Financials & Earnings", "User Acquisition", "Mediation & Monetization", "Regulation & Antitrust"],tv=[18, 9, 7, 4, 2, 2],sl=["AdExchanger", "ExchangeWire", "Digiday", "The Prof G Pod (Scott Galloway)", "Stratechery", "The Trade Desk", "Pivot (Kara Swisher & Scott Galloway)", "Marketecture Podcast"],sv=[5, 5, 5, 5, 4, 3, 2, 1];
+const themeColors=tl.map((_,i)=>{const h=(i*47+200)%360;return`hsl(${h},60%,55%)`});
+const srcColors=sl.map((_,i)=>{const h=(i*37+220)%360;return`hsl(${h},55%,50%)`});
+let tc,sc;
+function initCharts(){
+    const txt=gtc(),brd=gbc();
+    tc=new Chart(document.getElementById('themeChart'),{type:'bar',data:{labels:tl,datasets:[{data:tv,backgroundColor:themeColors,borderRadius:6,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:brd},ticks:{color:txt,stepSize:1}},y:{grid:{display:false},ticks:{color:txt,font:{size:11}}}}}});
+    sc=new Chart(document.getElementById('sourceChart'),{type:'bar',data:{labels:sl,datasets:[{data:sv,backgroundColor:srcColors,borderRadius:6,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:brd},ticks:{color:txt,stepSize:1}},y:{grid:{display:false},ticks:{color:txt,font:{size:11}}}}}});
+}
+initCharts();
+</script>
+</body>
+</html>

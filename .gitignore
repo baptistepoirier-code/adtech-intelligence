@@ -1,0 +1,6 @@
+output/
+financial/.cache/
+financial/financial_intel.db
+__pycache__/
+*.pyc
+.DS_Store

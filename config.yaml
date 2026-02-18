@@ -1,0 +1,319 @@
+# ============================================================
+# Ad Tech Content Curator — Configuration
+# ============================================================
+
+settings:
+  days_lookback: 7          # How far back to fetch content
+  max_items_per_source: 5   # Max items per source in the digest
+  output_dir: "./output"
+
+  # Optional: add your Anthropic or OpenAI key to enable AI summaries
+  # Without a key, the digest still works — just without summaries.
+  anthropic_api_key: ""     # sk-ant-...
+  openai_api_key: ""        # sk-...
+
+# ------------------------------------------------------------
+# Topics of interest — used for relevance scoring (future LLM feature)
+# ------------------------------------------------------------
+topics_of_interest:
+  # Core performance DSP
+  - performance DSP
+  - bid optimization
+  - ML bidding
+  - pCVR
+  - pLTV
+  - in-app bidding
+  - real-time bidding
+  - auction dynamics
+  # Mobile UA
+  - user acquisition
+  - app install
+  - CPI
+  - ROAS
+  - LTV
+  - retargeting
+  - re-engagement
+  # SKAN & Privacy
+  - SKAdNetwork
+  - SKAN 4.0
+  - ATT
+  - IDFA
+  - privacy sandbox Android
+  - cookieless
+  # Measurement
+  - incrementality
+  - attribution
+  - MMP
+  - AppsFlyer
+  - Adjust
+  - Singular
+  # Creative
+  - playable ads
+  - rewarded video
+  - DCO
+  - creative optimization
+  # Competitors
+  - AppLovin
+  - Unity Ads
+  - Moloco
+  - Liftoff
+  - Smadex
+  - Adikteev
+  - ironSource
+  - Mintegral
+  # Ecosystem
+  - mediation
+  - ad monetization
+  - mobile gaming
+  - ad fraud
+
+# ------------------------------------------------------------
+# Competitors to track
+# ------------------------------------------------------------
+competitors:
+  - name: AppLovin
+    type: "Performance DSP + Mediation (MAX, Adjust, Wurl)"
+    threat_level: high
+  - name: Unity / ironSource
+    type: "Gaming DSP + Mediation (LevelPlay) + Exchange"
+    threat_level: high
+  - name: Moloco
+    type: "ML-first performance DSP (Cloud DSP)"
+    threat_level: high
+  - name: Liftoff / Vungle
+    type: "Performance DSP + Exchange + Creative"
+    threat_level: medium
+  - name: Meta (Facebook Ads)
+    type: "Walled garden — biggest UA budget share"
+    threat_level: high
+  - name: Google (UAC/Admob)
+    type: "Walled garden — Android-first distribution"
+    threat_level: high
+  - name: Smadex
+    type: "Independent programmatic DSP"
+    threat_level: medium
+  - name: Adikteev
+    type: "Retargeting & re-engagement specialist"
+    threat_level: medium
+  - name: Digital Turbine
+    type: "On-device media + app distribution"
+    threat_level: low
+  - name: Mintegral
+    type: "Chinese-origin global DSP + exchange"
+    threat_level: medium
+  - name: InMobi
+    type: "Independent mobile DSP + exchange"
+    threat_level: medium
+  - name: Chartboost
+    type: "Gaming-focused exchange (owned by Zynga/T2)"
+    threat_level: low
+
+# ------------------------------------------------------------
+# People to follow (reference list for context)
+# ------------------------------------------------------------
+people:
+  # Strategic / Industry Thinkers
+  - name: Ari Paparo
+    role: "Former CEO Beeswax, founder Marketecture"
+    platforms: [linkedin, twitter]
+  - name: Brian O'Kelley
+    role: "Founder of AppNexus"
+    platforms: [linkedin, twitter]
+  - name: Eric Seufert
+    role: "Mobile Dev Memo, mobile & privacy economics"
+    platforms: [linkedin, twitter]
+  - name: Joanna O'Connell
+    role: "Veteran analyst, cuts through vendor hype"
+    platforms: [linkedin]
+  - name: Terry Kawaja
+    role: "CEO of LUMA Partners, M&A expert"
+    platforms: [linkedin, twitter]
+  - name: Ratko Vidakovic
+    role: "Founder of AdProfs, programmatic infrastructure"
+    platforms: [linkedin]
+  - name: Andrew Casale
+    role: "President & CEO Index Exchange, sell-side economics"
+    platforms: [linkedin]
+  - name: Jason Kint
+    role: "CEO Digital Content Next, publisher side & privacy"
+    platforms: [linkedin, twitter]
+  - name: Dave Morgan
+    role: "Founder Simulmedia, strategic long-form perspectives"
+    platforms: [linkedin]
+
+  # Programmatic / Exchange / RTB
+  - name: Dr. Augustine Fou
+    role: "Ad fraud expert, invalid traffic mechanics"
+    platforms: [linkedin]
+  - name: Tom Kershaw
+    role: "Former Rubicon exec, SSP & exchange expert"
+    platforms: [linkedin]
+  - name: Shani Rosenfelder
+    role: "Measurement, MRC, CTV fraud"
+    platforms: [linkedin]
+
+  # Retail Media
+  - name: Andrew Lipsman
+    role: "Retail media analyst (Amazon, Walmart, RMNs)"
+    platforms: [linkedin, twitter]
+  - name: Kiri Masters
+    role: "Retail media & ecommerce strategy"
+    platforms: [linkedin]
+
+  # Privacy / Policy
+  - name: Johnny Ryan
+    role: "Privacy & RTB critic — must understand this position"
+    platforms: [linkedin, twitter]
+  - name: Bennett Cyphers
+    role: "Privacy researcher, regulatory risk"
+    platforms: [linkedin]
+
+  # Financial / Market
+  - name: Martin Sorrell
+    role: "Broader advertising market perspective"
+    platforms: [linkedin]
+  - name: Laura Martin
+    role: "Wall Street media analyst, ad tech stocks"
+    platforms: [linkedin]
+
+# ------------------------------------------------------------
+# Blogs & Newsletters (RSS feeds)
+# ------------------------------------------------------------
+blogs:
+  - name: AdExchanger
+    rss_url: "https://www.adexchanger.com/feed/"
+    description: "The most important daily news source for programmatic"
+
+  - name: Digiday
+    rss_url: "https://digiday.com/feed/"
+    description: "Operational and commercial insights, agency & publisher perspective"
+
+  - name: ExchangeWire
+    rss_url: "https://www.exchangewire.com/feed/"
+    description: "More technical and European perspective on ad tech"
+
+  - name: Marketecture (Blog)
+    rss_url: "https://news.marketecture.tv/feed"
+    description: "Ari Paparo deep-dive newsletter on ad tech vendors"
+
+  - name: Mobile Dev Memo
+    rss_url: "https://mobiledevmemo.com/category/original-content/feed"
+    description: "Eric Seufert — mobile, ATT, SKAdNetwork, privacy economics"
+
+  - name: Stratechery
+    rss_url: "https://stratechery.com/feed/"
+    description: "Ben Thompson — platform economics, aggregators, walled gardens"
+
+  # Performance DSP / Mobile UA sources
+  - name: AppLovin
+    rss_url: "https://applovin.com/blog/feed/"
+    description: "AppLovin blog — MAX, performance marketing, mobile growth"
+
+  - name: AppsFlyer
+    rss_url: "https://www.appsflyer.com/blog/feed"
+    description: "AppsFlyer — attribution, SKAN, incrementality, MMP insights"
+
+  - name: Singular
+    rss_url: "https://www.singular.net/blog/feed/"
+    description: "Singular — mobile attribution, ROAS analytics, MMP"
+
+  - name: Liftoff
+    rss_url: "https://liftoff.io/feed/"
+    description: "Liftoff — mobile UA, creative optimization, app marketing"
+
+# ------------------------------------------------------------
+# YouTube Channels
+# YouTube RSS format: https://www.youtube.com/feeds/videos.xml?channel_id=XXXX
+# ------------------------------------------------------------
+youtube_channels:
+  - name: The Trade Desk
+    channel_id: "UCepu1fEfXlB39NF13-yiqew"
+    description: "Buy-side education, U of Digital style content"
+
+  # Channels below use handles — run `python curator.py --resolve-channels`
+  # to auto-discover their channel IDs.
+  - name: IAB Tech Lab
+    handle: "@IABTechLab"
+    channel_id: "UCdrD09g0KKGFc_TsZB_sgTA"
+    description: "Spec updates, OpenRTB changes, Seller Defined Audiences"
+
+  - name: Prebid.org
+    handle: "@Prebidorg"
+    channel_id: "UC-O89MrDzVVvch-DqpY-QjQ"
+    description: "Header bidding, Prebid Server, FLEDGE integrations"
+
+  - name: Google Ads Developers
+    handle: "@GoogleAdsDevelopers"
+    channel_id: "UCgCvgLpbHZFjH-7MAJNgWBQ"
+    description: "Auction mechanics, Privacy Sandbox, SDKs"
+
+  - name: Amazon Ads
+    handle: "@AmazonAds"
+    channel_id: "UCGRjlfFeU-5eC-ElShfwYPw"
+    description: "Retail media mechanics and API integration"
+
+  - name: AdMonsters
+    handle: "@AdMonsters"
+    channel_id: "UC8ru7vRBQkzM2qyX4IC7_RA"
+    description: "Operational and yield management discussions"
+
+# ------------------------------------------------------------
+# Podcasts (RSS feeds)
+# ------------------------------------------------------------
+podcasts:
+  - name: AdExchanger Talks
+    rss_url: "https://www.adexchanger.com/category/podcast/feed"
+    spotify_url: "https://open.spotify.com/show/31pO5OiCOFBRRFWCP8ah8j"
+    description: "High-level interviews with biggest names in ad tech"
+
+  - name: The AdTechGod Pod
+    rss_url: "https://feeds.megaphone.fm/EAATE5455623661"
+    spotify_url: "https://open.spotify.com/show/0xt8yv6JWqiDAuwGOSgjYP"
+    description: "Real-talk and humorous look at the industry"
+
+  - name: Marketecture Podcast
+    rss_url: "https://feeds.megaphone.fm/EAATE3740759293"
+    spotify_url: "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi"
+    description: "Deep-dive vendor interviews with Ari Paparo & Eric Franchi"
+
+  - name: The Digiday Podcast
+    rss_url: "https://feeds.megaphone.fm/DIGI5806832566"
+    spotify_url: "https://open.spotify.com/show/5FTMRr7SOs0WHMsOBPEe6F"
+    description: "Strategy and operations in digital media"
+
+  - name: The MadTech Podcast
+    rss_url: "https://rss.art19.com/the-madtech-podcast"
+    spotify_url: "https://open.spotify.com/show/1cE0RfG8TfCnIgWCLCc9bF"
+    description: "ExchangeWire deep industry conversations"
+
+  - name: Pivot (Kara Swisher & Scott Galloway)
+    rss_url: "https://feeds.megaphone.fm/pivot"
+    spotify_url: "https://open.spotify.com/show/6lNiVniMqHRCnDMawfBjYH"
+    description: "Tech industry power analysis and macro forces"
+
+  - name: The Prof G Pod (Scott Galloway)
+    rss_url: "https://feeds.megaphone.fm/WWO6655869236"
+    spotify_url: "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB"
+    description: "Macro and tech platform thinking"
+
+# ------------------------------------------------------------
+# LinkedIn Topics to watch (reference for future scraping/alerts)
+# ------------------------------------------------------------
+linkedin_topics:
+  - "#MobileUA"
+  - "#PerformanceMarketing"
+  - "#SKAdNetwork"
+  - "#SKAN4"
+  - "#AppTracking"
+  - "#Programmatic"
+  - "#PrivacySandbox"
+  - "Bid optimization / ML bidding"
+  - "pCVR / pLTV models"
+  - "In-app bidding vs waterfall"
+  - "AppLovin MAX vs Unity LevelPlay"
+  - "SKAN conversion modeling"
+  - "Incrementality testing"
+  - "Creative optimization / DCO"
+  - "Retargeting post-ATT"
+  - "MMP strategy (AppsFlyer vs Adjust vs Singular)"
+  - "Competitor DSP product launches"

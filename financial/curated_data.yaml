@@ -1,0 +1,448 @@
+# ============================================================
+# Ad Tech Financial Intel — Curated Financial Data
+# ============================================================
+# All values in USD millions unless otherwise noted.
+# Every datapoint has a source_url for attribution.
+# Private companies marked with is_estimate: true where applicable.
+# "~" (null) means not disclosed / not available.
+# ============================================================
+
+companies:
+  # ──────────────────────────────────────────────────────────
+  # PUBLIC COMPANIES (SEC filings + earnings releases)
+  # ──────────────────────────────────────────────────────────
+
+  - name: AppLovin
+    ticker: APP
+    cik: "1751008"
+    is_public: true
+    data_quality: high
+    description: "Performance DSP + app portfolio. MAX mediation, Adjust MMP."
+    periods:
+      - fiscal_year: 2022
+        period_type: annual
+        period_end_date: "2022-12-31"
+        source_url: "https://investors.applovin.com/financials/annual-reports/default.aspx"
+        source_description: "AppLovin FY2022 10-K"
+        metrics:
+          Revenue: 2817
+          GrossProfit: 1763
+          OperatingIncome: -102
+          NetIncome: -216
+          AdjustedEBITDA: 941
+          RnD: 543
+          SalesMarketing: 423
+          GeneralAdmin: 277
+        segments:
+          - name: Advertising
+            original_label: "Software Platform"
+            revenue: 1311
+          - name: Apps
+            original_label: "Apps"
+            revenue: 1506
+
+      - fiscal_year: 2023
+        period_type: annual
+        period_end_date: "2023-12-31"
+        source_url: "https://investors.applovin.com/financials/annual-reports/default.aspx"
+        source_description: "AppLovin FY2023 10-K"
+        metrics:
+          Revenue: 3283
+          GrossProfit: 2172
+          OperatingIncome: 540
+          NetIncome: 357
+          AdjustedEBITDA: 1504
+          FreeCashFlow: 1216
+          RnD: 530
+          SalesMarketing: 358
+          GeneralAdmin: 273
+        segments:
+          - name: Advertising
+            original_label: "Software Platform"
+            revenue: 1840
+            operating_income: 1280
+          - name: Apps
+            original_label: "Apps"
+            revenue: 1443
+            operating_income: 227
+
+      - fiscal_year: 2024
+        period_type: annual
+        period_end_date: "2024-12-31"
+        source_url: "https://s27.q4cdn.com/966411597/files/doc_financials/2024/q4/v2/4Q24-AppLovin-Press-Release.pdf"
+        source_description: "AppLovin Q4/FY2024 Earnings Press Release"
+        metrics:
+          Revenue: 4711
+          GrossProfit: 3449
+          OperatingIncome: 1937
+          NetIncome: 1580
+          AdjustedEBITDA: 2720
+          FreeCashFlow: 2100
+          RnD: 490
+          SalesMarketing: 350
+          GeneralAdmin: 280
+        segments:
+          - name: Advertising
+            original_label: "Software Platform"
+            revenue: 3220
+            operating_income: 2440
+          - name: Apps
+            original_label: "Apps"
+            revenue: 1491
+            operating_income: 277
+
+  - name: Unity
+    ticker: U
+    cik: "1723089"
+    is_public: true
+    data_quality: high
+    description: "Game engine + Grow Solutions (ads, mediation via LevelPlay/ironSource)."
+    periods:
+      - fiscal_year: 2022
+        period_type: annual
+        period_end_date: "2022-12-31"
+        source_url: "https://investors.unity.com/financials/quarterly-results/default.aspx"
+        source_description: "Unity FY2022 10-K"
+        metrics:
+          Revenue: 1391
+          GrossProfit: 943
+          OperatingIncome: -812
+          NetIncome: -921
+          AdjustedEBITDA: -55
+          RnD: 824
+          SalesMarketing: 567
+          GeneralAdmin: 336
+        segments:
+          - name: Create
+            original_label: "Create Solutions"
+            revenue: 476
+          - name: Grow
+            original_label: "Grow Solutions"
+            revenue: 915
+
+      - fiscal_year: 2023
+        period_type: annual
+        period_end_date: "2023-12-31"
+        source_url: "https://investors.unity.com/financials/quarterly-results/default.aspx"
+        source_description: "Unity FY2023 10-K (incl. ironSource)"
+        metrics:
+          Revenue: 2187
+          GrossProfit: 1503
+          OperatingIncome: -716
+          NetIncome: -826
+          AdjustedEBITDA: 348
+          FreeCashFlow: 216
+          RnD: 966
+          SalesMarketing: 680
+          GeneralAdmin: 405
+        segments:
+          - name: Create
+            original_label: "Create Solutions"
+            revenue: 859
+          - name: Grow
+            original_label: "Grow Solutions"
+            revenue: 1328
+
+      - fiscal_year: 2024
+        period_type: annual
+        period_end_date: "2024-12-31"
+        source_url: "https://investors.unity.com/news/news-details/2025/Unity-Reports-Fourth-Quarter-and-Fiscal-Year-2024-Financial-Results/default.aspx"
+        source_description: "Unity Q4/FY2024 Earnings Press Release"
+        metrics:
+          Revenue: 1813
+          GrossProfit: 1290
+          OperatingIncome: -481
+          NetIncome: -664
+          AdjustedEBITDA: 390
+          FreeCashFlow: 286
+          RnD: 740
+          SalesMarketing: 510
+          GeneralAdmin: 340
+        segments:
+          - name: Create
+            original_label: "Create Solutions"
+            revenue: 614
+          - name: Grow
+            original_label: "Grow Solutions"
+            revenue: 1199
+
+  - name: Alphabet (Google)
+    ticker: GOOGL
+    cik: "1652044"
+    is_public: true
+    data_quality: high
+    description: "Google Ads (Search, YouTube, Network). UAC/Admob for mobile."
+    periods:
+      - fiscal_year: 2022
+        period_type: annual
+        period_end_date: "2022-12-31"
+        source_url: "https://abc.xyz/investor/"
+        source_description: "Alphabet FY2022 10-K"
+        metrics:
+          Revenue: 282836
+          GrossProfit: 156633
+          OperatingIncome: 74842
+          NetIncome: 59972
+          FreeCashFlow: 60010
+          RnD: 39500
+          SalesMarketing: 26567
+          GeneralAdmin: 15724
+        segments:
+          - name: Google Search
+            original_label: "Google Search & other"
+            revenue: 162450
+          - name: YouTube Ads
+            original_label: "YouTube ads"
+            revenue: 29243
+          - name: Google Network
+            original_label: "Google Network"
+            revenue: 32780
+          - name: Google Cloud
+            original_label: "Google Cloud"
+            revenue: 26280
+
+      - fiscal_year: 2023
+        period_type: annual
+        period_end_date: "2023-12-31"
+        source_url: "https://abc.xyz/investor/"
+        source_description: "Alphabet FY2023 10-K"
+        metrics:
+          Revenue: 307394
+          GrossProfit: 174062
+          OperatingIncome: 84293
+          NetIncome: 73795
+          FreeCashFlow: 69495
+          RnD: 42628
+          SalesMarketing: 27900
+          GeneralAdmin: 14400
+        segments:
+          - name: Google Search
+            original_label: "Google Search & other"
+            revenue: 175033
+          - name: YouTube Ads
+            original_label: "YouTube ads"
+            revenue: 31510
+          - name: Google Network
+            original_label: "Google Network"
+            revenue: 31312
+          - name: Google Cloud
+            original_label: "Google Cloud"
+            revenue: 33088
+
+      - fiscal_year: 2024
+        period_type: annual
+        period_end_date: "2024-12-31"
+        source_url: "https://s206.q4cdn.com/479360582/files/doc_financials/2024/q4/2024q4-alphabet-earnings-release.pdf"
+        source_description: "Alphabet Q4/FY2024 Earnings Release"
+        metrics:
+          Revenue: 350018
+          GrossProfit: 199557
+          OperatingIncome: 112387
+          NetIncome: 100681
+          FreeCashFlow: 72790
+          RnD: 45427
+          SalesMarketing: 28212
+          GeneralAdmin: 15700
+        segments:
+          - name: Google Search
+            original_label: "Google Search & other"
+            revenue: 198117
+          - name: YouTube Ads
+            original_label: "YouTube ads"
+            revenue: 36142
+          - name: Google Network
+            original_label: "Google Network"
+            revenue: 30432
+          - name: Google Cloud
+            original_label: "Google Cloud"
+            revenue: 43077
+
+  - name: Meta Platforms
+    ticker: META
+    cik: "1326801"
+    is_public: true
+    data_quality: high
+    description: "Facebook, Instagram, WhatsApp, Messenger. Largest UA budget destination."
+    periods:
+      - fiscal_year: 2022
+        period_type: annual
+        period_end_date: "2022-12-31"
+        source_url: "https://investor.atmeta.com/"
+        source_description: "Meta FY2022 10-K"
+        metrics:
+          Revenue: 116609
+          GrossProfit: 93399
+          OperatingIncome: 28944
+          NetIncome: 23200
+          FreeCashFlow: 18436
+          RnD: 35338
+          SalesMarketing: 15262
+          GeneralAdmin: 11816
+        segments:
+          - name: Family of Apps
+            original_label: "Family of Apps"
+            revenue: 114450
+            operating_income: 42661
+          - name: Reality Labs
+            original_label: "Reality Labs"
+            revenue: 2159
+            operating_income: -13717
+
+      - fiscal_year: 2023
+        period_type: annual
+        period_end_date: "2023-12-31"
+        source_url: "https://investor.atmeta.com/"
+        source_description: "Meta FY2023 10-K"
+        metrics:
+          Revenue: 134902
+          GrossProfit: 108874
+          OperatingIncome: 46751
+          NetIncome: 39098
+          FreeCashFlow: 43034
+          RnD: 35336
+          SalesMarketing: 12301
+          GeneralAdmin: 11400
+        segments:
+          - name: Family of Apps
+            original_label: "Family of Apps"
+            revenue: 131948
+            operating_income: 63173
+          - name: Reality Labs
+            original_label: "Reality Labs"
+            revenue: 1896
+            operating_income: -16122
+
+      - fiscal_year: 2024
+        period_type: annual
+        period_end_date: "2024-12-31"
+        source_url: "https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx"
+        source_description: "Meta Q4/FY2024 Earnings Press Release"
+        metrics:
+          Revenue: 164503
+          GrossProfit: 133333
+          OperatingIncome: 69382
+          NetIncome: 62360
+          FreeCashFlow: 52103
+          RnD: 42264
+          SalesMarketing: 13669
+          GeneralAdmin: 11500
+        segments:
+          - name: Family of Apps
+            original_label: "Family of Apps"
+            revenue: 160776
+            operating_income: 87299
+          - name: Reality Labs
+            original_label: "Reality Labs"
+            revenue: 2085
+            operating_income: -17728
+
+  - name: Digital Turbine
+    ticker: APPS
+    cik: "1117297"
+    is_public: true
+    data_quality: high
+    description: "On-device media platform. AdColony, Fyber, App Growth Platform."
+    periods:
+      - fiscal_year: 2022
+        period_type: annual
+        period_end_date: "2022-03-31"
+        source_url: "https://ir.digitalturbine.com/sec-filings/annual-reports"
+        source_description: "Digital Turbine FY2022 10-K (Mar year-end)"
+        metrics:
+          Revenue: 747
+          GrossProfit: 350
+          OperatingIncome: 36
+          NetIncome: -14
+          AdjustedEBITDA: 195
+
+      - fiscal_year: 2023
+        period_type: annual
+        period_end_date: "2023-03-31"
+        source_url: "https://ir.digitalturbine.com/sec-filings/annual-reports"
+        source_description: "Digital Turbine FY2023 10-K"
+        metrics:
+          Revenue: 666
+          GrossProfit: 295
+          OperatingIncome: -7
+          NetIncome: -67
+          AdjustedEBITDA: 163
+
+      - fiscal_year: 2024
+        period_type: annual
+        period_end_date: "2024-03-31"
+        source_url: "https://ir.digitalturbine.com/sec-filings/annual-reports"
+        source_description: "Digital Turbine FY2024 10-K"
+        metrics:
+          Revenue: 545
+          GrossProfit: 231
+          OperatingIncome: -367
+          NetIncome: -420
+          AdjustedEBITDA: 92
+
+  # ──────────────────────────────────────────────────────────
+  # PRIVATE COMPANIES (estimates / partial disclosures)
+  # ──────────────────────────────────────────────────────────
+
+  - name: Moloco
+    ticker: ~
+    cik: ~
+    is_public: false
+    data_quality: medium
+    description: "ML-first cloud DSP. $2B valuation (2023). Series C $150M."
+    periods:
+      - fiscal_year: 2023
+        period_type: annual
+        period_end_date: "2023-12-31"
+        source_url: "https://www.cbinsights.com/company/moloco/financials"
+        source_description: "Moloco revenue estimate via CBInsights / press"
+        metrics:
+          Revenue:
+            value: 300
+            is_estimate: true
+            note: "Estimated. Company is profitable per press releases."
+
+  - name: Liftoff / Vungle
+    ticker: ~
+    cik: ~
+    is_public: false
+    data_quality: low
+    description: "Performance DSP + exchange. Acquired Vungle (2021) and GameRefinery."
+
+  - name: Smadex
+    ticker: ~
+    cik: ~
+    is_public: false
+    data_quality: low
+    description: "Independent programmatic mobile DSP (Entravision subsidiary)."
+
+  - name: Adikteev
+    ticker: ~
+    cik: ~
+    is_public: false
+    data_quality: low
+    description: "Retargeting and churn prediction platform for mobile apps."
+
+  - name: Remerge
+    ticker: ~
+    cik: ~
+    is_public: false
+    data_quality: low
+    description: "In-app retargeting DSP. Berlin-based."
+
+  - name: ironSource (Unity)
+    ticker: ~
+    cik: ~
+    is_public: false
+    data_quality: medium
+    description: "Merged into Unity (2022). LevelPlay mediation. Now part of Unity Grow."
+    periods:
+      - fiscal_year: 2022
+        period_type: annual
+        period_end_date: "2022-06-30"
+        source_url: "https://investors.unity.com/"
+        source_description: "ironSource pre-merger earnings (H1 2022). Merged into Unity Nov 2022."
+        metrics:
+          Revenue:
+            value: 530
+            note: "Full year 2021 revenue was $530M. 2022 partial year before Unity merger."
+            is_estimate: true
