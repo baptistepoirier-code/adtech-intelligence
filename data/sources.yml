@@ -1,0 +1,339 @@
+# ============================================================
+# Source Registry — Ad Tech Intelligence
+# ============================================================
+# tier: 1 (gold standard), 2 (strong), 3 (useful), 4 (supplemental)
+# credibility_weight: 0.0–1.0, used in scoring
+# category: finance | regulatory | programmatic | mobile | ctv | fraud | ua | measurement | privacy | general
+# type: blog | podcast | youtube | filing | newsletter
+# Adding a source = one entry here. The pipeline does the rest.
+# ============================================================
+
+sources:
+  # ── TIER 1: Gold Standard ─────────────────────────────────
+
+  - name: AdExchanger
+    type: blog
+    tier: 1
+    credibility_weight: 0.95
+    category: programmatic
+    tags: [programmatic, exchange, dsp, ssp, data]
+    rss_url: "https://www.adexchanger.com/feed/"
+    homepage: "https://adexchanger.com"
+
+  - name: Mobile Dev Memo
+    type: blog
+    tier: 1
+    credibility_weight: 1.0
+    category: mobile
+    tags: [mobile, att, skan, privacy, dsp, ua]
+    rss_url: "https://mobiledevmemo.com/feed/"
+    homepage: "https://mobiledevmemo.com"
+    notes: "Eric Seufert — highest authority on mobile DSP economics"
+
+  - name: Stratechery
+    type: newsletter
+    tier: 1
+    credibility_weight: 0.90
+    category: general
+    tags: [platforms, google, meta, apple, antitrust]
+    rss_url: "https://stratechery.com/feed/"
+    homepage: "https://stratechery.com"
+
+  # ── TIER 2: Strong Sources ────────────────────────────────
+
+  - name: ExchangeWire
+    type: blog
+    tier: 2
+    credibility_weight: 0.80
+    category: programmatic
+    tags: [programmatic, exchange, europe, policy]
+    rss_url: "https://www.exchangewire.com/blog/feed/"
+    homepage: "https://exchangewire.com"
+
+  - name: Digiday
+    type: blog
+    tier: 2
+    credibility_weight: 0.78
+    category: programmatic
+    tags: [agencies, publishers, programmatic, retail_media]
+    rss_url: "https://digiday.com/feed/"
+    homepage: "https://digiday.com"
+
+  - name: Marketecture Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.85
+    category: programmatic
+    tags: [exchange, infrastructure, interviews]
+    rss_url: "https://news.marketecture.tv/feed"
+    homepage: "https://marketecture.tv"
+
+  - name: AppLovin Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.75
+    category: mobile
+    tags: [applovin, dsp, mediation, max, ua]
+    rss_url: "https://www.applovin.com/blog/feed/"
+    homepage: "https://applovin.com"
+
+  - name: AppsFlyer Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.75
+    category: measurement
+    tags: [attribution, skan, mmp, incrementality]
+    rss_url: "https://www.appsflyer.com/blog/feed/"
+    homepage: "https://appsflyer.com"
+
+  - name: Singular Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.72
+    category: measurement
+    tags: [attribution, roas, mmp, skan]
+    rss_url: "https://www.singular.net/blog/feed/"
+    homepage: "https://singular.net"
+
+  - name: Liftoff Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.72
+    category: ua
+    tags: [ua, creative, mobile, dsp]
+    rss_url: "https://liftoff.io/feed/"
+    homepage: "https://liftoff.io"
+
+  - name: Adjust Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.72
+    category: measurement
+    tags: [attribution, fraud, mmp, applovin]
+    rss_url: "https://www.adjust.com/blog/feed/"
+    homepage: "https://adjust.com"
+
+  # ── TIER 2: Regulatory & Policy ───────────────────────────
+
+  - name: IAB Tech Lab
+    type: blog
+    tier: 2
+    credibility_weight: 0.88
+    category: regulatory
+    tags: [openrtb, standards, privacy, sellers_json, ads_txt]
+    rss_url: "https://iabtechlab.com/feed/"
+    homepage: "https://iabtechlab.com"
+
+  - name: Apple Developer News
+    type: blog
+    tier: 2
+    credibility_weight: 0.95
+    category: privacy
+    tags: [skan, att, ios, apple, privacy]
+    rss_url: "https://developer.apple.com/news/rss/news.rss"
+    homepage: "https://developer.apple.com/news/"
+
+  - name: Android Developers Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.90
+    category: privacy
+    tags: [privacy_sandbox, android, google, gaid, topics_api]
+    rss_url: "https://feeds.feedburner.com/blogspot/hsDu"
+    homepage: "https://android-developers.googleblog.com"
+
+  - name: Chrome Privacy Sandbox
+    type: blog
+    tier: 2
+    credibility_weight: 0.88
+    category: privacy
+    tags: [privacy_sandbox, cookies, fledge, topics_api, chrome]
+    rss_url: "https://blog.chromium.org/feeds/posts/default"
+    homepage: "https://privacysandbox.com"
+
+  # ── TIER 2: Finance & Filings ─────────────────────────────
+
+  - name: SEC EDGAR (AppLovin)
+    type: filing
+    tier: 2
+    credibility_weight: 0.98
+    category: finance
+    tags: [applovin, earnings, sec, 10k, 10q]
+    rss_url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001751008&type=&dateb=&owner=include&count=10&search_text=&action=getcompany&output=atom"
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001751008"
+
+  - name: SEC EDGAR (Unity)
+    type: filing
+    tier: 2
+    credibility_weight: 0.98
+    category: finance
+    tags: [unity, earnings, sec, 10k, 10q]
+    rss_url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001723089&type=&dateb=&owner=include&count=10&search_text=&action=getcompany&output=atom"
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001723089"
+
+  - name: SEC EDGAR (The Trade Desk)
+    type: filing
+    tier: 2
+    credibility_weight: 0.98
+    category: finance
+    tags: [ttd, earnings, sec, 10k, 10q]
+    rss_url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001671933&type=&dateb=&owner=include&count=10&search_text=&action=getcompany&output=atom"
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001671933"
+
+  - name: SEC EDGAR (Digital Turbine)
+    type: filing
+    tier: 2
+    credibility_weight: 0.98
+    category: finance
+    tags: [digital_turbine, earnings, sec]
+    rss_url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001117297&type=&dateb=&owner=include&count=10&search_text=&action=getcompany&output=atom"
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001117297"
+
+  # ── TIER 2: Fraud & Quality ───────────────────────────────
+
+  - name: IAS Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.75
+    category: fraud
+    tags: [viewability, brand_safety, fraud, ivt]
+    rss_url: "https://integralads.com/insider/feed/"
+    homepage: "https://integralads.com"
+
+  - name: DoubleVerify Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.75
+    category: fraud
+    tags: [viewability, fraud, brand_safety, ctv]
+    rss_url: "https://doubleverify.com/blog/feed/"
+    homepage: "https://doubleverify.com"
+
+  - name: Dr. Augustine Fou
+    type: blog
+    tier: 2
+    credibility_weight: 0.82
+    category: fraud
+    tags: [fraud, ivt, transparency, exchange]
+    rss_url: "https://www.yourfouanalytics.com/blog-feed.xml"
+    homepage: "https://www.yourfouanalytics.com"
+
+  # ── TIER 3: Useful Sources ────────────────────────────────
+
+  - name: The Trade Desk Blog
+    type: blog
+    tier: 3
+    credibility_weight: 0.68
+    category: programmatic
+    tags: [ttd, ctv, uid2, openpath]
+    rss_url: "https://www.thetradedesk.com/us/news/feed"
+    homepage: "https://thetradedesk.com"
+
+  - name: AdMonsters
+    type: blog
+    tier: 3
+    credibility_weight: 0.70
+    category: programmatic
+    tags: [yield, ops, publishers, header_bidding]
+    rss_url: "https://www.admonsters.com/feed/"
+    homepage: "https://admonsters.com"
+
+  - name: Prebid.org Blog
+    type: blog
+    tier: 3
+    credibility_weight: 0.72
+    category: programmatic
+    tags: [header_bidding, prebid, open_source, auction]
+    rss_url: "https://prebid.org/blog/feed/"
+    homepage: "https://prebid.org"
+
+  # ── PODCASTS ──────────────────────────────────────────────
+
+  - name: AdExchanger Talks
+    type: podcast
+    tier: 2
+    credibility_weight: 0.85
+    category: programmatic
+    tags: [interviews, programmatic, leadership]
+    rss_url: "https://www.adexchanger.com/category/podcast/feed"
+    spotify_url: "https://open.spotify.com/show/31pO5OiCOFBRRFWCP8ah8j"
+
+  - name: The AdTechGod Pod
+    type: podcast
+    tier: 2
+    credibility_weight: 0.78
+    category: programmatic
+    tags: [programmatic, insider, opinions]
+    rss_url: "https://feeds.megaphone.fm/EAATE5455623661"
+    spotify_url: "https://open.spotify.com/show/0xt8yv6JWqiDAuwGOSgjYP"
+
+  - name: Marketecture Podcast
+    type: podcast
+    tier: 2
+    credibility_weight: 0.85
+    category: programmatic
+    tags: [infrastructure, interviews, deep_dive]
+    rss_url: "https://feeds.megaphone.fm/EAATE3740759293"
+    spotify_url: "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi"
+
+  - name: The Digiday Podcast
+    type: podcast
+    tier: 3
+    credibility_weight: 0.72
+    category: general
+    tags: [agencies, publishers, strategy]
+    rss_url: "https://feeds.megaphone.fm/DIGI5806832566"
+    spotify_url: "https://open.spotify.com/show/5FTMRr7SOs0WHMsOBPEe6F"
+
+  - name: Pivot
+    type: podcast
+    tier: 3
+    credibility_weight: 0.70
+    category: general
+    tags: [macro, platforms, tech_policy]
+    rss_url: "https://feeds.megaphone.fm/pivot"
+    spotify_url: "https://open.spotify.com/show/6lNiVniMqHRCnDMawfBjYH"
+
+  - name: The Prof G Pod
+    type: podcast
+    tier: 3
+    credibility_weight: 0.65
+    category: general
+    tags: [macro, business, tech]
+    rss_url: "https://feeds.megaphone.fm/WWO6655869236"
+    spotify_url: "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB"
+
+  - name: Sub Club (RevenueCat)
+    type: podcast
+    tier: 3
+    credibility_weight: 0.70
+    category: mobile
+    tags: [subscriptions, mobile, growth, monetization]
+    rss_url: "https://feeds.transistor.fm/sub-club-by-revenuecat"
+    spotify_url: "https://open.spotify.com/show/3DBB4ypbKBsp19TA0MRSCI"
+
+  # ── YOUTUBE ───────────────────────────────────────────────
+
+  - name: The Trade Desk (YouTube)
+    type: youtube
+    tier: 3
+    credibility_weight: 0.65
+    category: programmatic
+    tags: [ttd, ctv, education]
+    channel_id: "UCnNIpsGKGsERV3e2ErvFKcA"
+
+  - name: IAB Tech Lab (YouTube)
+    type: youtube
+    tier: 2
+    credibility_weight: 0.80
+    category: regulatory
+    tags: [standards, openrtb, privacy]
+    channel_id: "UCg1gLL44W5-hR0pSbfRkgrQ"
+
+  - name: Google Ads Developers
+    type: youtube
+    tier: 2
+    credibility_weight: 0.80
+    category: programmatic
+    tags: [google, privacy_sandbox, sdks, auction]
+    channel_id: "UCwNbfBhkVVRpRQLOBN9jXkQ"

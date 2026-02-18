@@ -1,0 +1,704 @@
+{
+  "generated_at": "2026-02-18T22:48:36.095382+00:00",
+  "tiles": {
+    "total_items": 25,
+    "active_items": 25,
+    "noise_filtered": 0,
+    "avg_priority": 57.6,
+    "high_priority": 4,
+    "sources_active": 11,
+    "duplicates_removed": 5
+  },
+  "key_signals": [
+    {
+      "id": "b151212810c00bf3",
+      "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
+      "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
+      "source": "AdExchanger",
+      "source_type": "blog",
+      "source_tier": 1,
+      "source_category": "programmatic",
+      "credibility_weight": 0.95,
+      "published_at": "2026-02-18T05:35:56+00:00",
+      "type": "blog",
+      "tags": [
+        "programmatic",
+        "exchange",
+        "dsp",
+        "ssp",
+        "data"
+      ],
+      "topics": [
+        {
+          "key": "ua_growth",
+          "label": "User Acquisition & Growth",
+          "signal_type": "Market Structure",
+          "weight": 0.9
+        },
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
+        }
+      ],
+      "entities": [
+        {
+          "name": "Google",
+          "type": "platform",
+          "watchlist": true
+        },
+        {
+          "name": "Meta",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "Across industries, marketing teams are navigating a brutal equation: shrinking budgets, leaner teams and rising performance pressure. In this environment, platforms like Meta and Google dominate the ecosystem. Their unrivaled scale and AI-powered technology make them safe bets for marketing and user acquisition. But as these leaders push further into automation, they\u2019ve reduced the manual [&#8230;] The post Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes appeared first ",
+      "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
+      "recommended_action": "Track Google closely. Update your competitive positioning and roadmap.",
+      "signal_type": "Market Structure",
+      "credibility_score": 96,
+      "recency_score": 77,
+      "novelty_score": 100,
+      "relevance_score": 70,
+      "priority_score": 97,
+      "is_noise": false,
+      "confidence": "high",
+      "spotify_url": ""
+    },
+    {
+      "id": "1ad1a706511bf125",
+      "title": "Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market",
+      "url": "https://www.adexchanger.com/commerce/big-cpg-brands-are-quick-to-cut-ad-spend-amid-a-tough-us-market/",
+      "source": "AdExchanger",
+      "source_type": "blog",
+      "source_tier": 1,
+      "source_category": "programmatic",
+      "credibility_weight": 0.95,
+      "published_at": "2026-02-18T18:03:53+00:00",
+      "type": "blog",
+      "tags": [
+        "programmatic",
+        "exchange",
+        "dsp",
+        "ssp",
+        "data"
+      ],
+      "topics": [
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
+        }
+      ],
+      "entities": [],
+      "summary": "Happy Q4 earnings season! This is the time of year when the biggest brands disclose their full-year results and report on their make-or-break holiday seasons. And it\u2019s not been an easy few weeks for some of America\u2019s biggest CPG brands. Companies like Procter &#38; Gamble, Pepsi and Colgate-Palmolive are contending with cautious consumers and shrinking [&#8230;] The post Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market appeared first on AdExchanger .",
+      "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+      "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
+      "signal_type": "Earnings",
+      "credibility_score": 96,
+      "recency_score": 93,
+      "novelty_score": 100,
+      "relevance_score": 23,
+      "priority_score": 87,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": ""
+    },
+    {
+      "id": "92e283e485bb22b6",
+      "title": "Shopify Earnings, Shopify\u2019s AI Advantages",
+      "url": "https://stratechery.com/2026/shopify-earnings-shopifys-ai-advantages/",
+      "source": "Stratechery",
+      "source_type": "newsletter",
+      "source_tier": 1,
+      "source_category": "general",
+      "credibility_weight": 0.9,
+      "published_at": "2026-02-18T11:00:00+00:00",
+      "type": "newsletter",
+      "tags": [
+        "platforms",
+        "google",
+        "meta",
+        "apple",
+        "antitrust"
+      ],
+      "topics": [
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
+        }
+      ],
+      "entities": [],
+      "summary": "Shopify is poised to be one of the biggest winners from AI; it would behoove investors to actually understand the businesses they are selling.",
+      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
+      "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
+      "signal_type": "Earnings",
+      "credibility_score": 92,
+      "recency_score": 84,
+      "novelty_score": 100,
+      "relevance_score": 25,
+      "priority_score": 85,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": ""
+    },
+    {
+      "id": "5a236cfbf9101def",
+      "title": "Raging Moderates: Censoring Stephen Colbert Backfires",
+      "url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB",
+      "source": "The Prof G Pod",
+      "source_type": "podcast",
+      "source_tier": 3,
+      "source_category": "general",
+      "credibility_weight": 0.65,
+      "published_at": "2026-02-18T09:00:00+00:00",
+      "type": "podcast",
+      "tags": [
+        "macro",
+        "business",
+        "tech"
+      ],
+      "topics": [
+        {
+          "key": "ctv",
+          "label": "CTV & Streaming",
+          "signal_type": "Market Structure",
+          "weight": 0.75
+        },
+        {
+          "key": "regulatory",
+          "label": "Regulation & Antitrust",
+          "signal_type": "Policy",
+          "weight": 0.9
+        }
+      ],
+      "entities": [],
+      "summary": "Scott Galloway and Jessica Tarlov break down how censoring Colbert backfired on CBS \u2014 after Texas state Rep. James Talarico\u2019s scheduled appearance on The Late Show with Stephen Colbert was abruptly pulled off the air. Is this corporate media caving to Trump-era pressure \u2014 and is Paramount the real loser? Then: the DOJ says it\u2019s done releasing the Epstein files \u2014 but reports suggest the public has seen just 2% of them. If that\u2019s true, who\u2019s still exposed, and why is the department claiming missio",
+      "why_it_matters": "Policy and regulation reshape which data you can use and how your DSP operates. High business impact.",
+      "recommended_action": "Brief leadership and legal. Model scenario impact on your product roadmap.",
+      "signal_type": "Policy",
+      "credibility_score": 52,
+      "recency_score": 81,
+      "novelty_score": 100,
+      "relevance_score": 35,
+      "priority_score": 78,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB"
+    }
+  ],
+  "must_reads": [
+    {
+      "id": "b151212810c00bf3",
+      "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
+      "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
+      "source": "AdExchanger",
+      "source_type": "blog",
+      "source_tier": 1,
+      "source_category": "programmatic",
+      "credibility_weight": 0.95,
+      "published_at": "2026-02-18T05:35:56+00:00",
+      "type": "blog",
+      "tags": [
+        "programmatic",
+        "exchange",
+        "dsp",
+        "ssp",
+        "data"
+      ],
+      "topics": [
+        {
+          "key": "ua_growth",
+          "label": "User Acquisition & Growth",
+          "signal_type": "Market Structure",
+          "weight": 0.9
+        },
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
+        }
+      ],
+      "entities": [
+        {
+          "name": "Google",
+          "type": "platform",
+          "watchlist": true
+        },
+        {
+          "name": "Meta",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "Across industries, marketing teams are navigating a brutal equation: shrinking budgets, leaner teams and rising performance pressure. In this environment, platforms like Meta and Google dominate the ecosystem. Their unrivaled scale and AI-powered technology make them safe bets for marketing and user acquisition. But as these leaders push further into automation, they\u2019ve reduced the manual [&#8230;] The post Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes appeared first ",
+      "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
+      "recommended_action": "Track Google closely. Update your competitive positioning and roadmap.",
+      "signal_type": "Market Structure",
+      "credibility_score": 96,
+      "recency_score": 77,
+      "novelty_score": 100,
+      "relevance_score": 70,
+      "priority_score": 97,
+      "is_noise": false,
+      "confidence": "high",
+      "spotify_url": ""
+    },
+    {
+      "id": "1ad1a706511bf125",
+      "title": "Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market",
+      "url": "https://www.adexchanger.com/commerce/big-cpg-brands-are-quick-to-cut-ad-spend-amid-a-tough-us-market/",
+      "source": "AdExchanger",
+      "source_type": "blog",
+      "source_tier": 1,
+      "source_category": "programmatic",
+      "credibility_weight": 0.95,
+      "published_at": "2026-02-18T18:03:53+00:00",
+      "type": "blog",
+      "tags": [
+        "programmatic",
+        "exchange",
+        "dsp",
+        "ssp",
+        "data"
+      ],
+      "topics": [
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
+        }
+      ],
+      "entities": [],
+      "summary": "Happy Q4 earnings season! This is the time of year when the biggest brands disclose their full-year results and report on their make-or-break holiday seasons. And it\u2019s not been an easy few weeks for some of America\u2019s biggest CPG brands. Companies like Procter &#38; Gamble, Pepsi and Colgate-Palmolive are contending with cautious consumers and shrinking [&#8230;] The post Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market appeared first on AdExchanger .",
+      "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+      "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
+      "signal_type": "Earnings",
+      "credibility_score": 96,
+      "recency_score": 93,
+      "novelty_score": 100,
+      "relevance_score": 23,
+      "priority_score": 87,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": ""
+    },
+    {
+      "id": "92e283e485bb22b6",
+      "title": "Shopify Earnings, Shopify\u2019s AI Advantages",
+      "url": "https://stratechery.com/2026/shopify-earnings-shopifys-ai-advantages/",
+      "source": "Stratechery",
+      "source_type": "newsletter",
+      "source_tier": 1,
+      "source_category": "general",
+      "credibility_weight": 0.9,
+      "published_at": "2026-02-18T11:00:00+00:00",
+      "type": "newsletter",
+      "tags": [
+        "platforms",
+        "google",
+        "meta",
+        "apple",
+        "antitrust"
+      ],
+      "topics": [
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
+        }
+      ],
+      "entities": [],
+      "summary": "Shopify is poised to be one of the biggest winners from AI; it would behoove investors to actually understand the businesses they are selling.",
+      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
+      "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
+      "signal_type": "Earnings",
+      "credibility_score": 92,
+      "recency_score": 84,
+      "novelty_score": 100,
+      "relevance_score": 25,
+      "priority_score": 85,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": ""
+    },
+    {
+      "id": "5a236cfbf9101def",
+      "title": "Raging Moderates: Censoring Stephen Colbert Backfires",
+      "url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB",
+      "source": "The Prof G Pod",
+      "source_type": "podcast",
+      "source_tier": 3,
+      "source_category": "general",
+      "credibility_weight": 0.65,
+      "published_at": "2026-02-18T09:00:00+00:00",
+      "type": "podcast",
+      "tags": [
+        "macro",
+        "business",
+        "tech"
+      ],
+      "topics": [
+        {
+          "key": "ctv",
+          "label": "CTV & Streaming",
+          "signal_type": "Market Structure",
+          "weight": 0.75
+        },
+        {
+          "key": "regulatory",
+          "label": "Regulation & Antitrust",
+          "signal_type": "Policy",
+          "weight": 0.9
+        }
+      ],
+      "entities": [],
+      "summary": "Scott Galloway and Jessica Tarlov break down how censoring Colbert backfired on CBS \u2014 after Texas state Rep. James Talarico\u2019s scheduled appearance on The Late Show with Stephen Colbert was abruptly pulled off the air. Is this corporate media caving to Trump-era pressure \u2014 and is Paramount the real loser? Then: the DOJ says it\u2019s done releasing the Epstein files \u2014 but reports suggest the public has seen just 2% of them. If that\u2019s true, who\u2019s still exposed, and why is the department claiming missio",
+      "why_it_matters": "Policy and regulation reshape which data you can use and how your DSP operates. High business impact.",
+      "recommended_action": "Brief leadership and legal. Model scenario impact on your product roadmap.",
+      "signal_type": "Policy",
+      "credibility_score": 52,
+      "recency_score": 81,
+      "novelty_score": 100,
+      "relevance_score": 35,
+      "priority_score": 78,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB"
+    },
+    {
+      "id": "447ec0b054d1746b",
+      "title": "How The Minnesota Star Tribune Protects Advertisers While Covering ICE Crackdowns",
+      "url": "https://www.adexchanger.com/publishers/how-the-minnesota-star-tribune-protects-advertisers-while-covering-ice-crackdowns/",
+      "source": "AdExchanger",
+      "source_type": "blog",
+      "source_tier": 1,
+      "source_category": "programmatic",
+      "credibility_weight": 0.95,
+      "published_at": "2026-02-18T06:00:26+00:00",
+      "type": "blog",
+      "tags": [
+        "programmatic",
+        "exchange",
+        "dsp",
+        "ssp",
+        "data"
+      ],
+      "topics": [
+        {
+          "key": "mediation",
+          "label": "Mediation & Monetization",
+          "signal_type": "Market Structure",
+          "weight": 0.85
+        }
+      ],
+      "entities": [],
+      "summary": "Amid a federal immigration crackdown that\u2019s produced widespread allegations of law enforcement misconduct and resulted in the high-profile deaths of two US citizens, the state of a local news publisher\u2019s advertising business can seem inconsequential. But the Minnesota Star Tribune has to deal with how its duty to keep the public informed impacts its monetization [&#8230;] The post How The Minnesota Star Tribune Protects Advertisers While Covering ICE Crackdowns appeared first on AdExchanger .",
+      "why_it_matters": "The mediation layer sits between your DSP and supply. Shifts here impact fill rates and data access.",
+      "recommended_action": "Assess impact on your supply partnerships and bid request volume.",
+      "signal_type": "Market Structure",
+      "credibility_score": 96,
+      "recency_score": 78,
+      "novelty_score": 100,
+      "relevance_score": 25,
+      "priority_score": 64,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": ""
+    },
+    {
+      "id": "fe25ed16dccbd7dd",
+      "title": "Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association",
+      "url": "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi",
+      "source": "Marketecture Podcast",
+      "source_type": "podcast",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.85,
+      "published_at": "2026-02-13T11:00:00+00:00",
+      "type": "podcast",
+      "tags": [
+        "infrastructure",
+        "interviews",
+        "deep_dive"
+      ],
+      "topics": [
+        {
+          "key": "skan_att",
+          "label": "SKAN / ATT / iOS Privacy",
+          "signal_type": "Policy",
+          "weight": 1.0
+        },
+        {
+          "key": "measurement",
+          "label": "Measurement & Attribution",
+          "signal_type": "Measurement",
+          "weight": 0.85
+        }
+      ],
+      "entities": [
+        {
+          "name": "Apple",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "Matthew Egol, Founder & CEO of JourneySpark Consulting, joins Ari Paparo and Eric Franchi to break down agentic advertising and what AdCP means for the industry, from AI\u2019s Super Bowl moment to standards governance, Prebid collaboration, IAB alignment, and how AI agents are reshaping planning, creative, and measurement across marketing. Takeaways AI took over the Super Bowl, with roughly a quarter of ads tied to AI. Agentic advertising expands from buying to planning, discovery, and measurement. ",
+      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+      "recommended_action": "Track Apple closely. Update your competitive positioning and roadmap.",
+      "signal_type": "Policy",
+      "credibility_score": 78,
+      "recency_score": 14,
+      "novelty_score": 100,
+      "relevance_score": 61,
+      "priority_score": 62,
+      "is_noise": false,
+      "confidence": "high",
+      "spotify_url": "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi"
+    },
+    {
+      "id": "e1cc4f4b64f2da3a",
+      "title": "Creators eye Snapchat as a reliable income alternative to TikTok and YouTube",
+      "url": "https://digiday.com/media/creators-eye-snapchat-as-a-reliable-income-alternative-to-tiktok-and-youtube/?utm_campaign=digidaydis&utm_medium=rss&utm_source=general-rss",
+      "source": "Digiday",
+      "source_type": "blog",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.78,
+      "published_at": "2026-02-18T05:01:00+00:00",
+      "type": "blog",
+      "tags": [
+        "agencies",
+        "publishers",
+        "programmatic",
+        "retail_media"
+      ],
+      "topics": [
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
+        }
+      ],
+      "entities": [],
+      "summary": "Figuring out the Snapchat formula has been very lucrative for creators looking for more consistent revenue on a less-saturated platform.",
+      "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+      "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
+      "signal_type": "Earnings",
+      "credibility_score": 72,
+      "recency_score": 77,
+      "novelty_score": 100,
+      "relevance_score": 23,
+      "priority_score": 59,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": ""
+    }
+  ],
+  "key_learnings": [
+    {
+      "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
+      "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
+      "source": "AdExchanger",
+      "signal_type": "Market Structure",
+      "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
+      "priority_score": 97
+    },
+    {
+      "title": "Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market",
+      "url": "https://www.adexchanger.com/commerce/big-cpg-brands-are-quick-to-cut-ad-spend-amid-a-tough-us-market/",
+      "source": "AdExchanger",
+      "signal_type": "Earnings",
+      "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+      "priority_score": 87
+    },
+    {
+      "title": "Shopify Earnings, Shopify\u2019s AI Advantages",
+      "url": "https://stratechery.com/2026/shopify-earnings-shopifys-ai-advantages/",
+      "source": "Stratechery",
+      "signal_type": "Earnings",
+      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
+      "priority_score": 85
+    },
+    {
+      "title": "Raging Moderates: Censoring Stephen Colbert Backfires",
+      "url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB",
+      "source": "The Prof G Pod",
+      "signal_type": "Policy",
+      "why_it_matters": "Policy and regulation reshape which data you can use and how your DSP operates. High business impact.",
+      "priority_score": 78
+    },
+    {
+      "title": "How The Minnesota Star Tribune Protects Advertisers While Covering ICE Crackdowns",
+      "url": "https://www.adexchanger.com/publishers/how-the-minnesota-star-tribune-protects-advertisers-while-covering-ice-crackdowns/",
+      "source": "AdExchanger",
+      "signal_type": "Market Structure",
+      "why_it_matters": "The mediation layer sits between your DSP and supply. Shifts here impact fill rates and data access.",
+      "priority_score": 64
+    },
+    {
+      "title": "Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association",
+      "url": "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi",
+      "source": "Marketecture Podcast",
+      "signal_type": "Policy",
+      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+      "priority_score": 62
+    },
+    {
+      "title": "Influence, At Half The Cost; Are ChatGPT Ads On Target?",
+      "url": "https://www.adexchanger.com/daily-news-roundup/wednesday-18022026/",
+      "source": "AdExchanger",
+      "signal_type": "",
+      "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
+      "priority_score": 56
+    },
+    {
+      "title": "AI In Advertising: What\u2019s Real Beyond The Buzz",
+      "url": "https://www.adexchanger.com/content-studio/ai-in-advertising-whats-real-beyond-the-buzz/",
+      "source": "AdExchanger",
+      "signal_type": "",
+      "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
+      "priority_score": 56
+    },
+    {
+      "title": "Getting Started with ARTF: A Five-Step Guide for Ad Tech Companies",
+      "url": "https://iabtechlab.com/getting-started-with-artf/",
+      "source": "IAB Tech Lab",
+      "signal_type": "",
+      "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
+      "priority_score": 53
+    },
+    {
+      "title": "Get ready for Google I/O May 19-20",
+      "url": "http://android-developers.googleblog.com/2026/02/get-ready-for-google-io-may-19-20.html",
+      "source": "Android Developers Blog",
+      "signal_type": "",
+      "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
+      "priority_score": 53
+    }
+  ],
+  "topic_momentum": [
+    {
+      "label": "Earnings & Financials",
+      "score": 440,
+      "count": 6
+    },
+    {
+      "label": "CTV & Streaming",
+      "score": 191,
+      "count": 3
+    },
+    {
+      "label": "SKAN / ATT / iOS Privacy",
+      "score": 178,
+      "count": 3
+    },
+    {
+      "label": "User Acquisition & Growth",
+      "score": 97,
+      "count": 1
+    },
+    {
+      "label": "Regulation & Antitrust",
+      "score": 78,
+      "count": 1
+    },
+    {
+      "label": "Mediation & Monetization",
+      "score": 64,
+      "count": 1
+    },
+    {
+      "label": "Measurement & Attribution",
+      "score": 62,
+      "count": 1
+    }
+  ],
+  "source_distribution": [
+    {
+      "name": "AdExchanger",
+      "count": 5
+    },
+    {
+      "name": "Digiday",
+      "count": 5
+    },
+    {
+      "name": "Stratechery",
+      "count": 4
+    },
+    {
+      "name": "Android Developers Blog",
+      "count": 4
+    },
+    {
+      "name": "The Prof G Pod",
+      "count": 1
+    },
+    {
+      "name": "Marketecture Podcast",
+      "count": 1
+    },
+    {
+      "name": "Pivot",
+      "count": 1
+    },
+    {
+      "name": "The AdTechGod Pod",
+      "count": 1
+    },
+    {
+      "name": "IAB Tech Lab",
+      "count": 1
+    },
+    {
+      "name": "Apple Developer News",
+      "count": 1
+    },
+    {
+      "name": "The Digiday Podcast",
+      "count": 1
+    }
+  ],
+  "watchlist": {
+    "Apple": {
+      "count": 4,
+      "top_signal": {
+        "title": "Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association",
+        "url": "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi",
+        "priority_score": 62,
+        "signal_type": "Policy"
+      },
+      "max_priority": 62
+    },
+    "Google": {
+      "count": 2,
+      "top_signal": {
+        "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
+        "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
+        "priority_score": 97,
+        "signal_type": "Market Structure"
+      },
+      "max_priority": 97
+    },
+    "Meta": {
+      "count": 1,
+      "top_signal": {
+        "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
+        "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
+        "priority_score": 97,
+        "signal_type": "Market Structure"
+      },
+      "max_priority": 97
+    }
+  }
+}

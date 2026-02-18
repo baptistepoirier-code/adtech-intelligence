@@ -1,0 +1,27 @@
+# ============================================================
+# Scoring Thresholds
+# ============================================================
+
+# Items above this are "Key Signals" (top of dashboard)
+key_signal_min: 72
+
+# Items above this are "Must Read"
+must_read_min: 55
+
+# Items below this are noise (hidden by default)
+noise_max: 18
+
+# Max items per section
+max_key_signals: 5
+max_must_reads: 7
+max_key_learnings: 10
+max_items_per_source: 5
+
+# Dedupe: cosine similarity threshold for near-duplicate titles (0.0–1.0)
+dedupe_similarity: 0.75
+
+# Recency decay: half-life in hours (items lose 50% recency score after this)
+recency_half_life_hours: 48
+
+# Novelty window: days to look back for duplicate detection
+novelty_window_days: 14

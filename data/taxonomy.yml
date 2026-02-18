@@ -1,0 +1,326 @@
+# ============================================================
+# Topic Taxonomy — Ad Tech Intelligence
+# ============================================================
+# Each topic has keywords (matched against title + summary),
+# a signal_type for badge display, and a weight for scoring.
+# ============================================================
+
+topics:
+  bidding:
+    label: "Bidding & Auctions"
+    signal_type: "Market Structure"
+    weight: 1.0
+    keywords:
+      - bid optimization
+      - bid shading
+      - bidding algorithm
+      - ml bidding
+      - real-time bidding
+      - rtb
+      - openrtb
+      - auction
+      - floor price
+      - bid request
+      - in-app bidding
+      - header bidding
+      - waterfall
+      - unified auction
+      - first-price
+      - second-price
+      - win rate
+
+  skan_att:
+    label: "SKAN / ATT / iOS Privacy"
+    signal_type: "Policy"
+    weight: 1.0
+    keywords:
+      - skadnetwork
+      - skan
+      - att
+      - app tracking transparency
+      - idfa
+      - idfv
+      - skan 4
+      - skan 5
+      - conversion value
+      - postback
+      - apple privacy
+
+  privacy_sandbox:
+    label: "Privacy Sandbox / Chrome"
+    signal_type: "Policy"
+    weight: 0.95
+    keywords:
+      - privacy sandbox
+      - topics api
+      - protected audience
+      - fledge
+      - attribution reporting
+      - third-party cookies
+      - cookie deprecation
+      - chrome privacy
+      - android privacy sandbox
+      - gaid deprecation
+
+  ua_growth:
+    label: "User Acquisition & Growth"
+    signal_type: "Market Structure"
+    weight: 0.90
+    keywords:
+      - user acquisition
+      - app install
+      - cpi
+      - cpa
+      - roas
+      - return on ad spend
+      - ltv
+      - lifetime value
+      - retargeting
+      - re-engagement
+      - campaign optimization
+      - performance marketing
+      - mobile growth
+      - app growth
+
+  ml_ai:
+    label: "ML / AI in Advertising"
+    signal_type: "Product"
+    weight: 0.85
+    keywords:
+      - machine learning
+      - deep learning
+      - predictive model
+      - pcvr
+      - pltv
+      - pcpi
+      - axon
+      - advantage+
+      - performance max
+      - ai bidding
+      - generative ai
+      - creative ai
+      - llm
+      - recommendation engine
+
+  measurement:
+    label: "Measurement & Attribution"
+    signal_type: "Measurement"
+    weight: 0.85
+    keywords:
+      - incrementality
+      - media mix model
+      - mmm
+      - attribution
+      - last-click
+      - multi-touch
+      - conversion lift
+      - holdout
+      - measurement
+      - clean room
+      - data clean room
+
+  mediation:
+    label: "Mediation & Monetization"
+    signal_type: "Market Structure"
+    weight: 0.85
+    keywords:
+      - mediation
+      - max
+      - levelplay
+      - ironsource
+      - ad waterfall
+      - monetization
+      - ecpm
+      - fill rate
+      - arpdau
+      - rewarded video
+      - interstitial
+
+  ctv:
+    label: "CTV & Streaming"
+    signal_type: "Market Structure"
+    weight: 0.75
+    keywords:
+      - ctv
+      - connected tv
+      - ott
+      - streaming
+      - fast
+      - avod
+      - programmatic tv
+      - addressable tv
+      - ssai
+      - vast
+
+  creative:
+    label: "Creative & Ad Formats"
+    signal_type: "Creative"
+    weight: 0.70
+    keywords:
+      - playable
+      - endcard
+      - creative optimization
+      - dco
+      - dynamic creative
+      - video ads
+      - native ads
+      - ad format
+      - ugc ads
+      - ai creative
+
+  fraud:
+    label: "Fraud & Brand Safety"
+    signal_type: "Fraud"
+    weight: 0.80
+    keywords:
+      - ad fraud
+      - ivt
+      - invalid traffic
+      - brand safety
+      - viewability
+      - made for advertising
+      - mfa
+      - click fraud
+      - bot traffic
+      - spoofing
+
+  regulatory:
+    label: "Regulation & Antitrust"
+    signal_type: "Policy"
+    weight: 0.90
+    keywords:
+      - antitrust
+      - doj
+      - dma
+      - digital markets act
+      - dsa
+      - ftc
+      - gdpr
+      - eu commission
+      - regulation
+      - consent
+      - tcf
+      - divestiture
+
+  retail_media:
+    label: "Retail Media"
+    signal_type: "Market Structure"
+    weight: 0.65
+    keywords:
+      - retail media
+      - rmn
+      - amazon ads
+      - walmart connect
+      - instacart ads
+      - commerce media
+      - shopper marketing
+
+  identity:
+    label: "Identity & Addressability"
+    signal_type: "Policy"
+    weight: 0.80
+    keywords:
+      - uid2
+      - unified id
+      - rampid
+      - identity graph
+      - contextual targeting
+      - cohort
+      - fingerprinting
+      - device graph
+      - first-party data
+
+  earnings:
+    label: "Earnings & Financials"
+    signal_type: "Earnings"
+    weight: 0.85
+    keywords:
+      - earnings
+      - revenue
+      - q1
+      - q2
+      - q3
+      - q4
+      - 10-k
+      - 10-q
+      - sec filing
+      - guidance
+      - ebitda
+      - operating income
+      - ipo
+      - acquisition
+
+# ── Entities dictionary ──────────────────────────────────────
+
+entities:
+  companies:
+    - name: AppLovin
+      aliases: [applovin, app lovin, axon, max mediation]
+      type: competitor
+      watchlist: true
+    - name: Unity
+      aliases: [unity, ironsource, levelplay, unity ads]
+      type: competitor
+      watchlist: true
+    - name: Google
+      aliases: [google, alphabet, admob, google ads, dv360, uac, google ad manager]
+      type: platform
+      watchlist: true
+    - name: Meta
+      aliases: [meta, facebook, instagram, advantage+, facebook ads, meta ads]
+      type: platform
+      watchlist: true
+    - name: The Trade Desk
+      aliases: [the trade desk, ttd, uid2, openpath]
+      type: competitor
+      watchlist: true
+    - name: Moloco
+      aliases: [moloco]
+      type: competitor
+      watchlist: true
+    - name: Liftoff
+      aliases: [liftoff, vungle]
+      type: competitor
+      watchlist: true
+    - name: Digital Turbine
+      aliases: [digital turbine, adcolony, fyber]
+      type: competitor
+      watchlist: true
+    - name: Apple
+      aliases: [apple, ios, skan, att, app store]
+      type: platform
+      watchlist: true
+    - name: Amazon
+      aliases: [amazon, amazon ads, twitch]
+      type: platform
+      watchlist: false
+    - name: Smadex
+      aliases: [smadex]
+      type: competitor
+      watchlist: true
+    - name: Adikteev
+      aliases: [adikteev]
+      type: competitor
+      watchlist: true
+    - name: Remerge
+      aliases: [remerge]
+      type: competitor
+      watchlist: true
+    - name: InMobi
+      aliases: [inmobi, glance]
+      type: competitor
+      watchlist: false
+    - name: Mintegral
+      aliases: [mintegral, mintegraltop]
+      type: competitor
+      watchlist: false
+
+  standards:
+    - name: OpenRTB
+      aliases: [openrtb, ortb]
+    - name: VAST
+      aliases: [vast, vpaid]
+    - name: ads.txt
+      aliases: [ads.txt, sellers.json, app-ads.txt]
+    - name: TCF
+      aliases: [tcf, transparency consent framework]
