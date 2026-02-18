@@ -58,13 +58,22 @@ def load_thresholds():
 # ── Fetch ────────────────────────────────────────────────────
 
 class _RedirectHandler(urllib.request.HTTPRedirectHandler):
+    def http_error_301(self, req, fp, code, msg, headers):
+        return self.http_error_302(req, fp, code, msg, headers)
+
+    def http_error_307(self, req, fp, code, msg, headers):
+        return self.http_error_302(req, fp, code, msg, headers)
+
     def http_error_308(self, req, fp, code, msg, headers):
         return self.http_error_302(req, fp, code, msg, headers)
 
 
 def _fetch_raw(url):
     opener = urllib.request.build_opener(_RedirectHandler)
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA,
+        "Accept": "application/rss+xml, application/xml, text/xml, application/atom+xml, */*",
+    })
     with opener.open(req, timeout=FEED_TIMEOUT) as resp:
         return resp.read().decode("utf-8", errors="ignore")
 
@@ -145,6 +154,49 @@ def fetch_rss_source(source, days_lookback=7, max_items=5):
     return items
 
 
+def fetch_edgar_source(source, days_lookback=30, max_items=3):
+    """Fetch recent filings from SEC EDGAR EFTS API."""
+    cik = source.get("edgar_cik", "").lstrip("0")
+    if not cik:
+        return []
+    url = f"https://efts.sec.gov/LATEST/search-index?q=*&dateRange=custom&forms=10-K,10-Q,8-K&startdt=2025-01-01&enddt=2026-12-31"
+    try:
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "AdTechIntel research@example.com",
+            "Accept": "application/json",
+        })
+        with urllib.request.urlopen(req, timeout=FEED_TIMEOUT) as resp:
+            data = json.loads(resp.read().decode("utf-8", errors="ignore"))
+    except Exception as e:
+        print(f" [!] EDGAR {source['name']}: {e}", end="")
+        return []
+
+    items = []
+    for hit in (data.get("hits", {}).get("hits", []))[:max_items]:
+        src = hit.get("_source", {})
+        title = src.get("file_description", src.get("display_names", [""])[0])
+        filed = src.get("file_date", "")
+        form = src.get("form_type", "")
+        accession = src.get("file_num", "")
+
+        items.append({
+            "title": f"{source['name'].replace('SEC EDGAR ', '').strip('()')}: {form} — {title}" if title else f"{source['name']}: {form} filing",
+            "url": source.get("homepage", ""),
+            "source": source["name"],
+            "source_type": "filing",
+            "source_tier": source.get("tier", 2),
+            "source_category": "finance",
+            "source_tags": source.get("tags", []),
+            "credibility_weight": source.get("credibility_weight", 0.98),
+            "published_at": f"{filed}T00:00:00+00:00" if filed else None,
+            "published_dt": datetime.strptime(filed, "%Y-%m-%d").replace(tzinfo=timezone.utc) if filed else None,
+            "summary": f"SEC {form} filing for {source['name'].replace('SEC EDGAR ', '').strip('()')}. {title}",
+            "spotify_url": "",
+        })
+
+    return items
+
+
 def fetch_youtube_source(source, days_lookback=7, max_items=3):
     """Fetch items from a YouTube channel RSS."""
     cid = source.get("channel_id", "")
@@ -168,6 +220,8 @@ def fetch_all(sources, days_lookback=7):
 
         if stype == "youtube":
             items = fetch_youtube_source(src, days_lookback)
+        elif src.get("use_edgar_rss"):
+            items = fetch_edgar_source(src, days_lookback)
         else:
             items = fetch_rss_source(src, days_lookback)
 

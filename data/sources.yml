@@ -26,7 +26,7 @@ sources:
     credibility_weight: 1.0
     category: mobile
     tags: [mobile, att, skan, privacy, dsp, ua]
-    rss_url: "https://mobiledevmemo.com/feed/"
+    rss_url: "https://mobiledevmemo.com/feed/atom/"
     homepage: "https://mobiledevmemo.com"
     notes: "Eric Seufert — highest authority on mobile DSP economics"
 
@@ -47,7 +47,7 @@ sources:
     credibility_weight: 0.80
     category: programmatic
     tags: [programmatic, exchange, europe, policy]
-    rss_url: "https://www.exchangewire.com/blog/feed/"
+    rss_url: "https://www.exchangewire.com/feed/"
     homepage: "https://exchangewire.com"
 
   - name: Digiday
@@ -65,7 +65,7 @@ sources:
     credibility_weight: 0.85
     category: programmatic
     tags: [exchange, infrastructure, interviews]
-    rss_url: "https://news.marketecture.tv/feed"
+    rss_url: "https://www.marketecture.tv/blog-feed.xml"
     homepage: "https://marketecture.tv"
 
   - name: AppLovin Blog
@@ -74,7 +74,7 @@ sources:
     credibility_weight: 0.75
     category: mobile
     tags: [applovin, dsp, mediation, max, ua]
-    rss_url: "https://www.applovin.com/blog/feed/"
+    rss_url: "https://www.applovin.com/feed/"
     homepage: "https://applovin.com"
 
   - name: AppsFlyer Blog
@@ -92,7 +92,7 @@ sources:
     credibility_weight: 0.72
     category: measurement
     tags: [attribution, roas, mmp, skan]
-    rss_url: "https://www.singular.net/blog/feed/"
+    rss_url: "https://www.singular.net/feed/"
     homepage: "https://singular.net"
 
   - name: Liftoff Blog
@@ -159,8 +159,10 @@ sources:
     credibility_weight: 0.98
     category: finance
     tags: [applovin, earnings, sec, 10k, 10q]
-    rss_url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001751008&type=&dateb=&owner=include&count=10&search_text=&action=getcompany&output=atom"
+    rss_url: "https://efts.sec.gov/LATEST/search-index?q=%22AppLovin%22&dateRange=custom&startdt=2025-01-01&enddt=2026-12-31&forms=10-K,10-Q,8-K"
     homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001751008"
+    edgar_cik: "0001751008"
+    use_edgar_rss: true
 
   - name: SEC EDGAR (Unity)
     type: filing
@@ -168,8 +170,10 @@ sources:
     credibility_weight: 0.98
     category: finance
     tags: [unity, earnings, sec, 10k, 10q]
-    rss_url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001723089&type=&dateb=&owner=include&count=10&search_text=&action=getcompany&output=atom"
+    rss_url: ""
     homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001723089"
+    edgar_cik: "0001723089"
+    use_edgar_rss: true
 
   - name: SEC EDGAR (The Trade Desk)
     type: filing
@@ -177,8 +181,10 @@ sources:
     credibility_weight: 0.98
     category: finance
     tags: [ttd, earnings, sec, 10k, 10q]
-    rss_url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001671933&type=&dateb=&owner=include&count=10&search_text=&action=getcompany&output=atom"
+    rss_url: ""
     homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001671933"
+    edgar_cik: "0001671933"
+    use_edgar_rss: true
 
   - name: SEC EDGAR (Digital Turbine)
     type: filing
@@ -186,8 +192,10 @@ sources:
     credibility_weight: 0.98
     category: finance
     tags: [digital_turbine, earnings, sec]
-    rss_url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001117297&type=&dateb=&owner=include&count=10&search_text=&action=getcompany&output=atom"
+    rss_url: ""
     homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001117297"
+    edgar_cik: "0001117297"
+    use_edgar_rss: true
 
   # ── TIER 2: Fraud & Quality ───────────────────────────────
 
@@ -206,7 +214,7 @@ sources:
     credibility_weight: 0.75
     category: fraud
     tags: [viewability, fraud, brand_safety, ctv]
-    rss_url: "https://doubleverify.com/blog/feed/"
+    rss_url: "https://doubleverify.com/feed/"
     homepage: "https://doubleverify.com"
 
   - name: Dr. Augustine Fou
@@ -215,8 +223,8 @@ sources:
     credibility_weight: 0.82
     category: fraud
     tags: [fraud, ivt, transparency, exchange]
-    rss_url: "https://www.yourfouanalytics.com/blog-feed.xml"
-    homepage: "https://www.yourfouanalytics.com"
+    rss_url: "https://fouanalytics.com/feed/"
+    homepage: "https://fouanalytics.com"
 
   # ── TIER 3: Useful Sources ────────────────────────────────
 
@@ -226,7 +234,7 @@ sources:
     credibility_weight: 0.68
     category: programmatic
     tags: [ttd, ctv, uid2, openpath]
-    rss_url: "https://www.thetradedesk.com/us/news/feed"
+    rss_url: "https://www.thetradedesk.com/us/blog/feed"
     homepage: "https://thetradedesk.com"
 
   - name: AdMonsters
@@ -309,31 +317,36 @@ sources:
     credibility_weight: 0.70
     category: mobile
     tags: [subscriptions, mobile, growth, monetization]
-    rss_url: "https://feeds.transistor.fm/sub-club-by-revenuecat"
+    rss_url: "https://subclub.libsyn.com/rss"
     spotify_url: "https://open.spotify.com/show/3DBB4ypbKBsp19TA0MRSCI"
 
   # ── YOUTUBE ───────────────────────────────────────────────
 
-  - name: The Trade Desk (YouTube)
-    type: youtube
+  # ── Additional blogs ───────────────────────────────────────
+
+  - name: Unity Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.75
+    category: mobile
+    tags: [unity, mediation, levelplay, ironsource, gaming]
+    rss_url: "https://blog.unity.com/feed"
+    homepage: "https://blog.unity.com"
+
+  - name: Branch Blog
+    type: blog
     tier: 3
-    credibility_weight: 0.65
-    category: programmatic
-    tags: [ttd, ctv, education]
-    channel_id: "UCnNIpsGKGsERV3e2ErvFKcA"
+    credibility_weight: 0.68
+    category: measurement
+    tags: [deep_linking, attribution, measurement]
+    rss_url: "https://blog.branch.io/feed/"
+    homepage: "https://blog.branch.io"
 
-  - name: IAB Tech Lab (YouTube)
-    type: youtube
+  - name: Moloco Blog
+    type: blog
     tier: 2
-    credibility_weight: 0.80
-    category: regulatory
-    tags: [standards, openrtb, privacy]
-    channel_id: "UCg1gLL44W5-hR0pSbfRkgrQ"
-
-  - name: Google Ads Developers
-    type: youtube
-    tier: 2
-    credibility_weight: 0.80
-    category: programmatic
-    tags: [google, privacy_sandbox, sdks, auction]
-    channel_id: "UCwNbfBhkVVRpRQLOBN9jXkQ"
+    credibility_weight: 0.75
+    category: mobile
+    tags: [moloco, dsp, ml, ua, performance]
+    rss_url: "https://www.moloco.com/blog/rss.xml"
+    homepage: "https://moloco.com"

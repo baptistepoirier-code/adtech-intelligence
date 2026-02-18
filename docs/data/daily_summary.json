@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-02-18T22:48:36.095382+00:00",
+  "generated_at": "2026-02-18T22:55:12.124601+00:00",
   "tiles": {
-    "total_items": 25,
-    "active_items": 25,
+    "total_items": 34,
+    "active_items": 34,
     "noise_filtered": 0,
-    "avg_priority": 57.6,
-    "high_priority": 4,
-    "sources_active": 11,
-    "duplicates_removed": 5
+    "avg_priority": 58.3,
+    "high_priority": 6,
+    "sources_active": 13,
+    "duplicates_removed": 12
   },
   "key_signals": [
     {
@@ -95,7 +95,7 @@
       ],
       "entities": [],
       "summary": "Happy Q4 earnings season! This is the time of year when the biggest brands disclose their full-year results and report on their make-or-break holiday seasons. And it\u2019s not been an easy few weeks for some of America\u2019s biggest CPG brands. Companies like Procter &#38; Gamble, Pepsi and Colgate-Palmolive are contending with cautious consumers and shrinking [&#8230;] The post Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market appeared first on AdExchanger .",
-      "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
       "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
       "signal_type": "Earnings",
       "credibility_score": 96,
@@ -148,28 +148,80 @@
       "spotify_url": ""
     },
     {
-      "id": "5a236cfbf9101def",
-      "title": "Raging Moderates: Censoring Stephen Colbert Backfires",
-      "url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB",
-      "source": "The Prof G Pod",
-      "source_type": "podcast",
-      "source_tier": 3,
-      "source_category": "general",
-      "credibility_weight": 0.65,
-      "published_at": "2026-02-18T09:00:00+00:00",
-      "type": "podcast",
+      "id": "ee3019c96232709a",
+      "title": "Why Taxonomies Matter in the AI Age",
+      "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
+      "source": "IAB Tech Lab",
+      "source_type": "blog",
+      "source_tier": 2,
+      "source_category": "regulatory",
+      "credibility_weight": 0.88,
+      "published_at": "2026-02-11T01:20:07+00:00",
+      "type": "blog",
       "tags": [
-        "macro",
-        "business",
-        "tech"
+        "openrtb",
+        "standards",
+        "privacy",
+        "sellers_json",
+        "ads_txt"
       ],
       "topics": [
         {
-          "key": "ctv",
-          "label": "CTV & Streaming",
-          "signal_type": "Market Structure",
-          "weight": 0.75
+          "key": "skan_att",
+          "label": "SKAN / ATT / iOS Privacy",
+          "signal_type": "Policy",
+          "weight": 1.0
         },
+        {
+          "key": "ml_ai",
+          "label": "ML / AI in Advertising",
+          "signal_type": "Product",
+          "weight": 0.85
+        }
+      ],
+      "entities": [
+        {
+          "name": "AppLovin",
+          "type": "competitor",
+          "watchlist": true
+        },
+        {
+          "name": "Apple",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "Learn how Taxonomies continues to matter in an AI world and how a donation from Mixpeek can help you upgrade. The post Why Taxonomies Matter in the AI Age appeared first on IAB Tech Lab .",
+      "why_it_matters": "AppLovin is your primary competitor. Every move they make reshapes the performance DSP landscape.",
+      "recommended_action": "Track AppLovin closely. Update your competitive positioning and roadmap.",
+      "signal_type": "Policy",
+      "credibility_score": 80,
+      "recency_score": 6,
+      "novelty_score": 100,
+      "relevance_score": 82,
+      "priority_score": 82,
+      "is_noise": false,
+      "confidence": "high",
+      "spotify_url": ""
+    },
+    {
+      "id": "642efe98f853f85b",
+      "title": "Adtelligent Group Invests Majority Stake in AdSales to Expand Social & Messenger\u00a0 Advertising",
+      "url": "https://www.exchangewire.com/blog/2026/02/18/adtelligent-group-invests-majority-stake-in-adsales-to-expand-social-messenger-advertising/",
+      "source": "ExchangeWire",
+      "source_type": "blog",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.8,
+      "published_at": "2026-02-18T12:37:32+00:00",
+      "type": "blog",
+      "tags": [
+        "programmatic",
+        "exchange",
+        "europe",
+        "policy"
+      ],
+      "topics": [
         {
           "key": "regulatory",
           "label": "Regulation & Antitrust",
@@ -177,19 +229,25 @@
           "weight": 0.9
         }
       ],
-      "entities": [],
-      "summary": "Scott Galloway and Jessica Tarlov break down how censoring Colbert backfired on CBS \u2014 after Texas state Rep. James Talarico\u2019s scheduled appearance on The Late Show with Stephen Colbert was abruptly pulled off the air. Is this corporate media caving to Trump-era pressure \u2014 and is Paramount the real loser? Then: the DOJ says it\u2019s done releasing the Epstein files \u2014 but reports suggest the public has seen just 2% of them. If that\u2019s true, who\u2019s still exposed, and why is the department claiming missio",
-      "why_it_matters": "Policy and regulation reshape which data you can use and how your DSP operates. High business impact.",
-      "recommended_action": "Brief leadership and legal. Model scenario impact on your product roadmap.",
+      "entities": [
+        {
+          "name": "Meta",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "Adtelligent Group has acquired a majority stake in AdSales, strengthening its demand-side platform (DSP) capabilities and accelerating its expansion into social and messenger advertising environments, including Telegram and Meta platforms.&#160; The investment supports Adtelligent\u2019s strategy to offer advertisers unified access to [...] The post Adtelligent Group Invests Majority Stake in AdSales to Expand Social &amp; Messenger Advertising appeared first on ExchangeWire.com .",
+      "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
+      "recommended_action": "Track Meta closely. Update your competitive positioning and roadmap.",
       "signal_type": "Policy",
-      "credibility_score": 52,
-      "recency_score": 81,
+      "credibility_score": 74,
+      "recency_score": 86,
       "novelty_score": 100,
-      "relevance_score": 35,
-      "priority_score": 78,
+      "relevance_score": 33,
+      "priority_score": 80,
       "is_noise": false,
       "confidence": "medium",
-      "spotify_url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB"
+      "spotify_url": ""
     }
   ],
   "must_reads": [
@@ -278,7 +336,7 @@
       ],
       "entities": [],
       "summary": "Happy Q4 earnings season! This is the time of year when the biggest brands disclose their full-year results and report on their make-or-break holiday seasons. And it\u2019s not been an easy few weeks for some of America\u2019s biggest CPG brands. Companies like Procter &#38; Gamble, Pepsi and Colgate-Palmolive are contending with cautious consumers and shrinking [&#8230;] The post Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market appeared first on AdExchanger .",
-      "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
       "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
       "signal_type": "Earnings",
       "credibility_score": 96,
@@ -331,6 +389,108 @@
       "spotify_url": ""
     },
     {
+      "id": "ee3019c96232709a",
+      "title": "Why Taxonomies Matter in the AI Age",
+      "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
+      "source": "IAB Tech Lab",
+      "source_type": "blog",
+      "source_tier": 2,
+      "source_category": "regulatory",
+      "credibility_weight": 0.88,
+      "published_at": "2026-02-11T01:20:07+00:00",
+      "type": "blog",
+      "tags": [
+        "openrtb",
+        "standards",
+        "privacy",
+        "sellers_json",
+        "ads_txt"
+      ],
+      "topics": [
+        {
+          "key": "skan_att",
+          "label": "SKAN / ATT / iOS Privacy",
+          "signal_type": "Policy",
+          "weight": 1.0
+        },
+        {
+          "key": "ml_ai",
+          "label": "ML / AI in Advertising",
+          "signal_type": "Product",
+          "weight": 0.85
+        }
+      ],
+      "entities": [
+        {
+          "name": "AppLovin",
+          "type": "competitor",
+          "watchlist": true
+        },
+        {
+          "name": "Apple",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "Learn how Taxonomies continues to matter in an AI world and how a donation from Mixpeek can help you upgrade. The post Why Taxonomies Matter in the AI Age appeared first on IAB Tech Lab .",
+      "why_it_matters": "AppLovin is your primary competitor. Every move they make reshapes the performance DSP landscape.",
+      "recommended_action": "Track AppLovin closely. Update your competitive positioning and roadmap.",
+      "signal_type": "Policy",
+      "credibility_score": 80,
+      "recency_score": 6,
+      "novelty_score": 100,
+      "relevance_score": 82,
+      "priority_score": 82,
+      "is_noise": false,
+      "confidence": "high",
+      "spotify_url": ""
+    },
+    {
+      "id": "642efe98f853f85b",
+      "title": "Adtelligent Group Invests Majority Stake in AdSales to Expand Social & Messenger\u00a0 Advertising",
+      "url": "https://www.exchangewire.com/blog/2026/02/18/adtelligent-group-invests-majority-stake-in-adsales-to-expand-social-messenger-advertising/",
+      "source": "ExchangeWire",
+      "source_type": "blog",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.8,
+      "published_at": "2026-02-18T12:37:32+00:00",
+      "type": "blog",
+      "tags": [
+        "programmatic",
+        "exchange",
+        "europe",
+        "policy"
+      ],
+      "topics": [
+        {
+          "key": "regulatory",
+          "label": "Regulation & Antitrust",
+          "signal_type": "Policy",
+          "weight": 0.9
+        }
+      ],
+      "entities": [
+        {
+          "name": "Meta",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "Adtelligent Group has acquired a majority stake in AdSales, strengthening its demand-side platform (DSP) capabilities and accelerating its expansion into social and messenger advertising environments, including Telegram and Meta platforms.&#160; The investment supports Adtelligent\u2019s strategy to offer advertisers unified access to [...] The post Adtelligent Group Invests Majority Stake in AdSales to Expand Social &amp; Messenger Advertising appeared first on ExchangeWire.com .",
+      "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
+      "recommended_action": "Track Meta closely. Update your competitive positioning and roadmap.",
+      "signal_type": "Policy",
+      "credibility_score": 74,
+      "recency_score": 86,
+      "novelty_score": 100,
+      "relevance_score": 33,
+      "priority_score": 80,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": ""
+    },
+    {
       "id": "5a236cfbf9101def",
       "title": "Raging Moderates: Censoring Stephen Colbert Backfires",
       "url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB",
@@ -375,111 +535,22 @@
       "spotify_url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB"
     },
     {
-      "id": "447ec0b054d1746b",
-      "title": "How The Minnesota Star Tribune Protects Advertisers While Covering ICE Crackdowns",
-      "url": "https://www.adexchanger.com/publishers/how-the-minnesota-star-tribune-protects-advertisers-while-covering-ice-crackdowns/",
-      "source": "AdExchanger",
-      "source_type": "blog",
+      "id": "1579e83e671453fa",
+      "title": "Spotify Earnings, Individualized Networks, AI and Aggregation",
+      "url": "https://stratechery.com/2026/spotify-earnings-individualized-networks-ai-and-aggregation/",
+      "source": "Stratechery",
+      "source_type": "newsletter",
       "source_tier": 1,
-      "source_category": "programmatic",
-      "credibility_weight": 0.95,
-      "published_at": "2026-02-18T06:00:26+00:00",
-      "type": "blog",
+      "source_category": "general",
+      "credibility_weight": 0.9,
+      "published_at": "2026-02-11T11:00:00+00:00",
+      "type": "newsletter",
       "tags": [
-        "programmatic",
-        "exchange",
-        "dsp",
-        "ssp",
-        "data"
-      ],
-      "topics": [
-        {
-          "key": "mediation",
-          "label": "Mediation & Monetization",
-          "signal_type": "Market Structure",
-          "weight": 0.85
-        }
-      ],
-      "entities": [],
-      "summary": "Amid a federal immigration crackdown that\u2019s produced widespread allegations of law enforcement misconduct and resulted in the high-profile deaths of two US citizens, the state of a local news publisher\u2019s advertising business can seem inconsequential. But the Minnesota Star Tribune has to deal with how its duty to keep the public informed impacts its monetization [&#8230;] The post How The Minnesota Star Tribune Protects Advertisers While Covering ICE Crackdowns appeared first on AdExchanger .",
-      "why_it_matters": "The mediation layer sits between your DSP and supply. Shifts here impact fill rates and data access.",
-      "recommended_action": "Assess impact on your supply partnerships and bid request volume.",
-      "signal_type": "Market Structure",
-      "credibility_score": 96,
-      "recency_score": 78,
-      "novelty_score": 100,
-      "relevance_score": 25,
-      "priority_score": 64,
-      "is_noise": false,
-      "confidence": "medium",
-      "spotify_url": ""
-    },
-    {
-      "id": "fe25ed16dccbd7dd",
-      "title": "Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association",
-      "url": "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi",
-      "source": "Marketecture Podcast",
-      "source_type": "podcast",
-      "source_tier": 2,
-      "source_category": "programmatic",
-      "credibility_weight": 0.85,
-      "published_at": "2026-02-13T11:00:00+00:00",
-      "type": "podcast",
-      "tags": [
-        "infrastructure",
-        "interviews",
-        "deep_dive"
-      ],
-      "topics": [
-        {
-          "key": "skan_att",
-          "label": "SKAN / ATT / iOS Privacy",
-          "signal_type": "Policy",
-          "weight": 1.0
-        },
-        {
-          "key": "measurement",
-          "label": "Measurement & Attribution",
-          "signal_type": "Measurement",
-          "weight": 0.85
-        }
-      ],
-      "entities": [
-        {
-          "name": "Apple",
-          "type": "platform",
-          "watchlist": true
-        }
-      ],
-      "summary": "Matthew Egol, Founder & CEO of JourneySpark Consulting, joins Ari Paparo and Eric Franchi to break down agentic advertising and what AdCP means for the industry, from AI\u2019s Super Bowl moment to standards governance, Prebid collaboration, IAB alignment, and how AI agents are reshaping planning, creative, and measurement across marketing. Takeaways AI took over the Super Bowl, with roughly a quarter of ads tied to AI. Agentic advertising expands from buying to planning, discovery, and measurement. ",
-      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
-      "recommended_action": "Track Apple closely. Update your competitive positioning and roadmap.",
-      "signal_type": "Policy",
-      "credibility_score": 78,
-      "recency_score": 14,
-      "novelty_score": 100,
-      "relevance_score": 61,
-      "priority_score": 62,
-      "is_noise": false,
-      "confidence": "high",
-      "spotify_url": "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi"
-    },
-    {
-      "id": "e1cc4f4b64f2da3a",
-      "title": "Creators eye Snapchat as a reliable income alternative to TikTok and YouTube",
-      "url": "https://digiday.com/media/creators-eye-snapchat-as-a-reliable-income-alternative-to-tiktok-and-youtube/?utm_campaign=digidaydis&utm_medium=rss&utm_source=general-rss",
-      "source": "Digiday",
-      "source_type": "blog",
-      "source_tier": 2,
-      "source_category": "programmatic",
-      "credibility_weight": 0.78,
-      "published_at": "2026-02-18T05:01:00+00:00",
-      "type": "blog",
-      "tags": [
-        "agencies",
-        "publishers",
-        "programmatic",
-        "retail_media"
+        "platforms",
+        "google",
+        "meta",
+        "apple",
+        "antitrust"
       ],
       "topics": [
         {
@@ -490,15 +561,15 @@
         }
       ],
       "entities": [],
-      "summary": "Figuring out the Snapchat formula has been very lucrative for creators looking for more consistent revenue on a less-saturated platform.",
-      "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+      "summary": "Spotify's nature as a content network means that AI is a sustaining technology, particularly because they have the right business model in place.",
+      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
       "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
       "signal_type": "Earnings",
-      "credibility_score": 72,
-      "recency_score": 77,
+      "credibility_score": 92,
+      "recency_score": 7,
       "novelty_score": 100,
-      "relevance_score": 23,
-      "priority_score": 59,
+      "relevance_score": 25,
+      "priority_score": 69,
       "is_noise": false,
       "confidence": "medium",
       "spotify_url": ""
@@ -518,7 +589,7 @@
       "url": "https://www.adexchanger.com/commerce/big-cpg-brands-are-quick-to-cut-ad-spend-amid-a-tough-us-market/",
       "source": "AdExchanger",
       "signal_type": "Earnings",
-      "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
       "priority_score": 87
     },
     {
@@ -530,12 +601,20 @@
       "priority_score": 85
     },
     {
-      "title": "Raging Moderates: Censoring Stephen Colbert Backfires",
-      "url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB",
-      "source": "The Prof G Pod",
+      "title": "Why Taxonomies Matter in the AI Age",
+      "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
+      "source": "IAB Tech Lab",
       "signal_type": "Policy",
-      "why_it_matters": "Policy and regulation reshape which data you can use and how your DSP operates. High business impact.",
-      "priority_score": 78
+      "why_it_matters": "AppLovin is your primary competitor. Every move they make reshapes the performance DSP landscape.",
+      "priority_score": 82
+    },
+    {
+      "title": "Adtelligent Group Invests Majority Stake in AdSales to Expand Social & Messenger\u00a0 Advertising",
+      "url": "https://www.exchangewire.com/blog/2026/02/18/adtelligent-group-invests-majority-stake-in-adsales-to-expand-social-messenger-advertising/",
+      "source": "ExchangeWire",
+      "signal_type": "Policy",
+      "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
+      "priority_score": 80
     },
     {
       "title": "How The Minnesota Star Tribune Protects Advertisers While Covering ICE Crackdowns",
@@ -546,12 +625,12 @@
       "priority_score": 64
     },
     {
-      "title": "Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association",
-      "url": "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi",
-      "source": "Marketecture Podcast",
-      "signal_type": "Policy",
-      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
-      "priority_score": 62
+      "title": "Is CTV Really Advertising\u2019s Premium Pasture?",
+      "url": "https://www.exchangewire.com/blog/2026/02/18/is-ctv-really-advertisings-premium-pasture/",
+      "source": "ExchangeWire",
+      "signal_type": "Market Structure",
+      "why_it_matters": "CTV is the next scale opportunity for performance DSPs. Early positioning matters.",
+      "priority_score": 57
     },
     {
       "title": "Influence, At Half The Cost; Are ChatGPT Ads On Target?",
@@ -576,30 +655,27 @@
       "signal_type": "",
       "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
       "priority_score": 53
-    },
-    {
-      "title": "Get ready for Google I/O May 19-20",
-      "url": "http://android-developers.googleblog.com/2026/02/get-ready-for-google-io-may-19-20.html",
-      "source": "Android Developers Blog",
-      "signal_type": "",
-      "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
-      "priority_score": 53
     }
   ],
   "topic_momentum": [
     {
       "label": "Earnings & Financials",
-      "score": 440,
-      "count": 6
+      "score": 509,
+      "count": 7
     },
     {
       "label": "CTV & Streaming",
-      "score": 191,
-      "count": 3
+      "score": 285,
+      "count": 5
     },
     {
       "label": "SKAN / ATT / iOS Privacy",
-      "score": 178,
+      "score": 260,
+      "count": 4
+    },
+    {
+      "label": "Regulation & Antitrust",
+      "score": 220,
       "count": 3
     },
     {
@@ -608,8 +684,8 @@
       "count": 1
     },
     {
-      "label": "Regulation & Antitrust",
-      "score": 78,
+      "label": "ML / AI in Advertising",
+      "score": 82,
       "count": 1
     },
     {
@@ -621,6 +697,11 @@
       "label": "Measurement & Attribution",
       "score": 62,
       "count": 1
+    },
+    {
+      "label": "Bidding & Auctions",
+      "score": 50,
+      "count": 1
     }
   ],
   "source_distribution": [
@@ -629,16 +710,28 @@
       "count": 5
     },
     {
+      "name": "Stratechery",
+      "count": 5
+    },
+    {
+      "name": "ExchangeWire",
+      "count": 5
+    },
+    {
       "name": "Digiday",
       "count": 5
     },
     {
-      "name": "Stratechery",
+      "name": "Android Developers Blog",
       "count": 4
     },
     {
-      "name": "Android Developers Blog",
-      "count": 4
+      "name": "IAB Tech Lab",
+      "count": 2
+    },
+    {
+      "name": "The Digiday Podcast",
+      "count": 2
     },
     {
       "name": "The Prof G Pod",
@@ -657,28 +750,24 @@
       "count": 1
     },
     {
-      "name": "IAB Tech Lab",
+      "name": "AdMonsters",
       "count": 1
     },
     {
       "name": "Apple Developer News",
       "count": 1
-    },
-    {
-      "name": "The Digiday Podcast",
-      "count": 1
     }
   ],
   "watchlist": {
     "Apple": {
-      "count": 4,
+      "count": 5,
       "top_signal": {
-        "title": "Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association",
-        "url": "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi",
-        "priority_score": 62,
+        "title": "Why Taxonomies Matter in the AI Age",
+        "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
+        "priority_score": 82,
         "signal_type": "Policy"
       },
-      "max_priority": 62
+      "max_priority": 82
     },
     "Google": {
       "count": 2,
@@ -691,7 +780,7 @@
       "max_priority": 97
     },
     "Meta": {
-      "count": 1,
+      "count": 2,
       "top_signal": {
         "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
         "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
@@ -699,6 +788,16 @@
         "signal_type": "Market Structure"
       },
       "max_priority": 97
+    },
+    "AppLovin": {
+      "count": 1,
+      "top_signal": {
+        "title": "Why Taxonomies Matter in the AI Age",
+        "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
+        "priority_score": 82,
+        "signal_type": "Policy"
+      },
+      "max_priority": 82
     }
   }
 }

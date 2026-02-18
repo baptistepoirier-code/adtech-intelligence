@@ -84,7 +84,7 @@
     ],
     "entities": [],
     "summary": "Happy Q4 earnings season! This is the time of year when the biggest brands disclose their full-year results and report on their make-or-break holiday seasons. And it\u2019s not been an easy few weeks for some of America\u2019s biggest CPG brands. Companies like Procter &#38; Gamble, Pepsi and Colgate-Palmolive are contending with cautious consumers and shrinking [&#8230;] The post Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market appeared first on AdExchanger .",
-    "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+    "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
     "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
     "signal_type": "Earnings",
     "credibility_score": 96,
@@ -137,6 +137,108 @@
     "spotify_url": ""
   },
   {
+    "id": "ee3019c96232709a",
+    "title": "Why Taxonomies Matter in the AI Age",
+    "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
+    "source": "IAB Tech Lab",
+    "source_type": "blog",
+    "source_tier": 2,
+    "source_category": "regulatory",
+    "credibility_weight": 0.88,
+    "published_at": "2026-02-11T01:20:07+00:00",
+    "type": "blog",
+    "tags": [
+      "openrtb",
+      "standards",
+      "privacy",
+      "sellers_json",
+      "ads_txt"
+    ],
+    "topics": [
+      {
+        "key": "skan_att",
+        "label": "SKAN / ATT / iOS Privacy",
+        "signal_type": "Policy",
+        "weight": 1.0
+      },
+      {
+        "key": "ml_ai",
+        "label": "ML / AI in Advertising",
+        "signal_type": "Product",
+        "weight": 0.85
+      }
+    ],
+    "entities": [
+      {
+        "name": "AppLovin",
+        "type": "competitor",
+        "watchlist": true
+      },
+      {
+        "name": "Apple",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "summary": "Learn how Taxonomies continues to matter in an AI world and how a donation from Mixpeek can help you upgrade. The post Why Taxonomies Matter in the AI Age appeared first on IAB Tech Lab .",
+    "why_it_matters": "AppLovin is your primary competitor. Every move they make reshapes the performance DSP landscape.",
+    "recommended_action": "Track AppLovin closely. Update your competitive positioning and roadmap.",
+    "signal_type": "Policy",
+    "credibility_score": 80,
+    "recency_score": 6,
+    "novelty_score": 100,
+    "relevance_score": 82,
+    "priority_score": 82,
+    "is_noise": false,
+    "confidence": "high",
+    "spotify_url": ""
+  },
+  {
+    "id": "642efe98f853f85b",
+    "title": "Adtelligent Group Invests Majority Stake in AdSales to Expand Social & Messenger\u00a0 Advertising",
+    "url": "https://www.exchangewire.com/blog/2026/02/18/adtelligent-group-invests-majority-stake-in-adsales-to-expand-social-messenger-advertising/",
+    "source": "ExchangeWire",
+    "source_type": "blog",
+    "source_tier": 2,
+    "source_category": "programmatic",
+    "credibility_weight": 0.8,
+    "published_at": "2026-02-18T12:37:32+00:00",
+    "type": "blog",
+    "tags": [
+      "programmatic",
+      "exchange",
+      "europe",
+      "policy"
+    ],
+    "topics": [
+      {
+        "key": "regulatory",
+        "label": "Regulation & Antitrust",
+        "signal_type": "Policy",
+        "weight": 0.9
+      }
+    ],
+    "entities": [
+      {
+        "name": "Meta",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "summary": "Adtelligent Group has acquired a majority stake in AdSales, strengthening its demand-side platform (DSP) capabilities and accelerating its expansion into social and messenger advertising environments, including Telegram and Meta platforms.&#160; The investment supports Adtelligent\u2019s strategy to offer advertisers unified access to [...] The post Adtelligent Group Invests Majority Stake in AdSales to Expand Social &amp; Messenger Advertising appeared first on ExchangeWire.com .",
+    "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
+    "recommended_action": "Track Meta closely. Update your competitive positioning and roadmap.",
+    "signal_type": "Policy",
+    "credibility_score": 74,
+    "recency_score": 86,
+    "novelty_score": 100,
+    "relevance_score": 33,
+    "priority_score": 80,
+    "is_noise": false,
+    "confidence": "medium",
+    "spotify_url": ""
+  },
+  {
     "id": "5a236cfbf9101def",
     "title": "Raging Moderates: Censoring Stephen Colbert Backfires",
     "url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB",
@@ -181,6 +283,46 @@
     "spotify_url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB"
   },
   {
+    "id": "1579e83e671453fa",
+    "title": "Spotify Earnings, Individualized Networks, AI and Aggregation",
+    "url": "https://stratechery.com/2026/spotify-earnings-individualized-networks-ai-and-aggregation/",
+    "source": "Stratechery",
+    "source_type": "newsletter",
+    "source_tier": 1,
+    "source_category": "general",
+    "credibility_weight": 0.9,
+    "published_at": "2026-02-11T11:00:00+00:00",
+    "type": "newsletter",
+    "tags": [
+      "platforms",
+      "google",
+      "meta",
+      "apple",
+      "antitrust"
+    ],
+    "topics": [
+      {
+        "key": "earnings",
+        "label": "Earnings & Financials",
+        "signal_type": "Earnings",
+        "weight": 0.85
+      }
+    ],
+    "entities": [],
+    "summary": "Spotify's nature as a content network means that AI is a sustaining technology, particularly because they have the right business model in place.",
+    "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
+    "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
+    "signal_type": "Earnings",
+    "credibility_score": 92,
+    "recency_score": 7,
+    "novelty_score": 100,
+    "relevance_score": 25,
+    "priority_score": 69,
+    "is_noise": false,
+    "confidence": "medium",
+    "spotify_url": ""
+  },
+  {
     "id": "447ec0b054d1746b",
     "title": "How The Minnesota Star Tribune Protects Advertisers While Covering ICE Crackdowns",
     "url": "https://www.adexchanger.com/publishers/how-the-minnesota-star-tribune-protects-advertisers-while-covering-ice-crackdowns/",
@@ -216,6 +358,45 @@
     "novelty_score": 100,
     "relevance_score": 25,
     "priority_score": 64,
+    "is_noise": false,
+    "confidence": "medium",
+    "spotify_url": ""
+  },
+  {
+    "id": "98572e5cb314e1bd",
+    "title": "MM Creative Agency Optimises its Clients\u2019 Consent Management in the Netherlands with Axeptio",
+    "url": "https://www.exchangewire.com/blog/2026/02/18/mm-creative-agency-optimises-its-clients-consent-management-in-the-netherlands-with-axeptio/",
+    "source": "ExchangeWire",
+    "source_type": "blog",
+    "source_tier": 2,
+    "source_category": "programmatic",
+    "credibility_weight": 0.8,
+    "published_at": "2026-02-18T16:13:16+00:00",
+    "type": "blog",
+    "tags": [
+      "programmatic",
+      "exchange",
+      "europe",
+      "policy"
+    ],
+    "topics": [
+      {
+        "key": "regulatory",
+        "label": "Regulation & Antitrust",
+        "signal_type": "Policy",
+        "weight": 0.9
+      }
+    ],
+    "entities": [],
+    "summary": "Axeptio, a consent management platform (CMP), is supporting MM Creative Agency, a digital agency based in the Netherlands, in optimising consent collection for its clients.&#160; To address its clients\u2019 privacy challenges without adding friction to their digital journeys, the agency recently [...] The post MM Creative Agency Optimises its Clients\u2019 Consent Management in the Netherlands with Axeptio appeared first on ExchangeWire.com .",
+    "why_it_matters": "Policy and regulation reshape which data you can use and how your DSP operates. High business impact.",
+    "recommended_action": "Brief leadership and legal. Model scenario impact on your product roadmap.",
+    "signal_type": "Policy",
+    "credibility_score": 74,
+    "recency_score": 90,
+    "novelty_score": 100,
+    "relevance_score": 24,
+    "priority_score": 62,
     "is_noise": false,
     "confidence": "medium",
     "spotify_url": ""
@@ -396,6 +577,45 @@
     "is_noise": false,
     "confidence": "medium",
     "spotify_url": "https://open.spotify.com/show/0xt8yv6JWqiDAuwGOSgjYP"
+  },
+  {
+    "id": "0069853bc93b08ad",
+    "title": "Is CTV Really Advertising\u2019s Premium Pasture?",
+    "url": "https://www.exchangewire.com/blog/2026/02/18/is-ctv-really-advertisings-premium-pasture/",
+    "source": "ExchangeWire",
+    "source_type": "blog",
+    "source_tier": 2,
+    "source_category": "programmatic",
+    "credibility_weight": 0.8,
+    "published_at": "2026-02-18T10:00:00+00:00",
+    "type": "blog",
+    "tags": [
+      "programmatic",
+      "exchange",
+      "europe",
+      "policy"
+    ],
+    "topics": [
+      {
+        "key": "ctv",
+        "label": "CTV & Streaming",
+        "signal_type": "Market Structure",
+        "weight": 0.75
+      }
+    ],
+    "entities": [],
+    "summary": "Shirley Marschall is back - this week she's looking at why CTV reminds her of a joke about a cow... The post Is CTV Really Advertising&#8217;s Premium Pasture? appeared first on ExchangeWire.com .",
+    "why_it_matters": "CTV is the next scale opportunity for performance DSPs. Early positioning matters.",
+    "recommended_action": "Evaluate CTV supply integration opportunity. Size the addressable market for your DSP.",
+    "signal_type": "Market Structure",
+    "credibility_score": 74,
+    "recency_score": 82,
+    "novelty_score": 100,
+    "relevance_score": 15,
+    "priority_score": 57,
+    "is_noise": false,
+    "confidence": "medium",
+    "spotify_url": ""
   },
   {
     "id": "6009131756e67f28",
@@ -612,7 +832,7 @@
     "recommended_action": "Skim for relevant takeaways. Flag if it touches your product area.",
     "signal_type": "",
     "credibility_score": 80,
-    "recency_score": 88,
+    "recency_score": 87,
     "novelty_score": 100,
     "relevance_score": 0,
     "priority_score": 53,
@@ -660,6 +880,70 @@
     "spotify_url": ""
   },
   {
+    "id": "e39a2497bade588b",
+    "title": "Hershey\u2019s \u201cThe Real Gold\u201d Crowned The Most Emotionally Engaging Ad of the 2026 Winter Games",
+    "url": "https://www.exchangewire.com/blog/2026/02/18/hersheys-the-real-gold-crowned-the-most-emotionally-engaging-ad-of-the-2026-winter-games/",
+    "source": "ExchangeWire",
+    "source_type": "blog",
+    "source_tier": 2,
+    "source_category": "programmatic",
+    "credibility_weight": 0.8,
+    "published_at": "2026-02-18T13:43:48+00:00",
+    "type": "blog",
+    "tags": [
+      "programmatic",
+      "exchange",
+      "europe",
+      "policy"
+    ],
+    "topics": [],
+    "entities": [],
+    "summary": "Hershey\u2019s \"The Real Gold\" is the most emotionally engaging ad of the 2026 Winter Games. That\u2019s according to new data from creative intelligence platform DAIVID, which found the chocolate brand\u2019s first major ad campaign since 2018 generated the strongest positive emotional [...] The post Hershey\u2019s &#8220;The Real Gold&#8221; Crowned The Most Emotionally Engaging Ad of the 2026 Winter Games appeared first on ExchangeWire.com .",
+    "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
+    "recommended_action": "Skim for relevant takeaways. Flag if it touches your product area.",
+    "signal_type": "",
+    "credibility_score": 74,
+    "recency_score": 87,
+    "novelty_score": 100,
+    "relevance_score": 0,
+    "priority_score": 52,
+    "is_noise": false,
+    "confidence": "medium",
+    "spotify_url": ""
+  },
+  {
+    "id": "7cc730558234c014",
+    "title": "Limelight Inc.\u2019s Annual Report Charts Ad Networks\u2019 Move from Aggregation to Curation",
+    "url": "https://www.exchangewire.com/blog/2026/02/18/limelight-inc-s-annual-report-charts-ad-networks-move-from-aggregation-to-curation/",
+    "source": "ExchangeWire",
+    "source_type": "blog",
+    "source_tier": 2,
+    "source_category": "programmatic",
+    "credibility_weight": 0.8,
+    "published_at": "2026-02-18T10:22:45+00:00",
+    "type": "blog",
+    "tags": [
+      "programmatic",
+      "exchange",
+      "europe",
+      "policy"
+    ],
+    "topics": [],
+    "entities": [],
+    "summary": "Limelight Inc.\u2019s latest annual report, Progress and Possibility: State of Ad Networks, Digital Publishing and AdTech 2026, delves into how successful ad networks are shifting from aggregation to curation - doubling down on quality, relevance, transparency, and targeting sophistication - [...] The post Limelight Inc.\u2019s Annual Report Charts Ad Networks\u2019 Move from Aggregation to Curation appeared first on ExchangeWire.com .",
+    "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
+    "recommended_action": "Skim for relevant takeaways. Flag if it touches your product area.",
+    "signal_type": "",
+    "credibility_score": 74,
+    "recency_score": 83,
+    "novelty_score": 100,
+    "relevance_score": 0,
+    "priority_score": 51,
+    "is_noise": false,
+    "confidence": "medium",
+    "spotify_url": ""
+  },
+  {
     "id": "b3ed2886776917d3",
     "title": "Thin Is In",
     "url": "https://stratechery.com/2026/thin-is-in/",
@@ -687,6 +971,51 @@
     "recency_score": 59,
     "novelty_score": 100,
     "relevance_score": 0,
+    "priority_score": 50,
+    "is_noise": false,
+    "confidence": "medium",
+    "spotify_url": ""
+  },
+  {
+    "id": "82730ee5bb71cd37",
+    "title": "How Publishers Are Testing Amazon\u2019s Prebid Adapter For Incremental Yield",
+    "url": "https://www.admonsters.com/how-publishers-are-testing-amazons-prebid-adapter-for-incremental-yield/",
+    "source": "AdMonsters",
+    "source_type": "blog",
+    "source_tier": 3,
+    "source_category": "programmatic",
+    "credibility_weight": 0.7,
+    "published_at": "2026-02-11T18:30:55+00:00",
+    "type": "blog",
+    "tags": [
+      "yield",
+      "ops",
+      "publishers",
+      "header_bidding"
+    ],
+    "topics": [
+      {
+        "key": "bidding",
+        "label": "Bidding & Auctions",
+        "signal_type": "Market Structure",
+        "weight": 1.0
+      }
+    ],
+    "entities": [
+      {
+        "name": "Amazon",
+        "type": "platform",
+        "watchlist": false
+      }
+    ],
+    "summary": "Until now, Amazon largely operated its own parallel ad auction alongside publishers\u2019 Prebid setups, such as Amazon TAM (Transparent Ad Marketplace) for large enterprise publishers and Amazon Unified Ad Marketplace (UAM) for midsize publishers. That meant Amazon demand often sat outside the same decision layer where publishers already managed competition, floors and signals across other [&#8230;] The post How Publishers Are Testing Amazon\u2019s Prebid Adapter For Incremental Yield appeared first on A",
+    "why_it_matters": "Bid optimization is the #1 lever for DSP profitability. This signal could shift your bidding strategy.",
+    "recommended_action": "Review your bidding algorithms and auction participation strategy. Assess impact on win rates.",
+    "signal_type": "Market Structure",
+    "credibility_score": 56,
+    "recency_score": 8,
+    "novelty_score": 100,
+    "relevance_score": 45,
     "priority_score": 50,
     "is_noise": false,
     "confidence": "medium",
@@ -820,7 +1149,7 @@
     "recommended_action": "Skim for relevant takeaways. Flag if it touches your product area.",
     "signal_type": "",
     "credibility_score": 82,
-    "recency_score": 64,
+    "recency_score": 63,
     "novelty_score": 100,
     "relevance_score": 0,
     "priority_score": 49,
@@ -957,5 +1286,43 @@
     "is_noise": false,
     "confidence": "medium",
     "spotify_url": ""
+  },
+  {
+    "id": "c46b269b27593827",
+    "title": "Digiday ranks the best and worst Super Bowl ads of 2026",
+    "url": "https://digiday.com/podcasts/here-are-the-best-and-worst-super-bowl-ads-of-2026/",
+    "source": "The Digiday Podcast",
+    "source_type": "podcast",
+    "source_tier": 3,
+    "source_category": "general",
+    "credibility_weight": 0.72,
+    "published_at": "2026-02-10T05:00:00+00:00",
+    "type": "podcast",
+    "tags": [
+      "agencies",
+      "publishers",
+      "strategy"
+    ],
+    "topics": [
+      {
+        "key": "ctv",
+        "label": "CTV & Streaming",
+        "signal_type": "Market Structure",
+        "weight": 0.75
+      }
+    ],
+    "entities": [],
+    "summary": "Anthropic took a jab at OpenAI's ad product launch and T-Mobile and Coinbase used The Backstreet Boys top play up millennial nostalgia. Now that the dust has settled around the 60-plus Super Bowl ad spots rolled out this year, Tim Peterson and Kimeko McCoy are joined by Sunny Bonnell, co-founder and CEO of global brand strategy and design agency Motto, to reflect on the best and worst commercials from Super Bowl 2026.",
+    "why_it_matters": "Connected TV supply is opening to programmatic \u2014 a potential new channel for your exchange.",
+    "recommended_action": "Evaluate CTV supply integration opportunity. Size the addressable market for your DSP.",
+    "signal_type": "Market Structure",
+    "credibility_score": 57,
+    "recency_score": 4,
+    "novelty_score": 100,
+    "relevance_score": 13,
+    "priority_score": 37,
+    "is_noise": false,
+    "confidence": "medium",
+    "spotify_url": "https://open.spotify.com/show/5FTMRr7SOs0WHMsOBPEe6F"
   }
 ]
