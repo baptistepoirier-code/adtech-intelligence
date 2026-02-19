@@ -1,6 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (if any)
+node_modules/
+
+# Secrets
+.env
+credentials.json
+
+# Generated outputs / caches
 output/
 financial/.cache/
-financial/financial_intel.db
-__pycache__/
-*.pyc
-.DS_Store
+financial/*.db

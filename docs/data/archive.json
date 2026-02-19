@@ -1,0 +1,929 @@
+[
+  {
+    "id": "c2749e441e084140",
+    "title": "Q4: Omnicom\u2019s IPG Merger Is An AI Test Case",
+    "url": "https://www.adexchanger.com/marketers/q4-omnicoms-ipg-merger-is-an-ai-test-case/",
+    "source": "AdExchanger",
+    "source_type": "blog",
+    "source_category": "programmatic",
+    "source_tier": 1,
+    "published_at": "2026-02-19T00:28:09+00:00",
+    "archived_at": "2026-02-19T00:52:31.672645+00:00",
+    "priority_score": 100,
+    "signal_type": "Measurement",
+    "why_it_matters": "Measurement shifts change how advertisers evaluate DSP performance. Your reporting strategy may need updating.",
+    "topics": [
+      {
+        "key": "measurement",
+        "label": "Measurement & Attribution",
+        "signal_type": "Measurement",
+        "weight": 0.85
+      },
+      {
+        "key": "earnings",
+        "label": "Earnings & Financials",
+        "signal_type": "Earnings",
+        "weight": 0.85
+      },
+      {
+        "key": "ma_funding",
+        "label": "M&A & Funding",
+        "signal_type": "Market Structure",
+        "weight": 0.8
+      }
+    ],
+    "entities": [],
+    "business_tags": [
+      {
+        "tag": "BidMachine",
+        "color": "#3b82f6",
+        "url": "https://www.bidmachine.io/"
+      },
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      }
+    ],
+    "is_hsi": true,
+    "spotify_url": ""
+  },
+  {
+    "id": "1ad1a706511bf125",
+    "title": "Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market",
+    "url": "https://www.adexchanger.com/commerce/big-cpg-brands-are-quick-to-cut-ad-spend-amid-a-tough-us-market/",
+    "source": "AdExchanger",
+    "source_type": "blog",
+    "source_category": "programmatic",
+    "source_tier": 1,
+    "published_at": "2026-02-18T18:03:53+00:00",
+    "archived_at": "2026-02-19T00:52:31.672649+00:00",
+    "priority_score": 100,
+    "signal_type": "Earnings",
+    "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+    "topics": [
+      {
+        "key": "earnings",
+        "label": "Earnings & Financials",
+        "signal_type": "Earnings",
+        "weight": 0.85
+      },
+      {
+        "key": "macro",
+        "label": "Macro & Ad Spend",
+        "signal_type": "Macro",
+        "weight": 0.75
+      }
+    ],
+    "entities": [],
+    "business_tags": [
+      {
+        "tag": "BidMachine",
+        "color": "#3b82f6",
+        "url": "https://www.bidmachine.io/"
+      }
+    ],
+    "is_hsi": true,
+    "spotify_url": ""
+  },
+  {
+    "id": "19a678a5c67f52e1",
+    "title": "What is Meta\u2019s GEM?",
+    "url": "https://mobiledevmemo.com/what-is-metas-gem/",
+    "source": "Mobile Dev Memo",
+    "source_type": "blog",
+    "source_category": "mobile",
+    "source_tier": 1,
+    "published_at": "2026-02-18T00:08:23+00:00",
+    "archived_at": "2026-02-19T06:14:28.162442+00:00",
+    "priority_score": 100,
+    "signal_type": "Policy",
+    "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
+    "topics": [
+      {
+        "key": "skan_att",
+        "label": "SKAN / ATT / iOS Privacy",
+        "signal_type": "Policy",
+        "weight": 1.0
+      },
+      {
+        "key": "ml_ai",
+        "label": "ML / AI in Advertising",
+        "signal_type": "Product",
+        "weight": 0.85
+      },
+      {
+        "key": "earnings",
+        "label": "Earnings & Financials",
+        "signal_type": "Earnings",
+        "weight": 0.85
+      }
+    ],
+    "entities": [
+      {
+        "name": "Meta",
+        "type": "platform",
+        "watchlist": true
+      },
+      {
+        "name": "Apple",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "20f0425c4b6a79e1",
+    "title": "Podcast: MDM Mailbag #7 (with Matej Lancaric)",
+    "url": "https://mobiledevmemo.com/podcast-mdm-mailbag-7-with-matej-lancaric/",
+    "source": "Mobile Dev Memo",
+    "source_type": "blog",
+    "source_category": "mobile",
+    "source_tier": 1,
+    "published_at": "2026-02-17T23:38:19+00:00",
+    "archived_at": "2026-02-19T06:14:28.162445+00:00",
+    "priority_score": 100,
+    "signal_type": "Market Structure",
+    "why_it_matters": "Mobile growth strategies directly impact demand for your DSP. Budget shifts here are leading indicators.",
+    "topics": [
+      {
+        "key": "ua_growth",
+        "label": "User Acquisition & Growth",
+        "signal_type": "Market Structure",
+        "weight": 0.9
+      },
+      {
+        "key": "ml_ai",
+        "label": "ML / AI in Advertising",
+        "signal_type": "Product",
+        "weight": 0.85
+      },
+      {
+        "key": "earnings",
+        "label": "Earnings & Financials",
+        "signal_type": "Earnings",
+        "weight": 0.85
+      },
+      {
+        "key": "ma_funding",
+        "label": "M&A & Funding",
+        "signal_type": "Market Structure",
+        "weight": 0.8
+      },
+      {
+        "key": "mobile_gaming",
+        "label": "Mobile Gaming & Monetization",
+        "signal_type": "Market Structure",
+        "weight": 0.8
+      }
+    ],
+    "entities": [],
+    "business_tags": [
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      },
+      {
+        "tag": "Chardonnay",
+        "color": "#ec4899",
+        "url": "https://chardonnaypartners.com/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "642efe98f853f85b",
+    "title": "Adtelligent Group Invests Majority Stake in AdSales to Expand Social & Messenger\u00a0 Advertising",
+    "url": "https://www.exchangewire.com/blog/2026/02/18/adtelligent-group-invests-majority-stake-in-adsales-to-expand-social-messenger-advertising/",
+    "source": "ExchangeWire",
+    "source_type": "blog",
+    "source_category": "programmatic",
+    "source_tier": 2,
+    "published_at": "2026-02-18T12:37:32+00:00",
+    "archived_at": "2026-02-19T00:52:31.672651+00:00",
+    "priority_score": 96,
+    "signal_type": "Policy",
+    "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
+    "topics": [
+      {
+        "key": "regulatory",
+        "label": "Regulation & Antitrust",
+        "signal_type": "Policy",
+        "weight": 0.9
+      },
+      {
+        "key": "ma_funding",
+        "label": "M&A & Funding",
+        "signal_type": "Market Structure",
+        "weight": 0.8
+      }
+    ],
+    "entities": [
+      {
+        "name": "Meta",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "BidMachine",
+        "color": "#3b82f6",
+        "url": "https://www.bidmachine.io/"
+      },
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      }
+    ],
+    "is_hsi": true,
+    "spotify_url": ""
+  },
+  {
+    "id": "a42ffc04558cc908",
+    "title": "MadTech Daily: Google Faces Fresh EU Antitrust Scrutiny Over Search Ad Auctions",
+    "url": "https://audioboom.com/posts/8860896",
+    "source": "The MadTech Podcast",
+    "source_type": "podcast",
+    "source_category": "programmatic",
+    "source_tier": 2,
+    "published_at": "2026-02-16T08:00:00+00:00",
+    "archived_at": "2026-02-19T06:38:26.326384+00:00",
+    "priority_score": 93,
+    "signal_type": "Market Structure",
+    "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
+    "topics": [
+      {
+        "key": "bidding",
+        "label": "Bidding & Auctions",
+        "signal_type": "Market Structure",
+        "weight": 1.0
+      },
+      {
+        "key": "regulatory",
+        "label": "Regulation & Antitrust",
+        "signal_type": "Policy",
+        "weight": 0.9
+      }
+    ],
+    "entities": [
+      {
+        "name": "Google",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "BidMachine",
+        "color": "#3b82f6",
+        "url": "https://www.bidmachine.io/"
+      }
+    ],
+    "is_hsi": true,
+    "spotify_url": "https://open.spotify.com/show/0HecwRsDtNOGIh4HdDV3Ry"
+  },
+  {
+    "id": "92e283e485bb22b6",
+    "title": "Shopify Earnings, Shopify\u2019s AI Advantages",
+    "url": "https://stratechery.com/2026/shopify-earnings-shopifys-ai-advantages/",
+    "source": "Stratechery",
+    "source_type": "newsletter",
+    "source_category": "general",
+    "source_tier": 1,
+    "published_at": "2026-02-18T11:00:00+00:00",
+    "archived_at": "2026-02-19T00:52:31.672652+00:00",
+    "priority_score": 92,
+    "signal_type": "Earnings",
+    "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
+    "topics": [
+      {
+        "key": "earnings",
+        "label": "Earnings & Financials",
+        "signal_type": "Earnings",
+        "weight": 0.85
+      }
+    ],
+    "entities": [],
+    "business_tags": [],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "75ba9419be7768d3",
+    "title": "AppLovin Q4 2025 earnings: understanding AppLovin\u2019s risks",
+    "url": "https://mobiledevmemo.com/applovin-q4-2025-earnings-understanding-applovins-risks/",
+    "source": "Mobile Dev Memo",
+    "source_type": "blog",
+    "source_category": "mobile",
+    "source_tier": 1,
+    "published_at": "2026-02-12T15:44:30+00:00",
+    "archived_at": "2026-02-19T06:14:28.162446+00:00",
+    "priority_score": 90,
+    "signal_type": "Earnings",
+    "why_it_matters": "AppLovin is your primary competitor. Every move they make reshapes the performance DSP landscape.",
+    "topics": [
+      {
+        "key": "earnings",
+        "label": "Earnings & Financials",
+        "signal_type": "Earnings",
+        "weight": 0.85
+      }
+    ],
+    "entities": [
+      {
+        "name": "AppLovin",
+        "type": "competitor",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [],
+    "is_hsi": true,
+    "spotify_url": ""
+  },
+  {
+    "id": "77f0bf78ff7aac12",
+    "title": "My 5 Takeaways from The State of Video Gaming Report",
+    "url": "https://www.gamigion.com/my-5-takeaways-from-the-state-of-video-gaming-report/?utm_source=rss&utm_medium=rss&utm_campaign=my-5-takeaways-from-the-state-of-video-gaming-report",
+    "source": "Gamigion",
+    "source_type": "blog",
+    "source_category": "mobile",
+    "source_tier": 2,
+    "published_at": "2026-02-18T10:03:33+00:00",
+    "archived_at": "2026-02-19T05:58:44.181148+00:00",
+    "priority_score": 87,
+    "signal_type": "Policy",
+    "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+    "topics": [
+      {
+        "key": "skan_att",
+        "label": "SKAN / ATT / iOS Privacy",
+        "signal_type": "Policy",
+        "weight": 1.0
+      },
+      {
+        "key": "earnings",
+        "label": "Earnings & Financials",
+        "signal_type": "Earnings",
+        "weight": 0.85
+      },
+      {
+        "key": "mobile_gaming",
+        "label": "Mobile Gaming & Monetization",
+        "signal_type": "Market Structure",
+        "weight": 0.8
+      }
+    ],
+    "entities": [
+      {
+        "name": "Apple",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      },
+      {
+        "tag": "Chardonnay",
+        "color": "#ec4899",
+        "url": "https://chardonnaypartners.com/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "ee3019c96232709a",
+    "title": "Why Taxonomies Matter in the AI Age",
+    "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
+    "source": "IAB Tech Lab",
+    "source_type": "blog",
+    "source_category": "regulation",
+    "source_tier": 2,
+    "published_at": "2026-02-11T01:20:07+00:00",
+    "archived_at": "2026-02-19T00:52:31.672654+00:00",
+    "priority_score": 85,
+    "signal_type": "Policy",
+    "why_it_matters": "AppLovin is your primary competitor. Every move they make reshapes the performance DSP landscape.",
+    "topics": [
+      {
+        "key": "skan_att",
+        "label": "SKAN / ATT / iOS Privacy",
+        "signal_type": "Policy",
+        "weight": 1.0
+      },
+      {
+        "key": "ml_ai",
+        "label": "ML / AI in Advertising",
+        "signal_type": "Product",
+        "weight": 0.85
+      }
+    ],
+    "entities": [
+      {
+        "name": "AppLovin",
+        "type": "competitor",
+        "watchlist": true
+      },
+      {
+        "name": "Apple",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "9a086d599522f45f",
+    "title": "Inflation, Inflation, and the State of Gaming",
+    "url": "https://www.gamigion.com/inflation-inflation-and-the-state-of-gaming/?utm_source=rss&utm_medium=rss&utm_campaign=inflation-inflation-and-the-state-of-gaming",
+    "source": "Gamigion",
+    "source_type": "blog",
+    "source_category": "mobile",
+    "source_tier": 2,
+    "published_at": "2026-02-18T13:06:44+00:00",
+    "archived_at": "2026-02-19T05:58:44.181152+00:00",
+    "priority_score": 85,
+    "signal_type": "Policy",
+    "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+    "topics": [
+      {
+        "key": "skan_att",
+        "label": "SKAN / ATT / iOS Privacy",
+        "signal_type": "Policy",
+        "weight": 1.0
+      },
+      {
+        "key": "macro",
+        "label": "Macro & Ad Spend",
+        "signal_type": "Macro",
+        "weight": 0.75
+      },
+      {
+        "key": "mobile_gaming",
+        "label": "Mobile Gaming & Monetization",
+        "signal_type": "Market Structure",
+        "weight": 0.8
+      }
+    ],
+    "entities": [
+      {
+        "name": "Apple",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      },
+      {
+        "tag": "Chardonnay",
+        "color": "#ec4899",
+        "url": "https://chardonnaypartners.com/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "ad12f061f4a63bce",
+    "title": "Manhattan judge bars ex-Palantir employees from recruiting staff for Percepta AI",
+    "url": "https://seekingalpha.com/news/4553737-manhattan-judge-bars-ex-palantir-employees-from-recruiting-staff-for-percepta-ai?source=feed_sector_information_technology",
+    "source": "Seeking Alpha Ad Tech",
+    "source_type": "newsletter",
+    "source_category": "finance",
+    "source_tier": 1,
+    "published_at": "2026-02-19T06:24:49+00:00",
+    "archived_at": "2026-02-19T06:27:46.152846+00:00",
+    "priority_score": 85,
+    "signal_type": "Policy",
+    "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+    "topics": [
+      {
+        "key": "skan_att",
+        "label": "SKAN / ATT / iOS Privacy",
+        "signal_type": "Policy",
+        "weight": 1.0
+      }
+    ],
+    "entities": [
+      {
+        "name": "Apple",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "5a236cfbf9101def",
+    "title": "Raging Moderates: Censoring Stephen Colbert Backfires",
+    "url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB",
+    "source": "The Prof G Pod",
+    "source_type": "podcast",
+    "source_category": "general",
+    "source_tier": 3,
+    "published_at": "2026-02-18T09:00:00+00:00",
+    "archived_at": "2026-02-19T00:52:31.672655+00:00",
+    "priority_score": 84,
+    "signal_type": "Policy",
+    "why_it_matters": "Policy and regulation reshape which data you can use and how your DSP operates. High business impact.",
+    "topics": [
+      {
+        "key": "ctv",
+        "label": "CTV & Streaming",
+        "signal_type": "Market Structure",
+        "weight": 0.75
+      },
+      {
+        "key": "regulatory",
+        "label": "Regulation & Antitrust",
+        "signal_type": "Policy",
+        "weight": 0.9
+      }
+    ],
+    "entities": [],
+    "business_tags": [],
+    "is_hsi": true,
+    "spotify_url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB"
+  },
+  {
+    "id": "982f25d4fff739f6",
+    "title": "MICE: Minimal Interaction Cross-Encoders for efficient Re-ranking",
+    "url": "https://arxiv.org/abs/2602.16299",
+    "source": "arXiv Advertising ML",
+    "source_type": "blog",
+    "source_category": "ml",
+    "source_tier": 2,
+    "published_at": "2026-02-19T05:00:00+00:00",
+    "archived_at": "2026-02-19T05:18:39.648302+00:00",
+    "priority_score": 82,
+    "signal_type": "Policy",
+    "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+    "topics": [
+      {
+        "key": "skan_att",
+        "label": "SKAN / ATT / iOS Privacy",
+        "signal_type": "Policy",
+        "weight": 1.0
+      },
+      {
+        "key": "ctv",
+        "label": "CTV & Streaming",
+        "signal_type": "Market Structure",
+        "weight": 0.75
+      }
+    ],
+    "entities": [
+      {
+        "name": "Apple",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "1195aef06d80a41b",
+    "title": "Google attributes conversions to the day of the install instead of the ad interaction!",
+    "url": "https://www.gamigion.com/google-attributes-conversions-to-the-day-of-the-install-instead-of-the-ad-interaction/?utm_source=rss&utm_medium=rss&utm_campaign=google-attributes-conversions-to-the-day-of-the-install-instead-of-the-ad-interaction",
+    "source": "Gamigion",
+    "source_type": "blog",
+    "source_category": "mobile",
+    "source_tier": 2,
+    "published_at": "2026-02-18T09:49:21+00:00",
+    "archived_at": "2026-02-19T05:58:44.181154+00:00",
+    "priority_score": 81,
+    "signal_type": "Policy",
+    "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
+    "topics": [
+      {
+        "key": "skan_att",
+        "label": "SKAN / ATT / iOS Privacy",
+        "signal_type": "Policy",
+        "weight": 1.0
+      },
+      {
+        "key": "mobile_gaming",
+        "label": "Mobile Gaming & Monetization",
+        "signal_type": "Market Structure",
+        "weight": 0.8
+      }
+    ],
+    "entities": [
+      {
+        "name": "Google",
+        "type": "platform",
+        "watchlist": true
+      },
+      {
+        "name": "Apple",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      },
+      {
+        "tag": "Chardonnay",
+        "color": "#ec4899",
+        "url": "https://chardonnaypartners.com/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "a43c0b7e00f0b3aa",
+    "title": "ATTN: Names Former BuzzFeed, Complex Executive Edgar Hernandez Its First Chief Commercial Officer",
+    "url": "https://www.adweek.com/media/attn-edgar-hernandez-chief-commercial-officer/",
+    "source": "Adweek",
+    "source_type": "blog",
+    "source_category": "ctv",
+    "source_tier": 1,
+    "published_at": "2026-02-18T10:00:00+00:00",
+    "archived_at": "2026-02-19T00:52:31.672656+00:00",
+    "priority_score": 79,
+    "signal_type": "Policy",
+    "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+    "topics": [
+      {
+        "key": "skan_att",
+        "label": "SKAN / ATT / iOS Privacy",
+        "signal_type": "Policy",
+        "weight": 1.0
+      }
+    ],
+    "entities": [
+      {
+        "name": "Apple",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "4003986195417c6c",
+    "title": "Local Media Needs Consolidation To Compete, But An Outdated Legal Standard Stands In The Way",
+    "url": "https://www.adexchanger.com/on-tv-and-video/local-media-needs-consolidation-to-compete-but-an-outdated-legal-standard-stands-in-the-way/",
+    "source": "AdExchanger",
+    "source_type": "blog",
+    "source_category": "programmatic",
+    "source_tier": 1,
+    "published_at": "2026-02-19T05:35:37+00:00",
+    "archived_at": "2026-02-19T05:58:44.181155+00:00",
+    "priority_score": 79,
+    "signal_type": "Market Structure",
+    "why_it_matters": "Unity controls a major mediation stack (LevelPlay) and game engine. Their strategy directly impacts supply dynamics.",
+    "topics": [
+      {
+        "key": "ma_funding",
+        "label": "M&A & Funding",
+        "signal_type": "Market Structure",
+        "weight": 0.8
+      }
+    ],
+    "entities": [
+      {
+        "name": "Unity",
+        "type": "competitor",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "BidMachine",
+        "color": "#3b82f6",
+        "url": "https://www.bidmachine.io/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "23dd73e44f3760a1",
+    "title": "The AI Targeting Joke; Agentic AI Outgrows Its Hype",
+    "url": "https://www.adexchanger.com/daily-news-roundup/thursday-19022026/",
+    "source": "AdExchanger",
+    "source_type": "blog",
+    "source_category": "programmatic",
+    "source_tier": 1,
+    "published_at": "2026-02-19T05:03:20+00:00",
+    "archived_at": "2026-02-19T05:18:39.648308+00:00",
+    "priority_score": 78,
+    "signal_type": "Market Structure",
+    "why_it_matters": "User acquisition economics are shifting. This affects how advertisers allocate budgets across DSPs.",
+    "topics": [
+      {
+        "key": "ua_growth",
+        "label": "User Acquisition & Growth",
+        "signal_type": "Market Structure",
+        "weight": 0.9
+      }
+    ],
+    "entities": [],
+    "business_tags": [
+      {
+        "tag": "BidMachine",
+        "color": "#3b82f6",
+        "url": "https://www.bidmachine.io/"
+      },
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "1579e83e671453fa",
+    "title": "Spotify Earnings, Individualized Networks, AI and Aggregation",
+    "url": "https://stratechery.com/2026/spotify-earnings-individualized-networks-ai-and-aggregation/",
+    "source": "Stratechery",
+    "source_type": "newsletter",
+    "source_category": "general",
+    "source_tier": 1,
+    "published_at": "2026-02-11T11:00:00+00:00",
+    "archived_at": "2026-02-19T00:52:31.672657+00:00",
+    "priority_score": 77,
+    "signal_type": "Earnings",
+    "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
+    "topics": [
+      {
+        "key": "earnings",
+        "label": "Earnings & Financials",
+        "signal_type": "Earnings",
+        "weight": 0.85
+      }
+    ],
+    "entities": [],
+    "business_tags": [],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "2bae4420aed887c4",
+    "title": "A New Startup Is Personalizing Paywalls for Bots and Humans Alike",
+    "url": "https://www.adweek.com/media/paywall-for-bots-monetization-os/",
+    "source": "Adweek",
+    "source_type": "blog",
+    "source_category": "ctv",
+    "source_tier": 1,
+    "published_at": "2026-02-18T19:00:00+00:00",
+    "archived_at": "2026-02-19T00:52:31.672658+00:00",
+    "priority_score": 77,
+    "signal_type": "Market Structure",
+    "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
+    "topics": [
+      {
+        "key": "mediation",
+        "label": "Mediation & Monetization",
+        "signal_type": "Market Structure",
+        "weight": 0.85
+      }
+    ],
+    "entities": [
+      {
+        "name": "Google",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "Appodeal",
+        "color": "#f59e0b",
+        "url": "https://appodeal.com/mediation/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "0df50f7a1a262aa8",
+    "title": "Figma surges after Q4 revenue jumps 40%; 2026 full-year guidance shows 38% revenue jump",
+    "url": "https://seekingalpha.com/news/4553542-figma-surges-after-q4-revenue-jumps-40-2026-full-year-guidance-shows-38-revenue-jump?source=feed_sector_information_technology",
+    "source": "Seeking Alpha Ad Tech",
+    "source_type": "newsletter",
+    "source_category": "finance",
+    "source_tier": 1,
+    "published_at": "2026-02-18T21:25:29+00:00",
+    "archived_at": "2026-02-19T00:52:31.672659+00:00",
+    "priority_score": 75,
+    "signal_type": "Earnings",
+    "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
+    "topics": [
+      {
+        "key": "earnings",
+        "label": "Earnings & Financials",
+        "signal_type": "Earnings",
+        "weight": 0.85
+      }
+    ],
+    "entities": [],
+    "business_tags": [],
+    "is_hsi": false,
+    "spotify_url": ""
+  },
+  {
+    "id": "5686b3adf211aae5",
+    "title": "GaiaFlow: Semantic-Guided Diffusion Tuning for Carbon-Frugal Search",
+    "url": "https://arxiv.org/abs/2602.15423",
+    "source": "arXiv Advertising ML",
+    "source_type": "blog",
+    "source_category": "ml",
+    "source_tier": 2,
+    "published_at": "2026-02-18T05:00:00+00:00",
+    "archived_at": "2026-02-19T00:52:31.672660+00:00",
+    "priority_score": 75,
+    "signal_type": "Policy",
+    "why_it_matters": "Unity controls a major mediation stack (LevelPlay) and game engine. Their strategy directly impacts supply dynamics.",
+    "topics": [
+      {
+        "key": "skan_att",
+        "label": "SKAN / ATT / iOS Privacy",
+        "signal_type": "Policy",
+        "weight": 1.0
+      }
+    ],
+    "entities": [
+      {
+        "name": "Unity",
+        "type": "competitor",
+        "watchlist": true
+      },
+      {
+        "name": "Apple",
+        "type": "platform",
+        "watchlist": true
+      }
+    ],
+    "business_tags": [
+      {
+        "tag": "Appgrowth",
+        "color": "#10b981",
+        "url": "https://appodeal.com/appgrowth/"
+      }
+    ],
+    "is_hsi": false,
+    "spotify_url": ""
+  }
+]

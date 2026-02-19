@@ -250,6 +250,92 @@ topics:
       - ipo
       - acquisition
 
+  macro:
+    label: "Macro & Ad Spend"
+    signal_type: "Macro"
+    weight: 0.75
+    keywords:
+      - ad spend
+      - advertising spend
+      - global forecast
+      - cpi
+      - inflation
+      - retail sales
+      - budget cuts
+      - ad market
+      - warc
+      - magna
+      - media spend
+      - economic outlook
+
+  ma_funding:
+    label: "M&A & Funding"
+    signal_type: "Market Structure"
+    weight: 0.80
+    keywords:
+      - acquisition
+      - merger
+      - acquires
+      - acquired
+      - funding round
+      - series a
+      - series b
+      - series c
+      - series d
+      - valuation
+      - consolidation
+      - divestiture
+      - stake
+      - investment round
+      - lumascape
+
+  hiring:
+    label: "Hiring & Talent"
+    signal_type: "Hiring"
+    weight: 0.60
+    keywords:
+      - hiring
+      - layoffs
+      - headcount
+      - job cuts
+      - recruitment
+      - engineering team
+      - ml engineer
+      - privacy engineer
+      - laid off
+      - workforce reduction
+
+  mobile_gaming:
+    label: "Mobile Gaming & Monetization"
+    signal_type: "Market Structure"
+    weight: 0.80
+    keywords:
+      - mobile gaming
+      - mobile game
+      - game monetization
+      - hyper-casual
+      - hybrid-casual
+      - casual game
+      - idle game
+      - puzzle game
+      - midcore
+      - rewarded video
+      - interstitial
+      - playable ad
+      - ad waterfall
+      - arpdau
+      - d1 retention
+      - d7 retention
+      - soft launch
+      - global launch
+      - game publisher
+      - gaming revenue
+      - in-app purchase
+      - iap
+      - game economy
+      - game studio
+      - app store ranking
+
 # ── Entities dictionary ──────────────────────────────────────
 
 entities:
@@ -312,6 +398,54 @@ entities:
       watchlist: false
     - name: Mintegral
       aliases: [mintegral, mintegraltop]
+      type: competitor
+      watchlist: true
+    - name: Roku
+      aliases: [roku]
+      type: platform
+      watchlist: true
+    - name: PubMatic
+      aliases: [pubmatic]
+      type: competitor
+      watchlist: true
+    - name: Magnite
+      aliases: [magnite, rubicon project]
+      type: competitor
+      watchlist: true
+    - name: Criteo
+      aliases: [criteo]
+      type: competitor
+      watchlist: true
+    - name: Perion
+      aliases: [perion, undertone]
+      type: competitor
+      watchlist: false
+    - name: Netflix
+      aliases: [netflix, netflix ads]
+      type: platform
+      watchlist: false
+    - name: HUMAN Security
+      aliases: [human security, white ops]
+      type: vendor
+      watchlist: false
+    - name: Pixalate
+      aliases: [pixalate]
+      type: vendor
+      watchlist: false
+    - name: Aurion11
+      aliases: [aurion11, aurion]
+      type: competitor
+      watchlist: true
+    - name: Loomit
+      aliases: [loomit, loomit.ai]
+      type: competitor
+      watchlist: true
+    - name: IronSource
+      aliases: [ironsource, iron source]
+      type: competitor
+      watchlist: false
+    - name: Vungle
+      aliases: [vungle]
       type: competitor
       watchlist: false
 

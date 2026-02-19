@@ -1,25 +1,26 @@
 {
-  "generated_at": "2026-02-18T22:55:12.124601+00:00",
+  "generated_at": "2026-02-19T06:38:26.321290+00:00",
   "tiles": {
-    "total_items": 34,
-    "active_items": 34,
+    "total_items": 85,
+    "active_items": 85,
     "noise_filtered": 0,
-    "avg_priority": 58.3,
-    "high_priority": 6,
-    "sources_active": 13,
-    "duplicates_removed": 12
+    "avg_priority": 64.2,
+    "high_priority": 21,
+    "sources_active": 29,
+    "hsi_count": 6,
+    "duplicates_removed": 53
   },
   "key_signals": [
     {
-      "id": "b151212810c00bf3",
-      "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
-      "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
+      "id": "c2749e441e084140",
+      "title": "Q4: Omnicom\u2019s IPG Merger Is An AI Test Case",
+      "url": "https://www.adexchanger.com/marketers/q4-omnicoms-ipg-merger-is-an-ai-test-case/",
       "source": "AdExchanger",
       "source_type": "blog",
       "source_tier": 1,
       "source_category": "programmatic",
       "credibility_weight": 0.95,
-      "published_at": "2026-02-18T05:35:56+00:00",
+      "published_at": "2026-02-19T00:28:09+00:00",
       "type": "blog",
       "tags": [
         "programmatic",
@@ -30,42 +31,50 @@
       ],
       "topics": [
         {
-          "key": "ua_growth",
-          "label": "User Acquisition & Growth",
-          "signal_type": "Market Structure",
-          "weight": 0.9
+          "key": "measurement",
+          "label": "Measurement & Attribution",
+          "signal_type": "Measurement",
+          "weight": 0.85
         },
         {
           "key": "earnings",
           "label": "Earnings & Financials",
           "signal_type": "Earnings",
           "weight": 0.85
-        }
-      ],
-      "entities": [
-        {
-          "name": "Google",
-          "type": "platform",
-          "watchlist": true
         },
         {
-          "name": "Meta",
-          "type": "platform",
-          "watchlist": true
+          "key": "ma_funding",
+          "label": "M&A & Funding",
+          "signal_type": "Market Structure",
+          "weight": 0.8
         }
       ],
-      "summary": "Across industries, marketing teams are navigating a brutal equation: shrinking budgets, leaner teams and rising performance pressure. In this environment, platforms like Meta and Google dominate the ecosystem. Their unrivaled scale and AI-powered technology make them safe bets for marketing and user acquisition. But as these leaders push further into automation, they\u2019ve reduced the manual [&#8230;] The post Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes appeared first ",
-      "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
-      "recommended_action": "Track Google closely. Update your competitive positioning and roadmap.",
-      "signal_type": "Market Structure",
+      "entities": [],
+      "summary": "On Wednesday, Omnicom reported its first earnings since closing its $13.5 billion acquisition of IPG, and guess what? AI will be a key growth driver for the combined company. (Uh, duh.) Executives framed the deal as a \u201cdata-led AI transformation,\u201d highlighting plans to use AI for targeting, measurement and creative testing through Omni, Omnicom\u2019s centralized [&#8230;] The post Q4: Omnicom\u2019s IPG Merger Is An AI Test Case appeared first on AdExchanger .",
+      "why_it_matters": "Measurement shifts change how advertisers evaluate DSP performance. Your reporting strategy may need updating.",
+      "recommended_action": "Review your attribution reporting. Ensure your methodology stays competitive.",
+      "signal_type": "Measurement",
       "credibility_score": 96,
-      "recency_score": 77,
+      "recency_score": 91,
       "novelty_score": 100,
-      "relevance_score": 70,
-      "priority_score": 97,
+      "relevance_score": 66,
+      "priority_score": 100,
       "is_noise": false,
-      "confidence": "high",
-      "spotify_url": ""
+      "confidence": "medium",
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "BidMachine",
+          "color": "#3b82f6",
+          "url": "https://www.bidmachine.io/"
+        },
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        }
+      ],
+      "is_hsi": true
     },
     {
       "id": "1ad1a706511bf125",
@@ -91,79 +100,55 @@
           "label": "Earnings & Financials",
           "signal_type": "Earnings",
           "weight": 0.85
+        },
+        {
+          "key": "macro",
+          "label": "Macro & Ad Spend",
+          "signal_type": "Macro",
+          "weight": 0.75
         }
       ],
       "entities": [],
       "summary": "Happy Q4 earnings season! This is the time of year when the biggest brands disclose their full-year results and report on their make-or-break holiday seasons. And it\u2019s not been an easy few weeks for some of America\u2019s biggest CPG brands. Companies like Procter &#38; Gamble, Pepsi and Colgate-Palmolive are contending with cautious consumers and shrinking [&#8230;] The post Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market appeared first on AdExchanger .",
-      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
+      "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
       "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
       "signal_type": "Earnings",
       "credibility_score": 96,
-      "recency_score": 93,
+      "recency_score": 83,
       "novelty_score": 100,
-      "relevance_score": 23,
-      "priority_score": 87,
+      "relevance_score": 40,
+      "priority_score": 100,
       "is_noise": false,
       "confidence": "medium",
-      "spotify_url": ""
-    },
-    {
-      "id": "92e283e485bb22b6",
-      "title": "Shopify Earnings, Shopify\u2019s AI Advantages",
-      "url": "https://stratechery.com/2026/shopify-earnings-shopifys-ai-advantages/",
-      "source": "Stratechery",
-      "source_type": "newsletter",
-      "source_tier": 1,
-      "source_category": "general",
-      "credibility_weight": 0.9,
-      "published_at": "2026-02-18T11:00:00+00:00",
-      "type": "newsletter",
-      "tags": [
-        "platforms",
-        "google",
-        "meta",
-        "apple",
-        "antitrust"
-      ],
-      "topics": [
+      "spotify_url": "",
+      "business_tags": [
         {
-          "key": "earnings",
-          "label": "Earnings & Financials",
-          "signal_type": "Earnings",
-          "weight": 0.85
+          "tag": "BidMachine",
+          "color": "#3b82f6",
+          "url": "https://www.bidmachine.io/"
         }
       ],
-      "entities": [],
-      "summary": "Shopify is poised to be one of the biggest winners from AI; it would behoove investors to actually understand the businesses they are selling.",
-      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
-      "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
-      "signal_type": "Earnings",
-      "credibility_score": 92,
-      "recency_score": 84,
-      "novelty_score": 100,
-      "relevance_score": 25,
-      "priority_score": 85,
-      "is_noise": false,
-      "confidence": "medium",
-      "spotify_url": ""
+      "is_hsi": true
     },
     {
-      "id": "ee3019c96232709a",
-      "title": "Why Taxonomies Matter in the AI Age",
-      "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
-      "source": "IAB Tech Lab",
+      "id": "19a678a5c67f52e1",
+      "title": "What is Meta\u2019s GEM?",
+      "url": "https://mobiledevmemo.com/what-is-metas-gem/",
+      "source": "Mobile Dev Memo",
       "source_type": "blog",
-      "source_tier": 2,
-      "source_category": "regulatory",
-      "credibility_weight": 0.88,
-      "published_at": "2026-02-11T01:20:07+00:00",
+      "source_tier": 1,
+      "source_category": "mobile",
+      "credibility_weight": 1.0,
+      "published_at": "2026-02-18T00:08:23+00:00",
       "type": "blog",
       "tags": [
-        "openrtb",
-        "standards",
+        "mobile",
+        "att",
+        "skan",
         "privacy",
-        "sellers_json",
-        "ads_txt"
+        "dsp",
+        "ua",
+        "eric_seufert"
       ],
       "topics": [
         {
@@ -177,12 +162,18 @@
           "label": "ML / AI in Advertising",
           "signal_type": "Product",
           "weight": 0.85
+        },
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
         }
       ],
       "entities": [
         {
-          "name": "AppLovin",
-          "type": "competitor",
+          "name": "Meta",
+          "type": "platform",
           "watchlist": true
         },
         {
@@ -191,18 +182,105 @@
           "watchlist": true
         }
       ],
-      "summary": "Learn how Taxonomies continues to matter in an AI world and how a donation from Mixpeek can help you upgrade. The post Why Taxonomies Matter in the AI Age appeared first on IAB Tech Lab .",
-      "why_it_matters": "AppLovin is your primary competitor. Every move they make reshapes the performance DSP landscape.",
-      "recommended_action": "Track AppLovin closely. Update your competitive positioning and roadmap.",
+      "summary": "In a blog post published in March 2025, ahead of the company\u2019s Q1 2025 earnings release in May, Meta highlighted three machine learning architectures it had introduced to improve efficiency on its platform. My summary of each, informed by what little public information exists about them, is as follows: At that time, Lattice and Andromeda [\u2026]",
+      "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
+      "recommended_action": "Track Meta closely. Update your competitive positioning and roadmap.",
       "signal_type": "Policy",
-      "credibility_score": 80,
-      "recency_score": 6,
+      "credibility_score": 100,
+      "recency_score": 64,
       "novelty_score": 100,
-      "relevance_score": 82,
-      "priority_score": 82,
+      "relevance_score": 100,
+      "priority_score": 100,
       "is_noise": false,
       "confidence": "high",
-      "spotify_url": ""
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        }
+      ],
+      "is_hsi": false
+    },
+    {
+      "id": "20f0425c4b6a79e1",
+      "title": "Podcast: MDM Mailbag #7 (with Matej Lancaric)",
+      "url": "https://mobiledevmemo.com/podcast-mdm-mailbag-7-with-matej-lancaric/",
+      "source": "Mobile Dev Memo",
+      "source_type": "blog",
+      "source_tier": 1,
+      "source_category": "mobile",
+      "credibility_weight": 1.0,
+      "published_at": "2026-02-17T23:38:19+00:00",
+      "type": "blog",
+      "tags": [
+        "mobile",
+        "att",
+        "skan",
+        "privacy",
+        "dsp",
+        "ua",
+        "eric_seufert"
+      ],
+      "topics": [
+        {
+          "key": "ua_growth",
+          "label": "User Acquisition & Growth",
+          "signal_type": "Market Structure",
+          "weight": 0.9
+        },
+        {
+          "key": "ml_ai",
+          "label": "ML / AI in Advertising",
+          "signal_type": "Product",
+          "weight": 0.85
+        },
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
+        },
+        {
+          "key": "ma_funding",
+          "label": "M&A & Funding",
+          "signal_type": "Market Structure",
+          "weight": 0.8
+        },
+        {
+          "key": "mobile_gaming",
+          "label": "Mobile Gaming & Monetization",
+          "signal_type": "Market Structure",
+          "weight": 0.8
+        }
+      ],
+      "entities": [],
+      "summary": "In the latest installment of the MDM Mailbag series, I speak with Matej Lancaric, a well-known mobile gaming user acquisition consultant, a co-host of the two & a half gamers podcast, and the author of the Brutally Honest blog. As a reminder: guests for MDM Mailbag episodes of the podcast are practitioners, and questions are [\u2026]",
+      "why_it_matters": "User acquisition economics are shifting. This affects how advertisers allocate budgets across DSPs.",
+      "recommended_action": "Share with your demand team. Adjust positioning to capture shifting advertiser budgets.",
+      "signal_type": "Market Structure",
+      "credibility_score": 100,
+      "recency_score": 63,
+      "novelty_score": 100,
+      "relevance_score": 100,
+      "priority_score": 100,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        },
+        {
+          "tag": "Chardonnay",
+          "color": "#ec4899",
+          "url": "https://chardonnaypartners.com/"
+        }
+      ],
+      "is_hsi": false
     },
     {
       "id": "642efe98f853f85b",
@@ -227,6 +305,12 @@
           "label": "Regulation & Antitrust",
           "signal_type": "Policy",
           "weight": 0.9
+        },
+        {
+          "key": "ma_funding",
+          "label": "M&A & Funding",
+          "signal_type": "Market Structure",
+          "weight": 0.8
         }
       ],
       "entities": [
@@ -241,46 +325,58 @@
       "recommended_action": "Track Meta closely. Update your competitive positioning and roadmap.",
       "signal_type": "Policy",
       "credibility_score": 74,
-      "recency_score": 86,
+      "recency_score": 77,
       "novelty_score": 100,
-      "relevance_score": 33,
-      "priority_score": 80,
+      "relevance_score": 53,
+      "priority_score": 95,
       "is_noise": false,
-      "confidence": "medium",
-      "spotify_url": ""
+      "confidence": "high",
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "BidMachine",
+          "color": "#3b82f6",
+          "url": "https://www.bidmachine.io/"
+        },
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        }
+      ],
+      "is_hsi": true
     }
   ],
   "must_reads": [
     {
-      "id": "b151212810c00bf3",
-      "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
-      "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
-      "source": "AdExchanger",
-      "source_type": "blog",
-      "source_tier": 1,
+      "id": "a42ffc04558cc908",
+      "title": "MadTech Daily: Google Faces Fresh EU Antitrust Scrutiny Over Search Ad Auctions",
+      "url": "https://audioboom.com/posts/8860896",
+      "source": "The MadTech Podcast",
+      "source_type": "podcast",
+      "source_tier": 2,
       "source_category": "programmatic",
-      "credibility_weight": 0.95,
-      "published_at": "2026-02-18T05:35:56+00:00",
-      "type": "blog",
+      "credibility_weight": 0.78,
+      "published_at": "2026-02-16T08:00:00+00:00",
+      "type": "podcast",
       "tags": [
-        "programmatic",
-        "exchange",
-        "dsp",
-        "ssp",
-        "data"
+        "madtech",
+        "industry",
+        "deep_dive",
+        "exchange"
       ],
       "topics": [
         {
-          "key": "ua_growth",
-          "label": "User Acquisition & Growth",
+          "key": "bidding",
+          "label": "Bidding & Auctions",
           "signal_type": "Market Structure",
-          "weight": 0.9
+          "weight": 1.0
         },
         {
-          "key": "earnings",
-          "label": "Earnings & Financials",
-          "signal_type": "Earnings",
-          "weight": 0.85
+          "key": "regulatory",
+          "label": "Regulation & Antitrust",
+          "signal_type": "Policy",
+          "weight": 0.9
         }
       ],
       "entities": [
@@ -288,65 +384,28 @@
           "name": "Google",
           "type": "platform",
           "watchlist": true
-        },
-        {
-          "name": "Meta",
-          "type": "platform",
-          "watchlist": true
         }
       ],
-      "summary": "Across industries, marketing teams are navigating a brutal equation: shrinking budgets, leaner teams and rising performance pressure. In this environment, platforms like Meta and Google dominate the ecosystem. Their unrivaled scale and AI-powered technology make them safe bets for marketing and user acquisition. But as these leaders push further into automation, they\u2019ve reduced the manual [&#8230;] The post Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes appeared first ",
+      "summary": "Google is facing renewed antitrust scrutiny from EU regulators over its search advertising auctions, as Alibaba\u2019s Qwen app demonstrates massive scale by processing 120 million orders in just six days, and Saudi-backed Savvy Games Group enters talks to acquire Moonton, the gaming studio owned by ByteDance.",
       "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
       "recommended_action": "Track Google closely. Update your competitive positioning and roadmap.",
       "signal_type": "Market Structure",
-      "credibility_score": 96,
-      "recency_score": 77,
+      "credibility_score": 72,
+      "recency_score": 36,
       "novelty_score": 100,
-      "relevance_score": 70,
-      "priority_score": 97,
+      "relevance_score": 63,
+      "priority_score": 93,
       "is_noise": false,
       "confidence": "high",
-      "spotify_url": ""
-    },
-    {
-      "id": "1ad1a706511bf125",
-      "title": "Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market",
-      "url": "https://www.adexchanger.com/commerce/big-cpg-brands-are-quick-to-cut-ad-spend-amid-a-tough-us-market/",
-      "source": "AdExchanger",
-      "source_type": "blog",
-      "source_tier": 1,
-      "source_category": "programmatic",
-      "credibility_weight": 0.95,
-      "published_at": "2026-02-18T18:03:53+00:00",
-      "type": "blog",
-      "tags": [
-        "programmatic",
-        "exchange",
-        "dsp",
-        "ssp",
-        "data"
-      ],
-      "topics": [
+      "spotify_url": "https://open.spotify.com/show/0HecwRsDtNOGIh4HdDV3Ry",
+      "business_tags": [
         {
-          "key": "earnings",
-          "label": "Earnings & Financials",
-          "signal_type": "Earnings",
-          "weight": 0.85
+          "tag": "BidMachine",
+          "color": "#3b82f6",
+          "url": "https://www.bidmachine.io/"
         }
       ],
-      "entities": [],
-      "summary": "Happy Q4 earnings season! This is the time of year when the biggest brands disclose their full-year results and report on their make-or-break holiday seasons. And it\u2019s not been an easy few weeks for some of America\u2019s biggest CPG brands. Companies like Procter &#38; Gamble, Pepsi and Colgate-Palmolive are contending with cautious consumers and shrinking [&#8230;] The post Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market appeared first on AdExchanger .",
-      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
-      "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
-      "signal_type": "Earnings",
-      "credibility_score": 96,
-      "recency_score": 93,
-      "novelty_score": 100,
-      "relevance_score": 23,
-      "priority_score": 87,
-      "is_noise": false,
-      "confidence": "medium",
-      "spotify_url": ""
+      "is_hsi": true
     },
     {
       "id": "92e283e485bb22b6",
@@ -376,35 +435,86 @@
       ],
       "entities": [],
       "summary": "Shopify is poised to be one of the biggest winners from AI; it would behoove investors to actually understand the businesses they are selling.",
-      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
+      "why_it_matters": "Earnings data exposes margin structure and investment priorities of key players in your market.",
       "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
       "signal_type": "Earnings",
       "credibility_score": 92,
-      "recency_score": 84,
+      "recency_score": 75,
       "novelty_score": 100,
       "relevance_score": 25,
-      "priority_score": 85,
+      "priority_score": 91,
       "is_noise": false,
       "confidence": "medium",
-      "spotify_url": ""
+      "spotify_url": "",
+      "business_tags": [],
+      "is_hsi": false
     },
     {
-      "id": "ee3019c96232709a",
-      "title": "Why Taxonomies Matter in the AI Age",
-      "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
-      "source": "IAB Tech Lab",
+      "id": "75ba9419be7768d3",
+      "title": "AppLovin Q4 2025 earnings: understanding AppLovin\u2019s risks",
+      "url": "https://mobiledevmemo.com/applovin-q4-2025-earnings-understanding-applovins-risks/",
+      "source": "Mobile Dev Memo",
       "source_type": "blog",
-      "source_tier": 2,
-      "source_category": "regulatory",
-      "credibility_weight": 0.88,
-      "published_at": "2026-02-11T01:20:07+00:00",
+      "source_tier": 1,
+      "source_category": "mobile",
+      "credibility_weight": 1.0,
+      "published_at": "2026-02-12T15:44:30+00:00",
       "type": "blog",
       "tags": [
-        "openrtb",
-        "standards",
+        "mobile",
+        "att",
+        "skan",
         "privacy",
-        "sellers_json",
-        "ads_txt"
+        "dsp",
+        "ua",
+        "eric_seufert"
+      ],
+      "topics": [
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
+        }
+      ],
+      "entities": [
+        {
+          "name": "AppLovin",
+          "type": "competitor",
+          "watchlist": true
+        }
+      ],
+      "summary": "AppLovin reported its\u00a0Q4 2025 earnings\u00a0last night: AppLovin provided Q1 2026 revenue guidance of between $1.745 and $1.775BN. AppLovin beat consensus estimates on revenue, earnings, and revenue guidance, but the stock declined by as much as 10% in after-hours trading following its earnings report. As I write this, the stock is down by 13%. I\u2019m not [\u2026]",
+      "why_it_matters": "AppLovin is your primary competitor. Every move they make reshapes the performance DSP landscape.",
+      "recommended_action": "Track AppLovin closely. Update your competitive positioning and roadmap.",
+      "signal_type": "Earnings",
+      "credibility_score": 100,
+      "recency_score": 10,
+      "novelty_score": 100,
+      "relevance_score": 35,
+      "priority_score": 90,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "",
+      "business_tags": [],
+      "is_hsi": true
+    },
+    {
+      "id": "77f0bf78ff7aac12",
+      "title": "My 5 Takeaways from The State of Video Gaming Report",
+      "url": "https://www.gamigion.com/my-5-takeaways-from-the-state-of-video-gaming-report/?utm_source=rss&utm_medium=rss&utm_campaign=my-5-takeaways-from-the-state-of-video-gaming-report",
+      "source": "Gamigion",
+      "source_type": "blog",
+      "source_tier": 2,
+      "source_category": "mobile",
+      "credibility_weight": 0.72,
+      "published_at": "2026-02-18T10:03:33+00:00",
+      "type": "blog",
+      "tags": [
+        "mobile_gaming",
+        "adtech",
+        "monetization",
+        "gaming_news"
       ],
       "topics": [
         {
@@ -414,97 +524,535 @@
           "weight": 1.0
         },
         {
-          "key": "ml_ai",
-          "label": "ML / AI in Advertising",
-          "signal_type": "Product",
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
           "weight": 0.85
+        },
+        {
+          "key": "mobile_gaming",
+          "label": "Mobile Gaming & Monetization",
+          "signal_type": "Market Structure",
+          "weight": 0.8
         }
       ],
       "entities": [
-        {
-          "name": "AppLovin",
-          "type": "competitor",
-          "watchlist": true
-        },
         {
           "name": "Apple",
           "type": "platform",
           "watchlist": true
         }
       ],
-      "summary": "Learn how Taxonomies continues to matter in an AI world and how a donation from Mixpeek can help you upgrade. The post Why Taxonomies Matter in the AI Age appeared first on IAB Tech Lab .",
-      "why_it_matters": "AppLovin is your primary competitor. Every move they make reshapes the performance DSP landscape.",
-      "recommended_action": "Track AppLovin closely. Update your competitive positioning and roadmap.",
+      "summary": "So the Matthew Ball 2026 report is out and I advise all of you to check it out, it&#8217;s 164 slides of insights and industry gold. Just pulled out a couple of my personal highlights, but essentially gaming just hit an all-time revenue high. So why does it feel tougher [...] The post My 5 Takeaways from The State of Video Gaming Report first appeared on Gamigion: Mobile Games Industry News .",
+      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+      "recommended_action": "Track Apple closely. Update your competitive positioning and roadmap.",
       "signal_type": "Policy",
-      "credibility_score": 80,
-      "recency_score": 6,
+      "credibility_score": 67,
+      "recency_score": 74,
       "novelty_score": 100,
-      "relevance_score": 82,
-      "priority_score": 82,
+      "relevance_score": 89,
+      "priority_score": 86,
       "is_noise": false,
       "confidence": "high",
-      "spotify_url": ""
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        },
+        {
+          "tag": "Chardonnay",
+          "color": "#ec4899",
+          "url": "https://chardonnaypartners.com/"
+        }
+      ],
+      "is_hsi": false
     },
     {
-      "id": "642efe98f853f85b",
-      "title": "Adtelligent Group Invests Majority Stake in AdSales to Expand Social & Messenger\u00a0 Advertising",
-      "url": "https://www.exchangewire.com/blog/2026/02/18/adtelligent-group-invests-majority-stake-in-adsales-to-expand-social-messenger-advertising/",
-      "source": "ExchangeWire",
-      "source_type": "blog",
-      "source_tier": 2,
-      "source_category": "programmatic",
-      "credibility_weight": 0.8,
-      "published_at": "2026-02-18T12:37:32+00:00",
-      "type": "blog",
+      "id": "ad12f061f4a63bce",
+      "title": "Manhattan judge bars ex-Palantir employees from recruiting staff for Percepta AI",
+      "url": "https://seekingalpha.com/news/4553737-manhattan-judge-bars-ex-palantir-employees-from-recruiting-staff-for-percepta-ai?source=feed_sector_information_technology",
+      "source": "Seeking Alpha Ad Tech",
+      "source_type": "newsletter",
+      "source_tier": 1,
+      "source_category": "finance",
+      "credibility_weight": 0.9,
+      "published_at": "2026-02-19T06:24:49+00:00",
+      "type": "newsletter",
       "tags": [
-        "programmatic",
-        "exchange",
-        "europe",
-        "policy"
+        "earnings",
+        "transcripts",
+        "guidance",
+        "revenue",
+        "margin"
       ],
       "topics": [
         {
-          "key": "regulatory",
-          "label": "Regulation & Antitrust",
+          "key": "skan_att",
+          "label": "SKAN / ATT / iOS Privacy",
           "signal_type": "Policy",
-          "weight": 0.9
+          "weight": 1.0
         }
       ],
       "entities": [
         {
-          "name": "Meta",
+          "name": "Apple",
           "type": "platform",
           "watchlist": true
         }
       ],
-      "summary": "Adtelligent Group has acquired a majority stake in AdSales, strengthening its demand-side platform (DSP) capabilities and accelerating its expansion into social and messenger advertising environments, including Telegram and Meta platforms.&#160; The investment supports Adtelligent\u2019s strategy to offer advertisers unified access to [...] The post Adtelligent Group Invests Majority Stake in AdSales to Expand Social &amp; Messenger Advertising appeared first on ExchangeWire.com .",
-      "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
-      "recommended_action": "Track Meta closely. Update your competitive positioning and roadmap.",
+      "summary": "",
+      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+      "recommended_action": "Track Apple closely. Update your competitive positioning and roadmap.",
       "signal_type": "Policy",
-      "credibility_score": 74,
-      "recency_score": 86,
+      "credibility_score": 92,
+      "recency_score": 99,
       "novelty_score": 100,
-      "relevance_score": 33,
-      "priority_score": 80,
+      "relevance_score": 49,
+      "priority_score": 85,
       "is_noise": false,
       "confidence": "medium",
-      "spotify_url": ""
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        }
+      ],
+      "is_hsi": false
     },
     {
-      "id": "5a236cfbf9101def",
+      "id": "9a086d599522f45f",
+      "title": "Inflation, Inflation, and the State of Gaming",
+      "url": "https://www.gamigion.com/inflation-inflation-and-the-state-of-gaming/?utm_source=rss&utm_medium=rss&utm_campaign=inflation-inflation-and-the-state-of-gaming",
+      "source": "Gamigion",
+      "source_type": "blog",
+      "source_tier": 2,
+      "source_category": "mobile",
+      "credibility_weight": 0.72,
+      "published_at": "2026-02-18T13:06:44+00:00",
+      "type": "blog",
+      "tags": [
+        "mobile_gaming",
+        "adtech",
+        "monetization",
+        "gaming_news"
+      ],
+      "topics": [
+        {
+          "key": "skan_att",
+          "label": "SKAN / ATT / iOS Privacy",
+          "signal_type": "Policy",
+          "weight": 1.0
+        },
+        {
+          "key": "macro",
+          "label": "Macro & Ad Spend",
+          "signal_type": "Macro",
+          "weight": 0.75
+        },
+        {
+          "key": "mobile_gaming",
+          "label": "Mobile Gaming & Monetization",
+          "signal_type": "Market Structure",
+          "weight": 0.8
+        }
+      ],
+      "entities": [
+        {
+          "name": "Apple",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "I need to play my economist card here for a second and endorse the meme. Seriously, is no one ever going to adjust for inflation? Both Supercell&#8217;s claim in Ilkka Paananen&#8217;s letter (Supercell did not match their highest years!) and Matthew Ball&#8217;s The State of Video Gaming in 2026 report completely change when we adjust for conservative global [...] The post Inflation, Inflation, and the State of Gaming first appeared on Gamigion: Mobile Games Industry News .",
+      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+      "recommended_action": "Track Apple closely. Update your competitive positioning and roadmap.",
+      "signal_type": "Policy",
+      "credibility_score": 67,
+      "recency_score": 77,
+      "novelty_score": 100,
+      "relevance_score": 83,
+      "priority_score": 85,
+      "is_noise": false,
+      "confidence": "high",
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        },
+        {
+          "tag": "Chardonnay",
+          "color": "#ec4899",
+          "url": "https://chardonnaypartners.com/"
+        }
+      ],
+      "is_hsi": false
+    },
+    {
+      "id": "982f25d4fff739f6",
+      "title": "MICE: Minimal Interaction Cross-Encoders for efficient Re-ranking",
+      "url": "https://arxiv.org/abs/2602.16299",
+      "source": "arXiv Advertising ML",
+      "source_type": "blog",
+      "source_tier": 2,
+      "source_category": "ml",
+      "credibility_weight": 0.85,
+      "published_at": "2026-02-19T05:00:00+00:00",
+      "type": "blog",
+      "tags": [
+        "arxiv",
+        "research",
+        "bidding",
+        "auction",
+        "recommender",
+        "ml"
+      ],
+      "topics": [
+        {
+          "key": "skan_att",
+          "label": "SKAN / ATT / iOS Privacy",
+          "signal_type": "Policy",
+          "weight": 1.0
+        },
+        {
+          "key": "ctv",
+          "label": "CTV & Streaming",
+          "signal_type": "Market Structure",
+          "weight": 0.75
+        }
+      ],
+      "entities": [
+        {
+          "name": "Apple",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "arXiv:2602.16299v1 Announce Type: new Abstract: Cross-encoders deliver state-of-the-art ranking effectiveness in information retrieval, but have a high inference cost. This prevents them from being used as first-stage rankers, but also incurs a cost when re-ranking documents. Prior work has addressed this bottleneck from two largely separate directions: accelerating cross-encoder inference by sparsifying the attention process or improving first-stage retrieval effectiveness using more complex mo",
+      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+      "recommended_action": "Track Apple closely. Update your competitive positioning and roadmap.",
+      "signal_type": "Policy",
+      "credibility_score": 78,
+      "recency_score": 97,
+      "novelty_score": 100,
+      "relevance_score": 59,
+      "priority_score": 81,
+      "is_noise": false,
+      "confidence": "high",
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        }
+      ],
+      "is_hsi": false
+    }
+  ],
+  "key_learnings": [
+    {
+      "title": "Google attributes conversions to the day of the install instead of the ad interaction!",
+      "url": "https://www.gamigion.com/google-attributes-conversions-to-the-day-of-the-install-instead-of-the-ad-interaction/?utm_source=rss&utm_medium=rss&utm_campaign=google-attributes-conversions-to-the-day-of-the-install-instead-of-the-ad-interaction",
+      "source": "Gamigion",
+      "source_type": "blog",
+      "signal_type": "Policy",
+      "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
+      "priority_score": 81,
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        },
+        {
+          "tag": "Chardonnay",
+          "color": "#ec4899",
+          "url": "https://chardonnaypartners.com/"
+        }
+      ],
+      "is_hsi": false
+    },
+    {
+      "title": "Local Media Needs Consolidation To Compete, But An Outdated Legal Standard Stands In The Way",
+      "url": "https://www.adexchanger.com/on-tv-and-video/local-media-needs-consolidation-to-compete-but-an-outdated-legal-standard-stands-in-the-way/",
+      "source": "AdExchanger",
+      "source_type": "blog",
+      "signal_type": "Market Structure",
+      "why_it_matters": "Unity controls a major mediation stack (LevelPlay) and game engine. Their strategy directly impacts supply dynamics.",
+      "priority_score": 78,
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "BidMachine",
+          "color": "#3b82f6",
+          "url": "https://www.bidmachine.io/"
+        }
+      ],
+      "is_hsi": false
+    },
+    {
+      "title": "The AI Targeting Joke; Agentic AI Outgrows Its Hype",
+      "url": "https://www.adexchanger.com/daily-news-roundup/thursday-19022026/",
+      "source": "AdExchanger",
+      "source_type": "blog",
+      "signal_type": "Market Structure",
+      "why_it_matters": "User acquisition economics are shifting. This affects how advertisers allocate budgets across DSPs.",
+      "priority_score": 78,
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "BidMachine",
+          "color": "#3b82f6",
+          "url": "https://www.bidmachine.io/"
+        },
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        }
+      ],
+      "is_hsi": false
+    },
+    {
       "title": "Raging Moderates: Censoring Stephen Colbert Backfires",
       "url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB",
       "source": "The Prof G Pod",
       "source_type": "podcast",
-      "source_tier": 3,
-      "source_category": "general",
-      "credibility_weight": 0.65,
-      "published_at": "2026-02-18T09:00:00+00:00",
+      "signal_type": "Policy",
+      "why_it_matters": "Policy and regulation reshape which data you can use and how your DSP operates. High business impact.",
+      "priority_score": 77,
+      "spotify_url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB",
+      "business_tags": [],
+      "is_hsi": false
+    },
+    {
+      "title": "A New Startup Is Personalizing Paywalls for Bots and Humans Alike",
+      "url": "https://www.adweek.com/media/paywall-for-bots-monetization-os/",
+      "source": "Adweek",
+      "source_type": "blog",
+      "signal_type": "Market Structure",
+      "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
+      "priority_score": 76,
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "Appodeal",
+          "color": "#f59e0b",
+          "url": "https://appodeal.com/mediation/"
+        }
+      ],
+      "is_hsi": false
+    },
+    {
+      "title": "FeDecider: An LLM-Based Framework for Federated Cross-Domain Recommendation",
+      "url": "https://arxiv.org/abs/2602.16034",
+      "source": "arXiv Advertising ML",
+      "source_type": "blog",
+      "signal_type": "Product",
+      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+      "priority_score": 72,
+      "spotify_url": "",
+      "business_tags": [
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        }
+      ],
+      "is_hsi": false
+    },
+    {
+      "title": "Omnicom Swings to $941M Q4 Loss After Closing IPG Deal",
+      "url": "https://www.adweek.com/agencies/omnicom-swings-to-941m-q4-loss-after-closing-ipg-deal/",
+      "source": "Adweek",
+      "source_type": "blog",
+      "signal_type": "Earnings",
+      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
+      "priority_score": 71,
+      "spotify_url": "",
+      "business_tags": [],
+      "is_hsi": false
+    },
+    {
+      "title": "Quant ratings on Coatue Management's top holdings: TSM, MSFT, META, AMZN",
+      "url": "https://seekingalpha.com/news/4553377-quant-ratings-on-coatue-managements-top-holdings-tsm-msft-meta-amzn?source=feed_sector_information_technology",
+      "source": "Seeking Alpha Ad Tech",
+      "source_type": "newsletter",
+      "signal_type": "",
+      "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
+      "priority_score": 69,
+      "spotify_url": "",
+      "business_tags": [],
+      "is_hsi": false
+    },
+    {
+      "title": "KLA Corporation: I Would Take Some Profits (Rating Downgrade)",
+      "url": "https://seekingalpha.com/article/4871872-kla-corporation-stock-would-take-some-profits-rating-downgrade?source=feed_sector_information_technology",
+      "source": "Seeking Alpha Ad Tech",
+      "source_type": "newsletter",
+      "signal_type": "",
+      "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
+      "priority_score": 66,
+      "spotify_url": "",
+      "business_tags": [],
+      "is_hsi": false
+    },
+    {
+      "title": "Bill Gates withdraws from India AI summit",
+      "url": "https://seekingalpha.com/news/4553708-bill-gates-withdraws-from-india-ai-summit?source=feed_sector_information_technology",
+      "source": "Seeking Alpha Ad Tech",
+      "source_type": "newsletter",
+      "signal_type": "",
+      "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
+      "priority_score": 66,
+      "spotify_url": "",
+      "business_tags": [],
+      "is_hsi": false
+    }
+  ],
+  "youtube_items": [
+    {
+      "id": "b9a5f2cdb8f94bb7",
+      "title": "Episode 66: AI Governance is NOT optional",
+      "url": "https://www.youtube.com/watch?v=yoaTTTzpS9M",
+      "source": "MarketectureTV",
+      "source_type": "youtube",
+      "source_tier": 1,
+      "source_category": "programmatic",
+      "credibility_weight": 0.88,
+      "published_at": "2026-02-19T06:38:08.631251+00:00",
+      "type": "youtube",
+      "tags": [
+        "interviews",
+        "deep_dive",
+        "exchange",
+        "infrastructure",
+        "ctv"
+      ],
+      "topics": [],
+      "entities": [],
+      "summary": "YouTube video from MarketectureTV.",
+      "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
+      "recommended_action": "Skim for relevant takeaways. Flag if it touches your product area.",
+      "signal_type": "",
+      "credibility_score": 90,
+      "recency_score": 99,
+      "novelty_score": 100,
+      "relevance_score": 0,
+      "priority_score": 65,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "",
+      "business_tags": [],
+      "is_hsi": false
+    },
+    {
+      "id": "9657723632bf7d72",
+      "title": "Unity Tips: Timeline Signal Track#unitytiptuesday #unity3d #unitylearn",
+      "url": "https://www.youtube.com/shorts/Z06KIt2zzvE",
+      "source": "Unity (YouTube)",
+      "source_type": "youtube",
+      "source_tier": 2,
+      "source_category": "mobile",
+      "credibility_weight": 0.72,
+      "published_at": "2026-02-17T17:01:02+00:00",
+      "type": "youtube",
+      "tags": [
+        "unity",
+        "gaming",
+        "ads",
+        "sdk",
+        "mediation"
+      ],
+      "topics": [],
+      "entities": [
+        {
+          "name": "Unity",
+          "type": "competitor",
+          "watchlist": true
+        }
+      ],
+      "summary": "This quick-tip video shows you how a Signal track in Timeline lets you place time-based signals on a Timeline that trigger events or callbacks in your game logic easily. Find more free Unity learn resources: https://on.unity.com/learn Download the free Unity Warehouse assets here: https://on.unity.com/WarehouseAssets",
+      "why_it_matters": "Unity controls a major mediation stack (LevelPlay) and game engine. Their strategy directly impacts supply dynamics.",
+      "recommended_action": "Track Unity closely. Update your competitive positioning and roadmap.",
+      "signal_type": "",
+      "credibility_score": 67,
+      "recency_score": 58,
+      "novelty_score": 100,
+      "relevance_score": 8,
+      "priority_score": 51,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "",
+      "business_tags": [],
+      "is_hsi": false
+    },
+    {
+      "id": "129b2afddd18638d",
+      "title": "10 weeks dev time, 10 million copies sold\u2026",
+      "url": "https://www.youtube.com/shorts/QFcpCHZmiu4",
+      "source": "Unity (YouTube)",
+      "source_type": "youtube",
+      "source_tier": 2,
+      "source_category": "mobile",
+      "credibility_weight": 0.72,
+      "published_at": "2026-02-16T17:00:40+00:00",
+      "type": "youtube",
+      "tags": [
+        "unity",
+        "gaming",
+        "ads",
+        "sdk",
+        "mediation"
+      ],
+      "topics": [],
+      "entities": [
+        {
+          "name": "Unity",
+          "type": "competitor",
+          "watchlist": true
+        }
+      ],
+      "summary": "Co-op climbing game PEAK was one of the biggest Steam breakout hits of 2025 \u26f0\ufe0f Learn how the friends and devs from Landfall Games and Aggro Crab collaborated to iterate quickly and create an instant classic. #MadeWithUnity #Peak #GameDev #IndieGames",
+      "why_it_matters": "Unity controls a major mediation stack (LevelPlay) and game engine. Their strategy directly impacts supply dynamics.",
+      "recommended_action": "Track Unity closely. Update your competitive positioning and roadmap.",
+      "signal_type": "",
+      "credibility_score": 67,
+      "recency_score": 41,
+      "novelty_score": 100,
+      "relevance_score": 8,
+      "priority_score": 47,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "",
+      "business_tags": [],
+      "is_hsi": false
+    }
+  ],
+  "podcast_items": [
+    {
+      "id": "10f7a38e36b5936f",
+      "title": "ExchangeWire's Ad Tech Quiz: Netflix Subscriptions, Meta\u2019s Scam Ads, and Smartphone Use",
+      "url": "https://audioboom.com/posts/8860865",
+      "source": "The MadTech Podcast",
+      "source_type": "podcast",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.78,
+      "published_at": "2026-02-13T09:58:53+00:00",
       "type": "podcast",
       "tags": [
-        "macro",
-        "business",
-        "tech"
+        "madtech",
+        "industry",
+        "deep_dive",
+        "exchange"
       ],
       "topics": [
         {
@@ -518,41 +1066,133 @@
           "label": "Regulation & Antitrust",
           "signal_type": "Policy",
           "weight": 0.9
+        },
+        {
+          "key": "earnings",
+          "label": "Earnings & Financials",
+          "signal_type": "Earnings",
+          "weight": 0.85
         }
       ],
-      "entities": [],
-      "summary": "Scott Galloway and Jessica Tarlov break down how censoring Colbert backfired on CBS \u2014 after Texas state Rep. James Talarico\u2019s scheduled appearance on The Late Show with Stephen Colbert was abruptly pulled off the air. Is this corporate media caving to Trump-era pressure \u2014 and is Paramount the real loser? Then: the DOJ says it\u2019s done releasing the Epstein files \u2014 but reports suggest the public has seen just 2% of them. If that\u2019s true, who\u2019s still exposed, and why is the department claiming missio",
-      "why_it_matters": "Policy and regulation reshape which data you can use and how your DSP operates. High business impact.",
-      "recommended_action": "Brief leadership and legal. Model scenario impact on your product roadmap.",
+      "entities": [
+        {
+          "name": "Meta",
+          "type": "platform",
+          "watchlist": true
+        },
+        {
+          "name": "Netflix",
+          "type": "platform",
+          "watchlist": false
+        }
+      ],
+      "summary": "How many UK households have a Netflix subscription? What percentage of Meta\u2019s total revenue comes from scam ads? What was the smartphone usage rate in the UAE in 2025? In this quiz edition of The MadTech Podcast, ExchangeWire\u2019s head of marketing Grainne Reid is joined by COO Lindsay Rowntree and John Still, head of content. They look into the changing TV and streaming landscape, tolerances for fraudulent ads (and insects in chocolate), and open web versus mobile advertising. 0:00 Introduction 1:",
+      "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
+      "recommended_action": "Track Meta closely. Update your competitive positioning and roadmap.",
       "signal_type": "Policy",
-      "credibility_score": 52,
-      "recency_score": 81,
+      "credibility_score": 72,
+      "recency_score": 13,
       "novelty_score": 100,
-      "relevance_score": 35,
-      "priority_score": 78,
+      "relevance_score": 71,
+      "priority_score": 68,
       "is_noise": false,
-      "confidence": "medium",
-      "spotify_url": "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB"
+      "confidence": "high",
+      "spotify_url": "https://open.spotify.com/show/0HecwRsDtNOGIh4HdDV3Ry",
+      "business_tags": [
+        {
+          "tag": "BidMachine",
+          "color": "#3b82f6",
+          "url": "https://www.bidmachine.io/"
+        }
+      ],
+      "is_hsi": false
     },
     {
-      "id": "1579e83e671453fa",
-      "title": "Spotify Earnings, Individualized Networks, AI and Aggregation",
-      "url": "https://stratechery.com/2026/spotify-earnings-individualized-networks-ai-and-aggregation/",
-      "source": "Stratechery",
-      "source_type": "newsletter",
-      "source_tier": 1,
-      "source_category": "general",
-      "credibility_weight": 0.9,
-      "published_at": "2026-02-11T11:00:00+00:00",
-      "type": "newsletter",
+      "id": "fe25ed16dccbd7dd",
+      "title": "Episode 160: Matthew Egol on Why We Need an AI-Specific Industry Association",
+      "url": "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi",
+      "source": "Marketecture Podcast",
+      "source_type": "podcast",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.85,
+      "published_at": "2026-02-13T11:00:00+00:00",
+      "type": "podcast",
       "tags": [
-        "platforms",
-        "google",
-        "meta",
-        "apple",
-        "antitrust"
+        "infrastructure",
+        "interviews",
+        "deep_dive"
       ],
       "topics": [
+        {
+          "key": "skan_att",
+          "label": "SKAN / ATT / iOS Privacy",
+          "signal_type": "Policy",
+          "weight": 1.0
+        },
+        {
+          "key": "measurement",
+          "label": "Measurement & Attribution",
+          "signal_type": "Measurement",
+          "weight": 0.85
+        }
+      ],
+      "entities": [
+        {
+          "name": "Apple",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "Matthew Egol, Founder & CEO of JourneySpark Consulting, joins Ari Paparo and Eric Franchi to break down agentic advertising and what AdCP means for the industry, from AI\u2019s Super Bowl moment to standards governance, Prebid collaboration, IAB alignment, and how AI agents are reshaping planning, creative, and measurement across marketing. Takeaways AI took over the Super Bowl, with roughly a quarter of ads tied to AI. Agentic advertising expands from buying to planning, discovery, and measurement. ",
+      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+      "recommended_action": "Track Apple closely. Update your competitive positioning and roadmap.",
+      "signal_type": "Policy",
+      "credibility_score": 78,
+      "recency_score": 13,
+      "novelty_score": 100,
+      "relevance_score": 61,
+      "priority_score": 65,
+      "is_noise": false,
+      "confidence": "high",
+      "spotify_url": "https://open.spotify.com/show/2bMkmiMCfJkiLUOFiEjjGi",
+      "business_tags": [
+        {
+          "tag": "BidMachine",
+          "color": "#3b82f6",
+          "url": "https://www.bidmachine.io/"
+        },
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        }
+      ],
+      "is_hsi": false
+    },
+    {
+      "id": "71b7c8f3de3f2312",
+      "title": "Ep. 121 The Future of Streaming: Live Sports, AI, and the New Ad Economy with Ying Wang",
+      "url": "https://open.spotify.com/show/0xt8yv6JWqiDAuwGOSgjYP",
+      "source": "The AdTechGod Pod",
+      "source_type": "podcast",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.78,
+      "published_at": "2026-02-17T05:00:00+00:00",
+      "type": "podcast",
+      "tags": [
+        "programmatic",
+        "insider",
+        "opinions"
+      ],
+      "topics": [
+        {
+          "key": "ctv",
+          "label": "CTV & Streaming",
+          "signal_type": "Market Structure",
+          "weight": 0.75
+        },
         {
           "key": "earnings",
           "label": "Earnings & Financials",
@@ -561,146 +1201,307 @@
         }
       ],
       "entities": [],
-      "summary": "Spotify's nature as a content network means that AI is a sustaining technology, particularly because they have the right business model in place.",
+      "summary": "In this episode of the AdTechGod Pod, Ying Wang, the General Manager of Xumo, shares her journey in the streaming television industry, discussing her career growth, the evolution of ad revenue, the significance of live sports, and the future of streaming. She emphasizes the importance of AI in personalizing user experiences and offers valuable advice for aspiring professionals in the industry. Takeaways Ying Wang's career path reflects her adaptability and pursuit of opportunities. The streaming",
       "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
       "recommended_action": "Update your competitive analysis. Extract implications for your pricing and go-to-market.",
       "signal_type": "Earnings",
-      "credibility_score": 92,
-      "recency_score": 7,
+      "credibility_score": 72,
+      "recency_score": 48,
       "novelty_score": 100,
-      "relevance_score": 25,
-      "priority_score": 69,
+      "relevance_score": 34,
+      "priority_score": 60,
       "is_noise": false,
       "confidence": "medium",
-      "spotify_url": ""
-    }
-  ],
-  "key_learnings": [
-    {
-      "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
-      "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
-      "source": "AdExchanger",
-      "signal_type": "Market Structure",
-      "why_it_matters": "Google controls Android, AdMob, and the largest share of ad budgets. Platform policy changes here are existential.",
-      "priority_score": 97
+      "spotify_url": "https://open.spotify.com/show/0xt8yv6JWqiDAuwGOSgjYP",
+      "business_tags": [],
+      "is_hsi": false
     },
     {
-      "title": "Big CPG Brands Are Quick To Cut Ad Spend Amid A Tough US Market",
-      "url": "https://www.adexchanger.com/commerce/big-cpg-brands-are-quick-to-cut-ad-spend-amid-a-tough-us-market/",
-      "source": "AdExchanger",
-      "signal_type": "Earnings",
-      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
-      "priority_score": 87
-    },
-    {
-      "title": "Shopify Earnings, Shopify\u2019s AI Advantages",
-      "url": "https://stratechery.com/2026/shopify-earnings-shopifys-ai-advantages/",
-      "source": "Stratechery",
-      "signal_type": "Earnings",
-      "why_it_matters": "Financial results reveal competitors' strategic bets and resource allocation. Essential competitive intel.",
-      "priority_score": 85
-    },
-    {
-      "title": "Why Taxonomies Matter in the AI Age",
-      "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
-      "source": "IAB Tech Lab",
+      "id": "47c926400df9c42d",
+      "title": "Jane Fonda on How to Turn Rage Into Hope: On with Kara Swisher",
+      "url": "https://open.spotify.com/show/6lNiVniMqHRCnDMawfBjYH",
+      "source": "Pivot",
+      "source_type": "podcast",
+      "source_tier": 3,
+      "source_category": "general",
+      "credibility_weight": 0.7,
+      "published_at": "2026-02-17T11:00:00+00:00",
+      "type": "podcast",
+      "tags": [
+        "macro",
+        "platforms",
+        "tech_policy"
+      ],
+      "topics": [
+        {
+          "key": "skan_att",
+          "label": "SKAN / ATT / iOS Privacy",
+          "signal_type": "Policy",
+          "weight": 1.0
+        }
+      ],
+      "entities": [
+        {
+          "name": "Apple",
+          "type": "platform",
+          "watchlist": true
+        }
+      ],
+      "summary": "Jane Fonda has been fighting for social justice for over five decades, but in the past year, she\u2019s kicked things up a notch. This past fall, she relaunched the Committee for the First Amendment, and her environmentally focused political action committee, Jane Fonda Climate PAC, is gearing up for the midterm elections. The iconic actor and activist talks to Kara about how to fight for democracy and the environment when both are under attack. She breaks down her PACs electoral strategy, explains w",
+      "why_it_matters": "Apple controls iOS privacy policy. ATT/SKAN updates directly determine what your DSP can optimize for.",
+      "recommended_action": "Track Apple closely. Update your competitive positioning and roadmap.",
       "signal_type": "Policy",
-      "why_it_matters": "AppLovin is your primary competitor. Every move they make reshapes the performance DSP landscape.",
-      "priority_score": 82
+      "credibility_score": 56,
+      "recency_score": 53,
+      "novelty_score": 100,
+      "relevance_score": 40,
+      "priority_score": 57,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "https://open.spotify.com/show/6lNiVniMqHRCnDMawfBjYH",
+      "business_tags": [
+        {
+          "tag": "Appgrowth",
+          "color": "#10b981",
+          "url": "https://appodeal.com/appgrowth/"
+        }
+      ],
+      "is_hsi": false
     },
     {
-      "title": "Adtelligent Group Invests Majority Stake in AdSales to Expand Social & Messenger\u00a0 Advertising",
-      "url": "https://www.exchangewire.com/blog/2026/02/18/adtelligent-group-invests-majority-stake-in-adsales-to-expand-social-messenger-advertising/",
-      "source": "ExchangeWire",
-      "signal_type": "Policy",
-      "why_it_matters": "Meta is the #1 destination for mobile UA spend. Advantage+ automation is reducing the need for external DSPs.",
-      "priority_score": 80
-    },
-    {
-      "title": "How The Minnesota Star Tribune Protects Advertisers While Covering ICE Crackdowns",
-      "url": "https://www.adexchanger.com/publishers/how-the-minnesota-star-tribune-protects-advertisers-while-covering-ice-crackdowns/",
-      "source": "AdExchanger",
-      "signal_type": "Market Structure",
-      "why_it_matters": "The mediation layer sits between your DSP and supply. Shifts here impact fill rates and data access.",
-      "priority_score": 64
-    },
-    {
-      "title": "Is CTV Really Advertising\u2019s Premium Pasture?",
-      "url": "https://www.exchangewire.com/blog/2026/02/18/is-ctv-really-advertisings-premium-pasture/",
-      "source": "ExchangeWire",
-      "signal_type": "Market Structure",
-      "why_it_matters": "CTV is the next scale opportunity for performance DSPs. Early positioning matters.",
-      "priority_score": 57
-    },
-    {
-      "title": "Influence, At Half The Cost; Are ChatGPT Ads On Target?",
-      "url": "https://www.adexchanger.com/daily-news-roundup/wednesday-18022026/",
-      "source": "AdExchanger",
-      "signal_type": "",
+      "id": "46c4b31622ffe08b",
+      "title": "MadTech Daily: Digest: Starmer Targets Youth Social Media Access; Warner Bros Gives Paramount Final Bid Deadline",
+      "url": "https://audioboom.com/posts/8862333",
+      "source": "The MadTech Podcast",
+      "source_type": "podcast",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.78,
+      "published_at": "2026-02-18T07:00:00+00:00",
+      "type": "podcast",
+      "tags": [
+        "madtech",
+        "industry",
+        "deep_dive",
+        "exchange"
+      ],
+      "topics": [],
+      "entities": [],
+      "summary": "In today\u2019s MadTech Daily, we cover Starmer targeting youth social media access, Ireland\u2019s DPC probing X over Grok imagery, and Ad Net Zero\u2019s young leaders making new recommendations. We also look at Warner Bros giving Paramount a final bid deadline",
       "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
-      "priority_score": 56
+      "recommended_action": "Skim for relevant takeaways. Flag if it touches your product area.",
+      "signal_type": "",
+      "credibility_score": 72,
+      "recency_score": 71,
+      "novelty_score": 100,
+      "relevance_score": 0,
+      "priority_score": 51,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "https://open.spotify.com/show/0HecwRsDtNOGIh4HdDV3Ry",
+      "business_tags": [],
+      "is_hsi": false
     },
     {
-      "title": "AI In Advertising: What\u2019s Real Beyond The Buzz",
-      "url": "https://www.adexchanger.com/content-studio/ai-in-advertising-whats-real-beyond-the-buzz/",
-      "source": "AdExchanger",
-      "signal_type": "",
+      "id": "abeb302fd17ef5ec",
+      "title": "MadTech Daily: Disney Takes On Bytedance Over AI Video App; Alliance of Independent Agencies Launches Middle East Chapter",
+      "url": "https://audioboom.com/posts/8861887",
+      "source": "The MadTech Podcast",
+      "source_type": "podcast",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.78,
+      "published_at": "2026-02-17T07:00:00+00:00",
+      "type": "podcast",
+      "tags": [
+        "madtech",
+        "industry",
+        "deep_dive",
+        "exchange"
+      ],
+      "topics": [],
+      "entities": [],
+      "summary": "In today\u2019s MadTech Daily, we cover ByteDance scaling back its AI video app following a Disney warning, the Alliance of Independent Agencies launching a Middle East chapter with 23 founding members, and new data showing backlash to Six Nations in-game ads.",
       "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
-      "priority_score": 56
+      "recommended_action": "Skim for relevant takeaways. Flag if it touches your product area.",
+      "signal_type": "",
+      "credibility_score": 72,
+      "recency_score": 50,
+      "novelty_score": 100,
+      "relevance_score": 0,
+      "priority_score": 47,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "https://open.spotify.com/show/0HecwRsDtNOGIh4HdDV3Ry",
+      "business_tags": [],
+      "is_hsi": false
     },
     {
-      "title": "Getting Started with ARTF: A Five-Step Guide for Ad Tech Companies",
-      "url": "https://iabtechlab.com/getting-started-with-artf/",
-      "source": "IAB Tech Lab",
-      "signal_type": "",
+      "id": "44874f7d6ce3b36d",
+      "title": "ChatGPT enters the ad game. Now what?",
+      "url": "https://open.spotify.com/show/5FTMRr7SOs0WHMsOBPEe6F",
+      "source": "The Digiday Podcast",
+      "source_type": "podcast",
+      "source_tier": 3,
+      "source_category": "general",
+      "credibility_weight": 0.72,
+      "published_at": "2026-02-17T05:00:00+00:00",
+      "type": "podcast",
+      "tags": [
+        "agencies",
+        "publishers",
+        "strategy"
+      ],
+      "topics": [],
+      "entities": [],
+      "summary": "The other shoe has finally dropped. After months of speculation, OpenAI officially began to test ads in ChatGPT in the U.S. Meanwhile, marketers are still trying to read the tea leaves around OpenAI's ad team, data insights and more as chatbot competition intensifies. Digiday's senior platforms reporter Krystan Scanlon joins the Digiday Podcast to make sense of it all.",
       "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
-      "priority_score": 53
+      "recommended_action": "Skim for relevant takeaways. Flag if it touches your product area.",
+      "signal_type": "",
+      "credibility_score": 57,
+      "recency_score": 48,
+      "novelty_score": 100,
+      "relevance_score": 0,
+      "priority_score": 41,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "https://open.spotify.com/show/5FTMRr7SOs0WHMsOBPEe6F",
+      "business_tags": [],
+      "is_hsi": false
+    },
+    {
+      "id": "569c8e3f756a592f",
+      "title": "MadTech Daily: IPA Census 2025 Shows Staff Decline & Diversity Gains; Amazon Eyes Marketplace for AI Content Deals; Spotify Profits Soar After Raising Prices",
+      "url": "https://audioboom.com/posts/8860167",
+      "source": "The MadTech Podcast",
+      "source_type": "podcast",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.78,
+      "published_at": "2026-02-12T07:00:00+00:00",
+      "type": "podcast",
+      "tags": [
+        "madtech",
+        "industry",
+        "deep_dive",
+        "exchange"
+      ],
+      "topics": [],
+      "entities": [
+        {
+          "name": "Amazon",
+          "type": "platform",
+          "watchlist": false
+        }
+      ],
+      "summary": "In today\u2019s MadTech Daily, we look at the IPA Census 2025 showing staff declines and diversity gains, Amazon eyeing a marketplace for AI content deals, and Spotify profits soaring after raising prices.",
+      "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
+      "recommended_action": "Skim for relevant takeaways. Flag if it touches your product area.",
+      "signal_type": "",
+      "credibility_score": 72,
+      "recency_score": 8,
+      "novelty_score": 100,
+      "relevance_score": 7,
+      "priority_score": 41,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "https://open.spotify.com/show/0HecwRsDtNOGIh4HdDV3Ry",
+      "business_tags": [],
+      "is_hsi": false
+    },
+    {
+      "id": "d47f47c77bafc243",
+      "title": "The Chatbot Ad Platform",
+      "url": "https://thebigstory.libsyn.com/the-chatbot-ad-platform",
+      "source": "The Big Story by AdExchanger",
+      "source_type": "podcast",
+      "source_tier": 2,
+      "source_category": "programmatic",
+      "credibility_weight": 0.85,
+      "published_at": "2026-02-12T16:14:00+00:00",
+      "type": "podcast",
+      "tags": [
+        "market_dynamics",
+        "programmatic",
+        "analysis"
+      ],
+      "topics": [],
+      "entities": [],
+      "summary": "OpenAI launched ads this week, making ChatGPT the newest canvas for advertising. But not before its biggest competitor, Anthropic, lambasted the decision in a Super Bowl ad.",
+      "why_it_matters": "General industry signal. May contain relevant insights for DSP operators.",
+      "recommended_action": "Skim for relevant takeaways. Flag if it touches your product area.",
+      "signal_type": "",
+      "credibility_score": 78,
+      "recency_score": 10,
+      "novelty_score": 100,
+      "relevance_score": 0,
+      "priority_score": 40,
+      "is_noise": false,
+      "confidence": "medium",
+      "spotify_url": "https://open.spotify.com/show/3XtKGz45NQ5vQUeFgmmSSP",
+      "business_tags": [],
+      "is_hsi": false
     }
   ],
   "topic_momentum": [
     {
       "label": "Earnings & Financials",
-      "score": 509,
-      "count": 7
-    },
-    {
-      "label": "CTV & Streaming",
-      "score": 285,
-      "count": 5
+      "score": 932,
+      "count": 11
     },
     {
       "label": "SKAN / ATT / iOS Privacy",
-      "score": 260,
-      "count": 4
+      "score": 843,
+      "count": 11
     },
     {
-      "label": "Regulation & Antitrust",
-      "score": 220,
-      "count": 3
+      "label": "M&A & Funding",
+      "score": 491,
+      "count": 6
     },
     {
-      "label": "User Acquisition & Growth",
-      "score": 97,
-      "count": 1
+      "label": "Mobile Gaming & Monetization",
+      "score": 485,
+      "count": 6
     },
     {
       "label": "ML / AI in Advertising",
-      "score": 82,
+      "score": 464,
+      "count": 6
+    },
+    {
+      "label": "User Acquisition & Growth",
+      "score": 458,
+      "count": 6
+    },
+    {
+      "label": "CTV & Streaming",
+      "score": 411,
+      "count": 6
+    },
+    {
+      "label": "Regulation & Antitrust",
+      "score": 396,
+      "count": 5
+    },
+    {
+      "label": "Macro & Ad Spend",
+      "score": 253,
+      "count": 3
+    },
+    {
+      "label": "Measurement & Attribution",
+      "score": 165,
+      "count": 2
+    },
+    {
+      "label": "Bidding & Auctions",
+      "score": 93,
       "count": 1
     },
     {
       "label": "Mediation & Monetization",
-      "score": 64,
-      "count": 1
-    },
-    {
-      "label": "Measurement & Attribution",
-      "score": 62,
-      "count": 1
-    },
-    {
-      "label": "Bidding & Auctions",
-      "score": 50,
+      "score": 76,
       "count": 1
     }
   ],
@@ -710,11 +1511,31 @@
       "count": 5
     },
     {
-      "name": "Stratechery",
+      "name": "ExchangeWire",
       "count": 5
     },
     {
-      "name": "ExchangeWire",
+      "name": "The MadTech Podcast",
+      "count": 5
+    },
+    {
+      "name": "Gamigion",
+      "count": 5
+    },
+    {
+      "name": "Seeking Alpha Ad Tech",
+      "count": 5
+    },
+    {
+      "name": "arXiv Advertising ML",
+      "count": 5
+    },
+    {
+      "name": "Adweek",
+      "count": 5
+    },
+    {
+      "name": "Moloco Blog",
       "count": 5
     },
     {
@@ -722,15 +1543,31 @@
       "count": 5
     },
     {
+      "name": "Crunchbase AdTech",
+      "count": 5
+    },
+    {
+      "name": "arXiv ML / Learning",
+      "count": 5
+    },
+    {
+      "name": "Stratechery",
+      "count": 4
+    },
+    {
+      "name": "CNIL France",
+      "count": 4
+    },
+    {
       "name": "Android Developers Blog",
       "count": 4
     },
     {
-      "name": "IAB Tech Lab",
-      "count": 2
+      "name": "Mobile Dev Memo",
+      "count": 3
     },
     {
-      "name": "The Digiday Podcast",
+      "name": "Unity (YouTube)",
       "count": 2
     },
     {
@@ -738,66 +1575,130 @@
       "count": 1
     },
     {
+      "name": "US BLS CPI",
+      "count": 1
+    },
+    {
+      "name": "Smadex Blog",
+      "count": 1
+    },
+    {
       "name": "Marketecture Podcast",
-      "count": 1
-    },
-    {
-      "name": "Pivot",
-      "count": 1
-    },
-    {
-      "name": "The AdTechGod Pod",
-      "count": 1
-    },
-    {
-      "name": "AdMonsters",
-      "count": 1
-    },
-    {
-      "name": "Apple Developer News",
       "count": 1
     }
   ],
   "watchlist": {
     "Apple": {
-      "count": 5,
+      "count": 14,
       "top_signal": {
-        "title": "Why Taxonomies Matter in the AI Age",
-        "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
-        "priority_score": 82,
+        "title": "What is Meta\u2019s GEM?",
+        "url": "https://mobiledevmemo.com/what-is-metas-gem/",
+        "priority_score": 100,
         "signal_type": "Policy"
       },
-      "max_priority": 82
+      "max_priority": 100
     },
-    "Google": {
-      "count": 2,
+    "Unity": {
+      "count": 5,
       "top_signal": {
-        "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
-        "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
-        "priority_score": 97,
+        "title": "Local Media Needs Consolidation To Compete, But An Outdated Legal Standard Stands In The Way",
+        "url": "https://www.adexchanger.com/on-tv-and-video/local-media-needs-consolidation-to-compete-but-an-outdated-legal-standard-stands-in-the-way/",
+        "priority_score": 78,
         "signal_type": "Market Structure"
       },
-      "max_priority": 97
+      "max_priority": 78
     },
     "Meta": {
-      "count": 2,
+      "count": 4,
       "top_signal": {
-        "title": "Why Smart Marketers Look Beyond The Leading Platforms To Deliver Outcomes",
-        "url": "https://www.adexchanger.com/data-driven-thinking/why-smart-marketers-look-beyond-the-leading-platforms-to-deliver-outcomes/",
-        "priority_score": 97,
+        "title": "What is Meta\u2019s GEM?",
+        "url": "https://mobiledevmemo.com/what-is-metas-gem/",
+        "priority_score": 100,
+        "signal_type": "Policy"
+      },
+      "max_priority": 100
+    },
+    "Google": {
+      "count": 4,
+      "top_signal": {
+        "title": "MadTech Daily: Google Faces Fresh EU Antitrust Scrutiny Over Search Ad Auctions",
+        "url": "https://audioboom.com/posts/8860896",
+        "priority_score": 93,
         "signal_type": "Market Structure"
       },
-      "max_priority": 97
+      "max_priority": 93
+    },
+    "Moloco": {
+      "count": 2,
+      "top_signal": {
+        "title": "The AppsFlyer Performance Index (2025 Edition) recognizes Moloco as a top mobile growth partner",
+        "url": "https://www.moloco.com/blog/moloco-rankings-performance-index-2025-edition",
+        "priority_score": 72,
+        "signal_type": "Market Structure"
+      },
+      "max_priority": 72
     },
     "AppLovin": {
       "count": 1,
       "top_signal": {
-        "title": "Why Taxonomies Matter in the AI Age",
-        "url": "https://iabtechlab.com/why-taxonomies-matter-in-the-ai-age/",
-        "priority_score": 82,
-        "signal_type": "Policy"
+        "title": "AppLovin Q4 2025 earnings: understanding AppLovin\u2019s risks",
+        "url": "https://mobiledevmemo.com/applovin-q4-2025-earnings-understanding-applovins-risks/",
+        "priority_score": 90,
+        "signal_type": "Earnings"
       },
-      "max_priority": 82
+      "max_priority": 90
+    },
+    "Smadex": {
+      "count": 1,
+      "top_signal": {
+        "title": "How to Drive Performance with Clickable In-Game Advertising",
+        "url": "https://smadex.com/how-to-drive-performance-with-clickable-in-game-advertising/",
+        "priority_score": 67,
+        "signal_type": "Market Structure"
+      },
+      "max_priority": 67
     }
-  }
+  },
+  "category_distribution": [
+    {
+      "name": "programmatic",
+      "count": 24
+    },
+    {
+      "name": "mobile",
+      "count": 16
+    },
+    {
+      "name": "ml",
+      "count": 11
+    },
+    {
+      "name": "general",
+      "count": 7
+    },
+    {
+      "name": "regulation",
+      "count": 6
+    },
+    {
+      "name": "finance",
+      "count": 5
+    },
+    {
+      "name": "ctv",
+      "count": 5
+    },
+    {
+      "name": "funding",
+      "count": 5
+    },
+    {
+      "name": "privacy",
+      "count": 5
+    },
+    {
+      "name": "macro",
+      "count": 1
+    }
+  ]
 }

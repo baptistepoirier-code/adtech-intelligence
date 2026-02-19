@@ -17,6 +17,9 @@ max_must_reads: 7
 max_key_learnings: 10
 max_items_per_source: 5
 
+# Source capping: max items from one source in the top-ranked positions
+max_per_source: 5
+
 # Dedupe: cosine similarity threshold for near-duplicate titles (0.0–1.0)
 dedupe_similarity: 0.75
 
@@ -25,3 +28,7 @@ recency_half_life_hours: 48
 
 # Novelty window: days to look back for duplicate detection
 novelty_window_days: 14
+
+# Archive: persist top articles across runs
+archive_min_score: 75
+archive_max_items: 300

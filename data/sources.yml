@@ -3,12 +3,17 @@
 # ============================================================
 # tier: 1 (gold standard), 2 (strong), 3 (useful), 4 (supplemental)
 # credibility_weight: 0.0–1.0, used in scoring
-# category: finance | regulatory | programmatic | mobile | ctv | fraud | ua | measurement | privacy | general
+# category: finance | regulation | programmatic | mobile | ctv | fraud | ua | measurement | privacy | ml | macro | funding | hiring | general
 # type: blog | podcast | youtube | filing | newsletter
 # Adding a source = one entry here. The pipeline does the rest.
 # ============================================================
 
 sources:
+
+  # ════════════════════════════════════════════════════════════
+  #  EXISTING SOURCES (preserved)
+  # ════════════════════════════════════════════════════════════
+
   # ── TIER 1: Gold Standard ─────────────────────────────────
 
   - name: AdExchanger
@@ -25,10 +30,22 @@ sources:
     tier: 1
     credibility_weight: 1.0
     category: mobile
-    tags: [mobile, att, skan, privacy, dsp, ua]
-    rss_url: "https://mobiledevmemo.com/feed/atom/"
+    tags: [mobile, att, skan, privacy, dsp, ua, eric_seufert]
+    rss_url: ""
     homepage: "https://mobiledevmemo.com"
-    notes: "Eric Seufert — highest authority on mobile DSP economics"
+    use_wp_api: true
+    notes: "Eric Seufert — blog RSS disabled (MDM Pro paywall). Using WP REST API to scrape posts."
+
+  - name: Mobile Dev Memo (Podcast)
+    type: podcast
+    tier: 1
+    credibility_weight: 1.0
+    category: mobile
+    tags: [mobile, att, skan, privacy, dsp, ua, eric_seufert]
+    rss_url: "https://anchor.fm/s/45369a8/podcast/rss"
+    homepage: "https://mobiledevmemo.com"
+    spotify_url: "https://open.spotify.com/show/0RCsc3OW1p9jH5YC0qQTp0"
+    notes: "Eric Seufert — Podcast RSS via Anchor."
 
   - name: Stratechery
     type: newsletter
@@ -65,8 +82,10 @@ sources:
     credibility_weight: 0.85
     category: programmatic
     tags: [exchange, infrastructure, interviews]
-    rss_url: "https://www.marketecture.tv/blog-feed.xml"
-    homepage: "https://marketecture.tv"
+    rss_url: ""
+    homepage: "https://news.marketecture.tv"
+    disabled: true
+    notes: "Moved to Beehiiv (newsletter). No public RSS. Content available via MarketectureTV YouTube."
 
   - name: AppLovin Blog
     type: blog
@@ -74,8 +93,8 @@ sources:
     credibility_weight: 0.75
     category: mobile
     tags: [applovin, dsp, mediation, max, ua]
-    rss_url: "https://www.applovin.com/feed/"
-    homepage: "https://applovin.com"
+    rss_url: "https://blog.applovin.com/feed/"
+    homepage: "https://blog.applovin.com"
 
   - name: AppsFlyer Blog
     type: blog
@@ -113,13 +132,11 @@ sources:
     rss_url: "https://www.adjust.com/blog/feed/"
     homepage: "https://adjust.com"
 
-  # ── TIER 2: Regulatory & Policy ───────────────────────────
-
   - name: IAB Tech Lab
     type: blog
     tier: 2
     credibility_weight: 0.88
-    category: regulatory
+    category: regulation
     tags: [openrtb, standards, privacy, sellers_json, ads_txt]
     rss_url: "https://iabtechlab.com/feed/"
     homepage: "https://iabtechlab.com"
@@ -151,54 +168,6 @@ sources:
     rss_url: "https://blog.chromium.org/feeds/posts/default"
     homepage: "https://privacysandbox.com"
 
-  # ── TIER 2: Finance & Filings ─────────────────────────────
-
-  - name: SEC EDGAR (AppLovin)
-    type: filing
-    tier: 2
-    credibility_weight: 0.98
-    category: finance
-    tags: [applovin, earnings, sec, 10k, 10q]
-    rss_url: "https://efts.sec.gov/LATEST/search-index?q=%22AppLovin%22&dateRange=custom&startdt=2025-01-01&enddt=2026-12-31&forms=10-K,10-Q,8-K"
-    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001751008"
-    edgar_cik: "0001751008"
-    use_edgar_rss: true
-
-  - name: SEC EDGAR (Unity)
-    type: filing
-    tier: 2
-    credibility_weight: 0.98
-    category: finance
-    tags: [unity, earnings, sec, 10k, 10q]
-    rss_url: ""
-    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001723089"
-    edgar_cik: "0001723089"
-    use_edgar_rss: true
-
-  - name: SEC EDGAR (The Trade Desk)
-    type: filing
-    tier: 2
-    credibility_weight: 0.98
-    category: finance
-    tags: [ttd, earnings, sec, 10k, 10q]
-    rss_url: ""
-    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001671933"
-    edgar_cik: "0001671933"
-    use_edgar_rss: true
-
-  - name: SEC EDGAR (Digital Turbine)
-    type: filing
-    tier: 2
-    credibility_weight: 0.98
-    category: finance
-    tags: [digital_turbine, earnings, sec]
-    rss_url: ""
-    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001117297"
-    edgar_cik: "0001117297"
-    use_edgar_rss: true
-
-  # ── TIER 2: Fraud & Quality ───────────────────────────────
-
   - name: IAS Blog
     type: blog
     tier: 2
@@ -214,7 +183,7 @@ sources:
     credibility_weight: 0.75
     category: fraud
     tags: [viewability, fraud, brand_safety, ctv]
-    rss_url: "https://doubleverify.com/feed/"
+    rss_url: "https://doubleverify.com/blog/rss.xml"
     homepage: "https://doubleverify.com"
 
   - name: Dr. Augustine Fou
@@ -223,8 +192,31 @@ sources:
     credibility_weight: 0.82
     category: fraud
     tags: [fraud, ivt, transparency, exchange]
-    rss_url: "https://fouanalytics.com/feed/"
+    rss_url: ""
     homepage: "https://fouanalytics.com"
+    disabled: true
+    notes: "Site down / no RSS / no WP API. Manual input only."
+
+  - name: Unity Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.75
+    category: mobile
+    tags: [unity, mediation, levelplay, ironsource, gaming]
+    rss_url: "https://blog.unity.com/rss"
+    homepage: "https://blog.unity.com"
+
+  - name: Moloco Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.75
+    category: mobile
+    tags: [moloco, dsp, ml, ua, performance]
+    rss_url: ""
+    homepage: "https://www.moloco.com"
+    use_scrape: true
+    scrape_pattern: "blog"
+    notes: "No RSS. Scrape blog page for article links."
 
   # ── TIER 3: Useful Sources ────────────────────────────────
 
@@ -234,8 +226,10 @@ sources:
     credibility_weight: 0.68
     category: programmatic
     tags: [ttd, ctv, uid2, openpath]
-    rss_url: "https://www.thetradedesk.com/us/blog/feed"
-    homepage: "https://thetradedesk.com"
+    rss_url: ""
+    homepage: "https://www.thetradedesk.com"
+    disabled: true
+    notes: "No RSS or API. Content available via TTD YouTube and Seeking Alpha."
 
   - name: AdMonsters
     type: blog
@@ -255,7 +249,17 @@ sources:
     rss_url: "https://prebid.org/blog/feed/"
     homepage: "https://prebid.org"
 
-  # ── PODCASTS ──────────────────────────────────────────────
+  - name: Branch Blog
+    type: blog
+    tier: 3
+    credibility_weight: 0.68
+    category: measurement
+    tags: [deep_linking, attribution, measurement]
+    rss_url: ""
+    homepage: "https://www.branch.io"
+    use_wp_api: true
+
+  # ── PODCASTS (existing) ──────────────────────────────────
 
   - name: AdExchanger Talks
     type: podcast
@@ -311,42 +315,685 @@ sources:
     rss_url: "https://feeds.megaphone.fm/WWO6655869236"
     spotify_url: "https://open.spotify.com/show/5Ob2FTVHoNMPJfqbqXslaB"
 
-  - name: Sub Club (RevenueCat)
-    type: podcast
+  - name: RevenueCat Blog
+    type: blog
     tier: 3
     credibility_weight: 0.70
     category: mobile
-    tags: [subscriptions, mobile, growth, monetization]
-    rss_url: "https://subclub.libsyn.com/rss"
-    spotify_url: "https://open.spotify.com/show/3DBB4ypbKBsp19TA0MRSCI"
+    tags: [subscriptions, mobile, growth, monetization, iap]
+    rss_url: "https://www.revenuecat.com/blog/rss.xml"
+    homepage: "https://www.revenuecat.com"
 
-  # ── YOUTUBE ───────────────────────────────────────────────
+  # ── EXISTING SEC EDGAR ───────────────────────────────────
 
-  # ── Additional blogs ───────────────────────────────────────
+  - name: SEC EDGAR (AppLovin)
+    type: filing
+    tier: 1
+    credibility_weight: 0.98
+    category: finance
+    tags: [applovin, earnings, sec, 10k, 10q, 8k]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001751008"
+    edgar_cik: "0001751008"
+    use_edgar_rss: true
 
-  - name: Unity Blog
+  - name: SEC EDGAR (Unity)
+    type: filing
+    tier: 1
+    credibility_weight: 0.98
+    category: finance
+    tags: [unity, earnings, sec, 10k, 10q, 8k]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001723089"
+    edgar_cik: "0001723089"
+    use_edgar_rss: true
+
+  - name: SEC EDGAR (The Trade Desk)
+    type: filing
+    tier: 1
+    credibility_weight: 0.98
+    category: finance
+    tags: [ttd, earnings, sec, 10k, 10q, 8k]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001671933"
+    edgar_cik: "0001671933"
+    use_edgar_rss: true
+
+  - name: SEC EDGAR (Digital Turbine)
+    type: filing
+    tier: 1
+    credibility_weight: 0.98
+    category: finance
+    tags: [digital_turbine, earnings, sec, 10k, 10q]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001117297"
+    edgar_cik: "0001117297"
+    use_edgar_rss: true
+
+  # ════════════════════════════════════════════════════════════
+  #  NEW SOURCES — Category 1: Finance & Earnings (Tier 1)
+  # ════════════════════════════════════════════════════════════
+
+  - name: SEC EDGAR (Alphabet)
+    type: filing
+    tier: 1
+    credibility_weight: 1.0
+    category: finance
+    tags: [google, alphabet, earnings, sec, 10k, 10q, 8k]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044"
+    edgar_cik: "0001652044"
+    use_edgar_rss: true
+
+  - name: SEC EDGAR (Meta)
+    type: filing
+    tier: 1
+    credibility_weight: 1.0
+    category: finance
+    tags: [meta, facebook, earnings, sec, 10k, 10q, 8k]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801"
+    edgar_cik: "0001326801"
+    use_edgar_rss: true
+
+  - name: SEC EDGAR (Amazon)
+    type: filing
+    tier: 1
+    credibility_weight: 1.0
+    category: finance
+    tags: [amazon, earnings, sec, 10k, 10q, 8k, retail_media]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001018724"
+    edgar_cik: "0001018724"
+    use_edgar_rss: true
+
+  - name: SEC EDGAR (Roku)
+    type: filing
+    tier: 1
+    credibility_weight: 0.95
+    category: finance
+    tags: [roku, ctv, earnings, sec, 10k, 10q, 8k]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001428439"
+    edgar_cik: "0001428439"
+    use_edgar_rss: true
+
+  - name: SEC EDGAR (PubMatic)
+    type: filing
+    tier: 1
+    credibility_weight: 0.95
+    category: finance
+    tags: [pubmatic, ssp, earnings, sec, 10k, 10q, 8k]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001422930"
+    edgar_cik: "0001422930"
+    use_edgar_rss: true
+
+  - name: SEC EDGAR (Magnite)
+    type: filing
+    tier: 1
+    credibility_weight: 0.95
+    category: finance
+    tags: [magnite, ssp, ctv, earnings, sec, 10k, 10q, 8k]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001595974"
+    edgar_cik: "0001595974"
+    use_edgar_rss: true
+
+  - name: SEC EDGAR (Criteo)
+    type: filing
+    tier: 1
+    credibility_weight: 0.95
+    category: finance
+    tags: [criteo, retargeting, retail_media, earnings, sec]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001576427"
+    edgar_cik: "0001576427"
+    use_edgar_rss: true
+
+  - name: SEC EDGAR (Perion)
+    type: filing
+    tier: 1
+    credibility_weight: 0.90
+    category: finance
+    tags: [perion, search, display, ctv, earnings, sec]
+    rss_url: ""
+    homepage: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001516551"
+    edgar_cik: "0001516551"
+    use_edgar_rss: true
+
+  - name: Seeking Alpha Ad Tech
+    type: newsletter
+    tier: 1
+    credibility_weight: 0.90
+    category: finance
+    tags: [earnings, transcripts, guidance, revenue, margin]
+    rss_url: "https://seekingalpha.com/sector/technology.xml"
+    homepage: "https://seekingalpha.com"
+
+  # ════════════════════════════════════════════════════════════
+  #  NEW SOURCES — Category 2: Regulation & Policy (Tier 1)
+  # ════════════════════════════════════════════════════════════
+
+  - name: European Commission DMA
+    type: blog
+    tier: 1
+    credibility_weight: 0.98
+    category: regulation
+    tags: [dma, eu, gatekeeper, regulation, enforcement]
+    rss_url: ""
+    homepage: "https://digital-markets-act.ec.europa.eu/"
+    disabled: true
+    notes: "EC RSS deprecated. DMA/DSA news covered by IAB Europe and Digiday."
+
+  - name: European Commission DSA
+    type: blog
+    tier: 1
+    credibility_weight: 0.98
+    category: regulation
+    tags: [dsa, eu, content_moderation, platform_regulation]
+    rss_url: ""
+    homepage: "https://digital-services-act.ec.europa.eu/"
+    disabled: true
+    notes: "EC RSS deprecated. Covered by IAB Europe and Digiday."
+
+  - name: UK ICO
+    type: blog
+    tier: 1
+    credibility_weight: 0.95
+    category: regulation
+    tags: [ico, uk, gdpr, data_protection, privacy]
+    rss_url: ""
+    homepage: "https://ico.org.uk"
+    disabled: true
+    notes: "RSS endpoint removed. ICO redesigned site without feed."
+
+  - name: CNIL France
+    type: blog
+    tier: 1
+    credibility_weight: 0.95
+    category: regulation
+    tags: [cnil, france, gdpr, cookies, consent]
+    rss_url: "https://www.cnil.fr/fr/rss.xml"
+    homepage: "https://cnil.fr"
+
+  - name: AEPD Spain
+    type: blog
+    tier: 2
+    credibility_weight: 0.90
+    category: regulation
+    tags: [aepd, spain, gdpr, data_protection]
+    rss_url: ""
+    homepage: "https://aepd.es"
+    disabled: true
+    notes: "RSS endpoint removed."
+
+  - name: US FTC
+    type: blog
+    tier: 1
+    credibility_weight: 0.98
+    category: regulation
+    tags: [ftc, antitrust, privacy, enforcement, us]
+    rss_url: ""
+    homepage: "https://ftc.gov"
+    disabled: true
+    notes: "RSS endpoint removed after site redesign. FTC news covered by AdExchanger and Digiday."
+
+  - name: California CPPA
+    type: blog
+    tier: 1
+    credibility_weight: 0.95
+    category: regulation
+    tags: [ccpa, cpra, california, privacy, consent]
+    rss_url: "https://cppa.ca.gov/feed.xml"
+    homepage: "https://cppa.ca.gov"
+
+  - name: IAB Europe
+    type: blog
+    tier: 2
+    credibility_weight: 0.85
+    category: regulation
+    tags: [iab, europe, tcf, consent, programmatic]
+    rss_url: "https://iabeurope.eu/feed/"
+    homepage: "https://iabeurope.eu"
+
+  - name: W3C Privacy CG
+    type: blog
+    tier: 2
+    credibility_weight: 0.90
+    category: regulation
+    tags: [w3c, privacy_sandbox, standards, web_platform]
+    rss_url: "https://www.w3.org/blog/feed/"
+    homepage: "https://www.w3.org/groups/cg/privacycg"
+
+  # ════════════════════════════════════════════════════════════
+  #  NEW SOURCES — Category 4: ML, Bidding & Infrastructure (Tier 2)
+  # ════════════════════════════════════════════════════════════
+
+  - name: Smadex Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.72
+    category: ml
+    tags: [smadex, dsp, ml, bidding, mobile]
+    rss_url: "https://smadex.com/feed/"
+    homepage: "https://smadex.com"
+
+  - name: Remerge Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.70
+    category: ml
+    tags: [remerge, retargeting, dsp, re-engagement]
+    rss_url: ""
+    homepage: "https://www.remerge.io"
+    disabled: true
+    notes: "Site times out consistently. Remerge may have shut down or restructured."
+
+  - name: arXiv Advertising ML
+    type: blog
+    tier: 2
+    credibility_weight: 0.85
+    category: ml
+    tags: [arxiv, research, bidding, auction, recommender, ml]
+    rss_url: "https://rss.arxiv.org/rss/cs.IR"
+    homepage: "https://arxiv.org/list/cs.IR/recent"
+
+  # ════════════════════════════════════════════════════════════
+  #  NEW SOURCES — Category 5: CTV & Streaming (Tier 1–2)
+  # ════════════════════════════════════════════════════════════
+
+  - name: Adweek
+    type: blog
+    tier: 1
+    credibility_weight: 0.88
+    category: ctv
+    tags: [ctv, streaming, brands, creative, campaigns]
+    rss_url: "https://www.adweek.com/feed/"
+    homepage: "https://adweek.com"
+
+  - name: Broadcasting+Cable
+    type: blog
+    tier: 2
+    credibility_weight: 0.78
+    category: ctv
+    tags: [ctv, streaming, linear, broadcast, supply]
+    rss_url: "https://www.nexttv.com/rss"
+    homepage: "https://nexttv.com"
+
+  - name: Netflix Ad Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.82
+    category: ctv
+    tags: [netflix, ctv, avod, streaming, premium_video]
+    rss_url: ""
+    homepage: "https://ads.netflix.com"
+    disabled: true
+    notes: "No public RSS or API. Ads blog behind ads.netflix.com requires manual monitoring."
+
+  - name: Samsung Ads Blog
+    type: blog
+    tier: 2
+    credibility_weight: 0.72
+    category: ctv
+    tags: [samsung, ctv, ace, smart_tv, audience]
+    rss_url: ""
+    homepage: "https://www.samsung.com/us/business/samsungads/insights/"
+    disabled: true
+    notes: "No RSS or API. Samsung Ads insights page requires manual monitoring."
+
+  # ════════════════════════════════════════════════════════════
+  #  NEW SOURCES — Category 6: Fraud & Supply Quality (Tier 1)
+  # ════════════════════════════════════════════════════════════
+
+  - name: HUMAN Security Blog
+    type: blog
+    tier: 1
+    credibility_weight: 0.90
+    category: fraud
+    tags: [bot, fraud, ivt, brand_safety, supply_quality]
+    rss_url: ""
+    homepage: "https://www.humansecurity.com"
+    disabled: true
+    notes: "403 on all RSS/feed endpoints. Cloudflare-protected. Manual monitoring only."
+
+  # ════════════════════════════════════════════════════════════
+  #  NEW SOURCES — Category 7: Macro & Market Forecasts (Tier 1)
+  # ════════════════════════════════════════════════════════════
+
+  - name: WARC
+    type: blog
+    tier: 1
+    credibility_weight: 0.92
+    category: macro
+    tags: [ad_spend, forecast, global, brand, budget]
+    rss_url: ""
+    homepage: "https://warc.com"
+    disabled: true
+    notes: "Paywall. No public RSS or API."
+
+  - name: Magna Global
+    type: blog
+    tier: 1
+    credibility_weight: 0.90
+    category: macro
+    tags: [ad_spend, forecast, programmatic, tv, digital]
+    rss_url: "https://magnaglobal.com/feed/"
+    homepage: "https://magnaglobal.com"
+
+  - name: eMarketer / Insider Intelligence
+    type: blog
+    tier: 1
+    credibility_weight: 0.90
+    category: macro
+    tags: [ad_spend, forecast, digital, mobile, ctv, retail_media]
+    rss_url: ""
+    homepage: "https://www.insiderintelligence.com"
+    disabled: true
+    notes: "Paywall. No public RSS or API."
+
+  - name: US BLS CPI
+    type: blog
+    tier: 1
+    credibility_weight: 0.98
+    category: macro
+    tags: [cpi, inflation, consumer, macro]
+    rss_url: "https://www.bls.gov/feed/cpi.rss"
+    homepage: "https://www.bls.gov/cpi/"
+
+  # ════════════════════════════════════════════════════════════
+  #  NEW SOURCES — Category 8: M&A & Funding (Tier 2)
+  # ════════════════════════════════════════════════════════════
+
+  - name: Crunchbase AdTech
+    type: blog
+    tier: 2
+    credibility_weight: 0.78
+    category: funding
+    tags: [venture, funding, acquisition, startup, adtech]
+    rss_url: "https://news.crunchbase.com/feed/"
+    homepage: "https://news.crunchbase.com"
+
+  - name: LUMA Partners
+    type: blog
+    tier: 2
+    credibility_weight: 0.85
+    category: funding
+    tags: [ma, consolidation, valuation, lumascape]
+    rss_url: ""
+    homepage: "https://lumapartners.com"
+    use_wp_api: true
+
+  # ════════════════════════════════════════════════════════════
+  #  NEW SOURCES — Category 9: Hiring & Talent Signals (Tier 2)
+  # ════════════════════════════════════════════════════════════
+
+  # Hiring signals are tracked via keyword monitoring.
+  # These are proxy sources that often report on hiring trends.
+
+  - name: The Information
+    type: newsletter
+    tier: 1
+    credibility_weight: 0.92
+    category: general
+    tags: [google, meta, amazon, strategy, hiring, layoffs]
+    rss_url: ""
+    homepage: "https://theinformation.com"
+    disabled: true
+    notes: "Paywall (403). No public RSS."
+
+  # ════════════════════════════════════════════════════════════
+  #  NEW PODCASTS
+  # ════════════════════════════════════════════════════════════
+
+  # ════════════════════════════════════════════════════════════
+  #  YOUTUBE CHANNELS
+  # ════════════════════════════════════════════════════════════
+
+  - name: MarketectureTV
+    type: youtube
+    tier: 1
+    credibility_weight: 0.88
+    category: programmatic
+    tags: [interviews, deep_dive, exchange, infrastructure, ctv]
+    channel_id: "UC36uhUUuRKawpUy3eCKn51w"
+    homepage: "https://youtube.com/@marketecturetv"
+
+  - name: AdExchanger (YouTube)
+    type: youtube
+    tier: 1
+    credibility_weight: 0.90
+    category: programmatic
+    tags: [programmatic, interviews, industry, exchange]
+    channel_id: "UCxmyVr1rPn-SIH0GbyV4jkg"
+    homepage: "https://youtube.com/@adexchanger"
+
+  - name: AppLovin (YouTube)
+    type: youtube
+    tier: 2
+    credibility_weight: 0.75
+    category: mobile
+    tags: [applovin, dsp, gaming, ua, mediation]
+    channel_id: "UCqD7ljg1Y8wSUsHHQrX_-qg"
+    homepage: "https://youtube.com/@AppLovin"
+
+  - name: The Trade Desk (YouTube)
+    type: youtube
+    tier: 2
+    credibility_weight: 0.72
+    category: programmatic
+    tags: [ttd, ctv, uid2, dsp, openpath]
+    channel_id: "UCepu1fEfXlB39NF13-yiqew"
+    homepage: "https://youtube.com/@TheTradeDeskInc"
+
+  - name: Google Ads (YouTube)
+    type: youtube
+    tier: 1
+    credibility_weight: 0.90
+    category: programmatic
+    tags: [google, performance_max, youtube_ads, demand]
+    channel_id: "UCJ5UyIAa5nEGksjcdp43Ixw"
+    homepage: "https://youtube.com/@googleads"
+
+  - name: Google Ads Developers
+    type: youtube
+    tier: 2
+    credibility_weight: 0.88
+    category: ml
+    tags: [google, api, privacy_sandbox, sdk, auction]
+    channel_id: "UCgCvgLpbHZFjH-7MAJNgWBQ"
+    homepage: "https://youtube.com/@GoogleAdsDevelopers"
+
+  - name: Amazon Ads (YouTube)
+    type: youtube
+    tier: 2
+    credibility_weight: 0.82
+    category: ctv
+    tags: [amazon, retail_media, streaming, dsp, demand]
+    channel_id: "UCGRjlfFeU-5eC-ElShfwYPw"
+    homepage: "https://youtube.com/@AmazonAds"
+
+  - name: IAB Tech Lab (YouTube)
+    type: youtube
+    tier: 2
+    credibility_weight: 0.85
+    category: regulation
+    tags: [openrtb, standards, privacy, sellers_json]
+    channel_id: "UCdrD09g0KKGFc_TsZB_sgTA"
+    homepage: "https://youtube.com/@IABTechLab"
+
+  - name: Unity (YouTube)
+    type: youtube
+    tier: 2
+    credibility_weight: 0.72
+    category: mobile
+    tags: [unity, gaming, ads, sdk, mediation]
+    channel_id: "UCG08EqOAXJk_YXPDsAvReSg"
+    homepage: "https://youtube.com/@unity"
+
+  - name: Mobile UA Show
+    type: youtube
+    tier: 2
+    credibility_weight: 0.78
+    category: ua
+    tags: [ua, mobile, creative, performance, growth]
+    channel_id: "UCbHv8_eNUkHu9WrTGyZ9Bsw"
+    homepage: "https://youtube.com/@MobileUAShow"
+
+  - name: Prebid.org (YouTube)
+    type: youtube
+    tier: 3
+    credibility_weight: 0.75
+    category: programmatic
+    tags: [prebid, header_bidding, open_source, auction]
+    channel_id: "UC-O89MrDzVVvch-DqpY-QjQ"
+    homepage: "https://youtube.com/@Prebidorg"
+
+  - name: The Programmatic Advisory
+    type: youtube
+    tier: 2
+    credibility_weight: 0.75
+    category: programmatic
+    tags: [programmatic, rtb, education, whiteboard]
+    channel_id: "UCr0y1kJJgOeezcL9wYQp4Jw"
+    homepage: "https://youtube.com/channel/UCr0y1kJJgOeezcL9wYQp4Jw"
+
+  # ════════════════════════════════════════════════════════════
+  #  NEW PODCASTS
+  # ════════════════════════════════════════════════════════════
+
+  - name: The MadTech Podcast
+    type: podcast
+    tier: 2
+    credibility_weight: 0.78
+    category: programmatic
+    tags: [madtech, industry, deep_dive, exchange]
+    rss_url: "https://audioboom.com/channels/4976875.rss"
+    spotify_url: "https://open.spotify.com/show/0HecwRsDtNOGIh4HdDV3Ry"
+
+  - name: The Big Story by AdExchanger
+    type: podcast
+    tier: 2
+    credibility_weight: 0.85
+    category: programmatic
+    tags: [market_dynamics, programmatic, analysis]
+    rss_url: "https://thebigstory.libsyn.com/rss"
+    spotify_url: "https://open.spotify.com/show/3XtKGz45NQ5vQUeFgmmSSP"
+
+  - name: LUMA Partners Podcast
+    type: podcast
+    tier: 2
+    credibility_weight: 0.80
+    category: funding
+    tags: [ma, ecosystem, valuation, lumascape]
+    rss_url: ""
+    spotify_url: "https://open.spotify.com/show/0LT5YNu5x5YXLqGLWy6JEi"
+    disabled: true
+    notes: "No working RSS feed found. Content via LUMA Partners blog (WP API)."
+
+  # ════════════════════════════════════════════════════════════
+  #  TEAM SOURCES — #to_read & #adtech-knowledge-hub
+  # ════════════════════════════════════════════════════════════
+
+  # ── Newsletters & Blogs ─────────────────────────────────────
+
+  - name: GameBiz Consulting
+    type: newsletter
+    tier: 2
+    credibility_weight: 0.78
+    category: mobile
+    tags: [admon, admonization, ios, meta, ad_quality, gaming, monetization]
+    rss_url: ""
+    homepage: "https://www.gamebizconsulting.com/newsletter/"
+    notes: "AdMon newsletter series. No RSS found — requires periodic scraping or manual input."
+
+  - name: Gamigion
+    type: blog
+    tier: 2
+    credibility_weight: 0.72
+    category: mobile
+    tags: [mobile_gaming, adtech, monetization, gaming_news]
+    rss_url: "https://www.gamigion.com/feed/"
+    homepage: "https://www.gamigion.com/"
+
+  - name: NFX
+    type: blog
+    tier: 2
+    credibility_weight: 0.80
+    category: general
+    tags: [growth, strategy, startup, network_effects, marketplace]
+    rss_url: "https://feeds.feedburner.com/nfx"
+    homepage: "https://www.nfx.com/post/"
+
+  - name: Gamesforum
     type: blog
     tier: 2
     credibility_weight: 0.75
     category: mobile
-    tags: [unity, mediation, levelplay, ironsource, gaming]
-    rss_url: "https://blog.unity.com/feed"
-    homepage: "https://blog.unity.com"
+    tags: [mobile_gaming, monetization, mediation, industry_features]
+    rss_url: ""
+    homepage: "https://www.globalgamesforum.com/features/"
+    notes: "No working RSS feed. Homepage scraping or manual input needed."
 
-  - name: Branch Blog
+  # ── Research & Reports ──────────────────────────────────────
+
+  - name: Pixalate Research
+    type: blog
+    tier: 1
+    credibility_weight: 0.88
+    category: fraud
+    tags: [market_share, fraud, programmatic, ctv_fraud, ott, supply_quality, report]
+    rss_url: "https://www.pixalate.com/blog/rss.xml"
+    homepage: "https://www.pixalate.com/research/"
+
+  - name: AppsFlyer Performance Index
+    type: blog
+    tier: 1
+    credibility_weight: 0.92
+    category: measurement
+    tags: [performance_index, network_rankings, mobile, ua, attribution, report]
+    rss_url: ""
+    homepage: "https://index.appsflyer.com/"
+    notes: "Annual/bi-annual report. No RSS. Monitor homepage or AppsFlyer blog for release announcements."
+
+  - name: arXiv ML / Learning
+    type: blog
+    tier: 2
+    credibility_weight: 0.85
+    category: ml
+    tags: [arxiv, research, machine_learning, deep_learning, ranking, recommender]
+    rss_url: "https://rss.arxiv.org/rss/cs.LG"
+    homepage: "https://arxiv.org/list/cs.LG/recent"
+    notes: "Complements cs.IR feed. Keywords: ad auction, bid prediction, LTV, ranking model."
+
+  # ── Competitor Intelligence ─────────────────────────────────
+
+  - name: Aurion11
     type: blog
     tier: 3
-    credibility_weight: 0.68
-    category: measurement
-    tags: [deep_linking, attribution, measurement]
-    rss_url: "https://blog.branch.io/feed/"
-    homepage: "https://blog.branch.io"
-
-  - name: Moloco Blog
-    type: blog
-    tier: 2
-    credibility_weight: 0.75
+    credibility_weight: 0.60
     category: mobile
-    tags: [moloco, dsp, ml, ua, performance]
-    rss_url: "https://www.moloco.com/blog/rss.xml"
-    homepage: "https://moloco.com"
+    tags: [mediation, competitor, monetization, sdk]
+    rss_url: ""
+    homepage: "https://www.aurion11.com/"
+    notes: "Mediation competitor. No RSS found. Monitor homepage for product updates."
+
+  - name: Loomit.ai
+    type: blog
+    tier: 3
+    credibility_weight: 0.60
+    category: mobile
+    tags: [mediation, competitor, monetization, ai]
+    rss_url: ""
+    homepage: "https://loomit.ai/"
+    notes: "Mediation competitor. No RSS found. Monitor homepage for product updates."
+
+  # ── LinkedIn Influencers (manual curation) ──────────────────
+  # These require RSS bridges (e.g. rss.app, nitter-style) or manual
+  # Slack-based input. Listed here for completeness; items from these
+  # sources should be submitted via the #to_read channel workflow.
+  #
+  #   - Ari Paparo — adtech market structure, exchanges
+  #   - Mintegral (company page) — non-gaming apps, mobile marketing
+  #   - Moloco (company page) — programmatic, retail media

@@ -22,6 +22,10 @@ topic_weights:
   retail_media: 0.5
   identity: 1.0
   earnings: 1.1
+  macro: 0.9
+  ma_funding: 1.0
+  hiring: 0.7
+  mobile_gaming: 1.1
 
 entity_weights:
   AppLovin: 1.5
@@ -36,6 +40,15 @@ entity_weights:
   Smadex: 1.2
   Adikteev: 1.1
   Remerge: 1.0
+  Roku: 0.9
+  PubMatic: 0.9
+  Magnite: 0.9
+  Criteo: 0.8
+  Perion: 0.7
+  Mintegral: 1.1
+  Aurion11: 1.0
+  Loomit: 1.0
+  Pixalate: 0.8
 
 content_type_weights:
   blog: 1.0
@@ -66,3 +79,142 @@ preferred_geos:
   - global
   - us
   - eu
+
+# ── Business Unit Tags ──────────────────────────────────────
+# Each item gets tagged with relevant internal BU(s).
+# An item can have multiple BU tags if it crosses domains.
+# ────────────────────────────────────────────────────────────
+
+business_units:
+  - tag: "BidMachine"
+    color: "#3b82f6"
+    url: "https://www.bidmachine.io/"
+    description: "Ad Exchange"
+    match_topics: [bidding, identity]
+    match_keywords:
+      - exchange
+      - ssp
+      - supply path
+      - supply side
+      - header bidding
+      - prebid
+      - sellers.json
+      - ads.txt
+      - app-ads.txt
+      - bid request
+      - bid response
+      - openrtb
+      - ortb
+      - vast
+      - auction mechanics
+      - floor price
+      - bid shading
+      - first-price
+      - second-price
+      - programmatic infrastructure
+      - ad exchange
+      - ad inventory
+      - impression auction
+      - fill rate
+      - win rate
+      - qps
+      - bid density
+      - traffic shaping
+      - supply curation
+
+  - tag: "Appgrowth"
+    color: "#10b981"
+    url: "https://appodeal.com/appgrowth/"
+    description: "DSP / User Acquisition"
+    match_topics: [ua_growth, ml_ai, measurement, skan_att, creative]
+    match_keywords:
+      - dsp
+      - demand side
+      - user acquisition
+      - app install
+      - campaign optimization
+      - performance marketing
+      - cpi
+      - cpa
+      - roas
+      - return on ad spend
+      - ltv
+      - lifetime value
+      - retargeting
+      - re-engagement
+      - lookalike
+      - predictive
+      - pcvr
+      - pltv
+      - bid optimization
+      - ml bidding
+      - axon
+      - advantage+
+      - performance max
+      - moloco
+      - liftoff
+      - creative optimization
+      - playable
+      - endcard
+
+  - tag: "Appodeal"
+    color: "#f59e0b"
+    url: "https://appodeal.com/mediation/"
+    description: "Mediation"
+    match_topics: [mediation]
+    match_keywords:
+      - mediation
+      - ad mediation
+      - waterfall optimization
+      - ecpm floor
+      - ecpm optimization
+      - ad monetization sdk
+      - in-app bidding
+      - applovin max
+      - levelplay
+      - ironsource mediation
+      - admob mediation
+      - unity ads mediation
+      - demand source integration
+      - sdk network
+      - ad format optimization
+      - bidding waterfall
+      - hybrid waterfall
+      - mediation stack
+
+  - tag: "Chardonnay"
+    color: "#ec4899"
+    url: "https://chardonnaypartners.com/"
+    description: "Publishing"
+    match_topics: [mobile_gaming]
+    match_keywords:
+      - app publisher
+      - game publisher
+      - game publishing
+      - app store optimization
+      - aso strategy
+      - mobile game
+      - mobile gaming
+      - hyper-casual
+      - casual game
+      - hybrid-casual
+      - game monetization
+      - supersonic
+      - lion studios
+      - game developer
+      - indie dev
+      - indie developer
+      - game design
+      - arpdau
+      - d1 retention
+      - d7 retention
+      - d30 retention
+      - game economy
+      - in-app purchase
+      - iap
+      - rewarded video
+      - playable ad
+      - ua for games
+      - user acquisition game
+      - soft launch
+      - global launch
