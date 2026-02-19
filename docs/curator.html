@@ -931,7 +931,7 @@ document.getElementById('refresh-btn').addEventListener('click',async function()
 
     if(!isLocal){
         // On GitHub Pages: open the workflow dispatch page
-        const ghRepo='appodeal/adtech-intelligence';
+        const ghRepo='baptistepoirier-code/adtech-intelligence';
         window.open(`https://github.com/${ghRepo}/actions/workflows/daily-intel.yml`,'_blank');
         label.textContent='Opening GitHub Actions...';
         setTimeout(()=>{label.textContent='Refresh';},2000);
