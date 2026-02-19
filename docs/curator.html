@@ -8,6 +8,12 @@
 <script src="jspdf.umd.min.js"></script>
 <style>
 :root{--bg:#08080e;--s1:#10101a;--s2:#161622;--s3:#1c1c2e;--bd:#252538;--t1:#e8e8f4;--t2:#9898b0;--t3:#606078;--ac:#6366f1;--ac2:#818cf8;--gr:#10b981;--rd:#ef4444;--yl:#f59e0b;--bl:#3b82f6;--pp:#8b5cf6;--pk:#ec4899;--r:10px;--rs:6px;--tr:.2s;--glow:0 0 20px rgba(99,102,241,.08)}
+html.light{--bg:#f4f5f7;--s1:#ffffff;--s2:#eef0f4;--s3:#e2e5eb;--bd:#d1d5db;--t1:#111827;--t2:#4b5563;--t3:#9ca3af;--ac:#4f46e5;--ac2:#4338ca;--gr:#059669;--rd:#dc2626;--yl:#d97706;--bl:#2563eb;--pp:#7c3aed;--pk:#db2777;--glow:0 0 20px rgba(79,70,229,.06)}
+html.light *::-webkit-scrollbar-track{background:var(--s2)}
+html.light *::-webkit-scrollbar-thumb{background:var(--bd)}
+html.light .signal-card,html.light .ci-card{box-shadow:0 1px 3px rgba(0,0,0,.06)}
+html.light .refresh-btn{background:rgba(79,70,229,.06);border-color:var(--ac)}
+html.light .export-btn{background:rgba(5,150,105,.06)!important;border-color:var(--gr)!important}
 *{margin:0;padding:0;box-sizing:border-box}
 *::-webkit-scrollbar{width:6px}
 *::-webkit-scrollbar-track{background:var(--bg)}
@@ -221,6 +227,8 @@ a:hover{color:#a5b4fc;text-decoration:none}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .export-btn{border-color:var(--gr)!important;color:var(--gr)!important;background:rgba(16,185,129,.08)!important}
 .export-btn:hover{background:rgba(16,185,129,.18)!important;box-shadow:0 2px 8px rgba(16,185,129,.15)!important}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:var(--rs);border:1px solid var(--bd);background:var(--s2);color:var(--t2);cursor:pointer;transition:all var(--tr);font-size:16px;padding:0;line-height:1}
+.theme-toggle:hover{background:var(--s3);color:var(--t1);transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.1)}
 
 /* ── Footer ──────────────────────────────────────────── */
 .footer{text-align:center;padding:36px;color:var(--t3);font-size:11px;border-top:1px solid var(--bd);margin-top:20px}
@@ -314,7 +322,8 @@ a:hover{color:#a5b4fc;text-decoration:none}
             <span style="color:var(--t3)">•</span>
             <span style="color:var(--t3)" id="freshness-schedule">Auto-refresh: daily 7:30 CET via GitHub Actions</span>
         </div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode">&#9789;</button>
             <button class="refresh-btn" id="refresh-btn" title="Re-run the full pipeline (fetch RSS, score, generate)">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
                 <span class="refresh-label">Refresh</span>
@@ -923,6 +932,24 @@ function updateFreshness(){
     age.textContent=label;
     dot.className='freshness-dot '+cls;
 }
+
+// ── Theme toggle ─────────────────────────────────────
+(function(){
+    const saved=localStorage.getItem('dsp-theme');
+    if(saved==='light') document.documentElement.classList.add('light');
+    const btn=document.getElementById('theme-toggle');
+    function updateIcon(){
+        const isLight=document.documentElement.classList.contains('light');
+        btn.innerHTML=isLight?'&#9728;':'&#9789;';
+        btn.title=isLight?'Switch to dark mode':'Switch to light mode';
+    }
+    updateIcon();
+    btn.addEventListener('click',function(){
+        document.documentElement.classList.toggle('light');
+        localStorage.setItem('dsp-theme',document.documentElement.classList.contains('light')?'light':'dark');
+        updateIcon();
+    });
+})();
 
 document.getElementById('refresh-btn').addEventListener('click',async function(){
     const btn=this;
